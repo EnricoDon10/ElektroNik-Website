@@ -29,17 +29,17 @@ export async function generateMetadata(): Promise<Metadata> {
       shortcut: "/favicon.svg",
     },
     openGraph: {
-      title: "ElektroNik | Spannung. Perfekt gelöst.",
+      title: "ElektroNik | Verkabeln. Vernetzen. Vertrauen.",
       description: "Moderne Elektrotechnik – meisterhaft geplant und persönlich umgesetzt.",
-      images: [{ url: new URL("/og.png", siteUrl), width: 1734, height: 907, alt: "ElektroNik Elektro-Meisterbetrieb" }],
+      images: [{ url: new URL("/og-v2.png", siteUrl), width: 1734, height: 907, alt: "ElektroNik – Verkabeln. Vernetzen. Vertrauen." }],
       locale: "de_DE",
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: "ElektroNik | Spannung. Perfekt gelöst.",
+      title: "ElektroNik | Verkabeln. Vernetzen. Vertrauen.",
       description: "Moderne Elektrotechnik – meisterhaft geplant und persönlich umgesetzt.",
-      images: [new URL("/og.png", siteUrl)],
+      images: [new URL("/og-v2.png", siteUrl)],
     },
   };
 }

@@ -105,10 +105,11 @@ export default function Home() {
         <div className="hero-grid" aria-hidden="true" />
         <div className="hero-glow" aria-hidden="true" />
         <div className="hero-content">
-          <p className="eyebrow"><span /> Elektro-Meisterbetrieb · zuverlässig &amp; persönlich</p>
+          <p className="eyebrow"><span /> Meisterstrom für Haus und Industrie</p>
           <h1>
-            Spannung.<br />
-            <span>Perfekt</span> gelöst.
+            Verkabeln.<br />
+            Vernetzen.<br />
+            <span>Vertrauen.</span>
           </h1>
           <p className="hero-lead">
             ElektroNik steht für moderne Elektrotechnik mit Handschlagqualität –
