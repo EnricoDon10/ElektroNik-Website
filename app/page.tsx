@@ -11,9 +11,9 @@ const services = [
   },
   {
     number: "02",
-    title: "Smart Home",
-    text: "Intelligente Lösungen für Licht, Klima, Beschattung und Sicherheit, die Ihren Alltag einfacher und effizienter machen.",
-    tags: ["KNX", "Automation", "Netzwerk"],
+    title: "Netzwerkverkabelung",
+    text: "Strukturierte Netzwerkverkabelung für zuverlässige Datenverbindungen – von Netzwerkschränken und Bodentanks bis zu fachgerecht installierten Netzwerkdosen.",
+    tags: ["Netzwerkschränke", "Bodentanks", "Netzwerkdosen"],
   },
   {
     number: "03",
@@ -76,7 +76,6 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a className="brand" href="#start" aria-label="ElektroNik Startseite">
-          <span className="brand-mark" aria-hidden="true">EN</span>
           <span className="brand-name">ELEKTRO<span>NIK</span></span>
           <span className="brand-sub">Meisterbetrieb</span>
         </a>
@@ -105,11 +104,10 @@ export default function Home() {
         <div className="hero-grid" aria-hidden="true" />
         <div className="hero-glow" aria-hidden="true" />
         <div className="hero-content">
-          <p className="eyebrow"><span /> Meisterstrom für Haus und Industrie</p>
+          <p className="eyebrow"><span /> Elektro-Meisterbetrieb · zuverlässig &amp; persönlich</p>
           <h1>
-            Verkabeln.<br />
-            Vernetzen.<br />
-            <span>Vertrauen.</span>
+            Elektromeister<br />
+            <span>für Haus und Industrie</span>
           </h1>
           <p className="hero-lead">
             ElektroNik steht für moderne Elektrotechnik mit Handschlagqualität –
@@ -123,24 +121,22 @@ export default function Home() {
               Leistungen ansehen <span aria-hidden="true">↓</span>
             </a>
           </div>
-          <div className="hero-trust">
-            <span className="trust-seal"><strong>100%</strong>Meisterqualität</span>
-            <span className="trust-copy">Saubere Arbeit.<br />Klare Kommunikation.</span>
-          </div>
         </div>
 
         <div className="hero-visual" aria-label="ElektroNik Kompetenzübersicht">
           <div className="visual-orbit orbit-one" />
           <div className="visual-orbit orbit-two" />
           <div className="visual-core">
-            <span className="core-bolt" aria-hidden="true">ϟ</span>
+            <span className="core-bolt" aria-hidden="true" />
             <small>ENERGIE</small>
             <strong>mit System</strong>
           </div>
-          <div className="visual-chip chip-one"><span>01</span> SMART HOME</div>
-          <div className="visual-chip chip-two"><span>02</span> E-MOBILITÄT</div>
-          <div className="visual-chip chip-three"><span>03</span> SICHERHEIT</div>
-          <p className="visual-label">PRÄZISION<br />AUF JEDEM<br />ANSCHLUSS.</p>
+          <div className="visual-chip chip-one"><span>01</span> ELEKTROINSTALLATION</div>
+          <div className="visual-chip chip-two"><span>02</span> NETZWERKVERKABELUNG</div>
+          <div className="visual-chip chip-three"><span>03</span> E-MOBILITÄT</div>
+          <div className="visual-chip chip-four"><span>04</span> PV &amp; ENERGIE</div>
+          <div className="visual-chip chip-five"><span>05</span> PRÜFUNG &amp; SICHERHEIT</div>
+          <div className="visual-chip chip-six"><span>06</span> SERVICE &amp; STÖRUNG</div>
         </div>
 
         <a className="hero-phone" href="tel:+490000000000">
@@ -152,7 +148,7 @@ export default function Home() {
       <section className="ticker" aria-label="Leistungsschwerpunkte">
         <div>
           <span>ELEKTROINSTALLATION</span><i>✦</i>
-          <span>SMART HOME</span><i>✦</i>
+          <span>NETZWERKVERKABELUNG</span><i>✦</i>
           <span>E-MOBILITÄT</span><i>✦</i>
           <span>PHOTOVOLTAIK</span><i>✦</i>
           <span>SICHERHEIT</span><i>✦</i>
@@ -299,8 +295,8 @@ export default function Home() {
       <footer>
         <div className="footer-brand">
           <a className="brand brand-footer" href="#start">
-            <span className="brand-mark">EN</span>
             <span className="brand-name">ELEKTRO<span>NIK</span></span>
+            <span className="brand-sub">Meisterbetrieb</span>
           </a>
           <p>Moderne Elektrotechnik.<br />Meisterhaft umgesetzt.</p>
         </div>
