@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { FormEvent, useState } from "react";
 
 const services = [
@@ -60,14 +61,15 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
   const sendWhatsApp = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const text = encodeURIComponent(
-      `Hallo ElektroNik, ich bin ${name || "Interessent/in"}.\n\n${message || "Ich möchte ein Projekt besprechen."}`,
+      `Hallo ElektroNik, ich bin ${name || "Interessent/in"}.\nE-Mail: ${email}\n\n${message || "Ich möchte ein Projekt besprechen."}`,
     );
-    window.open(`https://wa.me/490000000000?text=${text}`, "_blank", "noopener,noreferrer");
+    window.open(`https://wa.me/4915168488353?text=${text}`, "_blank", "noopener,noreferrer");
   };
 
   const closeMenu = () => setMenuOpen(false);
@@ -85,8 +87,12 @@ export default function Home() {
           <a href="#ablauf" onClick={closeMenu}>Ablauf</a>
           <a href="#kontakt" onClick={closeMenu}>Kontakt</a>
         </nav>
-        <a className="header-cta" href="#kontakt">
-          Projekt anfragen <span aria-hidden="true">↗</span>
+        <a className="header-cta" href="#whatsapp-anfrage" aria-label="Zum WhatsApp-Anfrageformular">
+          <span className="whatsapp-mark" aria-hidden="true">
+            <Image src="/whatsapp.svg" alt="" height={22} width={22} />
+          </span>
+          <strong className="header-cta-label">Projekt anfragen</strong>
+          <span className="header-cta-arrow" aria-hidden="true">↓</span>
         </a>
         <button
           className="menu-button"
@@ -114,9 +120,6 @@ export default function Home() {
             von der klassischen Installation bis zur intelligenten Energielösung.
           </p>
           <div className="hero-actions">
-            <a className="button button-primary" href="#kontakt">
-              Projekt starten <span aria-hidden="true">↗</span>
-            </a>
             <a className="button button-ghost" href="#leistungen">
               Leistungen ansehen <span aria-hidden="true">↓</span>
             </a>
@@ -131,17 +134,17 @@ export default function Home() {
             <small>ENERGIE</small>
             <strong>mit System</strong>
           </div>
-          <div className="visual-chip chip-one"><span>01</span> ELEKTROINSTALLATION</div>
-          <div className="visual-chip chip-two"><span>02</span> NETZWERKVERKABELUNG</div>
-          <div className="visual-chip chip-three"><span>03</span> E-MOBILITÄT</div>
-          <div className="visual-chip chip-four"><span>04</span> PV &amp; ENERGIE</div>
-          <div className="visual-chip chip-five"><span>05</span> PRÜFUNG &amp; SICHERHEIT</div>
-          <div className="visual-chip chip-six"><span>06</span> SERVICE &amp; STÖRUNG</div>
+          <a className="visual-chip chip-one" href="#leistungen"><span>01</span> ELEKTROINSTALLATION</a>
+          <a className="visual-chip chip-two" href="#leistungen"><span>02</span> NETZWERKVERKABELUNG</a>
+          <a className="visual-chip chip-three" href="#leistungen"><span>03</span> E-MOBILITÄT</a>
+          <a className="visual-chip chip-four" href="#leistungen"><span>04</span> PV &amp; ENERGIE</a>
+          <a className="visual-chip chip-five" href="#leistungen"><span>05</span> PRÜFUNG &amp; SICHERHEIT</a>
+          <a className="visual-chip chip-six" href="#leistungen"><span>06</span> SERVICE &amp; STÖRUNG</a>
         </div>
 
-        <a className="hero-phone" href="tel:+490000000000">
+        <a className="hero-phone" href="tel:+4915168488353">
           <span className="phone-icon" aria-hidden="true">⌕</span>
-          <span><small>Direkt anrufen</small><strong>+49 000 000 00 00</strong></span>
+          <span><small>Direkt anrufen</small><strong>0151 68488353</strong></span>
         </a>
       </section>
 
@@ -260,26 +263,60 @@ export default function Home() {
           <h2>Was können wir<br />für Sie <em>anschließen?</em></h2>
           <p>Beschreiben Sie kurz Ihr Vorhaben. Wir melden uns persönlich und besprechen den sinnvollsten nächsten Schritt.</p>
           <div className="contact-options">
-            <a href="tel:+490000000000">
+            <a className="contact-item" href="tel:+4915168488353">
               <span className="contact-symbol">T</span>
-              <span><small>Telefon</small><strong>+49 000 000 00 00</strong></span>
+              <span className="contact-copy"><small>Telefon</small><strong>0151 68488353</strong></span>
               <i>↗</i>
             </a>
-            <a href="mailto:kontakt@elektronik-meisterbetrieb.de">
+            <a className="contact-item" href="mailto:kontakt@elektronik-meisterbetrieb.de">
               <span className="contact-symbol">@</span>
-              <span><small>E-Mail</small><strong>kontakt@elektronik-meisterbetrieb.de</strong></span>
+              <span className="contact-copy"><small>E-Mail</small><strong>kontakt@elektronik-meisterbetrieb.de</strong></span>
               <i>↗</i>
             </a>
+            <a
+              aria-label="ElektroNik in Google Maps öffnen"
+              className="contact-item"
+              href="https://www.google.com/maps/search/?api=1&query=Krieler+Str.+115%2C+50935+K%C3%B6ln-Lindenthal"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <span className="contact-symbol">A</span>
+              <span className="contact-copy">
+                <small>Adresse</small>
+                <strong className="contact-address">
+                  <span>Krieler Str. 115</span>
+                  <span>50935</span>
+                  <span>Köln-Lindenthal</span>
+                </strong>
+              </span>
+              <i>↗</i>
+            </a>
+            <div className="contact-item contact-item-placeholder">
+              <span className="contact-symbol">Ö</span>
+              <span className="contact-copy"><small>Öffnungszeiten</small><strong>Öffnungszeiten ergänzen</strong></span>
+            </div>
           </div>
         </div>
-        <form className="contact-form" onSubmit={sendWhatsApp}>
+        <form className="contact-form" id="whatsapp-anfrage" onSubmit={sendWhatsApp}>
           <div className="form-head">
             <span>WhatsApp-Direktanfrage</span>
             <span className="online"><i /> Persönlich erreichbar</span>
           </div>
           <label>
             Ihr Name
-            <input value={name} onChange={(event) => setName(event.target.value)} placeholder="Vor- und Nachname" />
+            <input autoComplete="name" value={name} onChange={(event) => setName(event.target.value)} placeholder="Vor- und Nachname" />
+          </label>
+          <label>
+            Ihre E-Mail-Adresse
+            <input
+              autoComplete="email"
+              inputMode="email"
+              onChange={(event) => setEmail(event.target.value)}
+              placeholder="name@beispiel.de"
+              required
+              type="email"
+              value={email}
+            />
           </label>
           <label>
             Worum geht es?
@@ -302,7 +339,7 @@ export default function Home() {
         </div>
         <div className="footer-nav">
           <div><strong>Navigation</strong><a href="#leistungen">Leistungen</a><a href="#warum-wir">Über uns</a><a href="#ablauf">Ablauf</a></div>
-          <div><strong>Kontakt</strong><a href="tel:+490000000000">Telefon</a><a href="https://wa.me/490000000000">WhatsApp</a><a href="mailto:kontakt@elektronik-meisterbetrieb.de">E-Mail</a></div>
+          <div><strong>Kontakt</strong><a href="tel:+4915168488353">Telefon</a><a href="https://wa.me/4915168488353">WhatsApp</a><a href="mailto:kontakt@elektronik-meisterbetrieb.de">E-Mail</a></div>
           <div><strong>Rechtliches</strong><a href="#kontakt">Impressum</a><a href="#kontakt">Datenschutz</a></div>
         </div>
         <div className="footer-bottom">
@@ -312,8 +349,8 @@ export default function Home() {
       </footer>
 
       <div className="mobile-actions">
-        <a href="tel:+490000000000">Anrufen</a>
-        <a href="https://wa.me/490000000000">WhatsApp</a>
+        <a href="tel:+4915168488353">Anrufen</a>
+        <a href="https://wa.me/4915168488353">WhatsApp</a>
       </div>
     </main>
   );
