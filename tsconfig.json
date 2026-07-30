@@ -34,9 +34,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts",
-    ".vinext/dev/types/**/*.ts",
-    ".vinext/dev/dev/types/**/*.ts"
+    "**/*.mts"
   ],
   "exclude": [
     "node_modules"

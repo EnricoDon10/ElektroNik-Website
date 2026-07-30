@@ -2,7 +2,11 @@ import type { Metadata, Viewport } from "next";
 import { faqs } from "./data/site-content";
 import "./globals.css";
 
-const deployedSiteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+const deployedSiteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.NODE_ENV === "production"
+    ? "https://elektronik-meisterbetrieb.de"
+    : undefined);
 const siteUrl = deployedSiteUrl ?? "http://localhost:3000";
 
 const localBusinessStructuredData = {

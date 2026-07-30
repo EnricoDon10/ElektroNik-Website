@@ -13,7 +13,7 @@ Du arbeitest ab jetzt als verantwortlicher Senior Frontend-Entwickler und UI/UX-
 Lokaler Windows-Projektordner:
 
 ```text
-C:\Users\enric\OneDrive\Dokumente\GitHub\Elektro Nik Website
+C:\Users\enric\dev\GitHub\Elektro Nik Website
 ```
 
 GitHub-Repository:
@@ -55,7 +55,7 @@ Diese lokalen Änderungen enthalten unter anderem den Maps-Bereich und die begon
 Führe zu Beginn diese rein lesenden Prüfungen aus:
 
 ```powershell
-Set-Location 'C:\Users\enric\OneDrive\Dokumente\GitHub\Elektro Nik Website'
+Set-Location 'C:\Users\enric\dev\GitHub\Elektro Nik Website'
 git status --short --branch
 git remote -v
 git branch -a
@@ -102,9 +102,9 @@ Kein `git pull`, solange lokale, nicht gesicherte Änderungen vorhanden sind. Di
 Für eine komplett neue, leere Arbeitsumgebung kann das private Repository so geklont werden:
 
 ```powershell
-Set-Location 'C:\Users\enric\OneDrive\Dokumente\GitHub'
+Set-Location 'C:\Users\enric\dev\GitHub'
 git clone https://github.com/EnricoDon10/ElektroNik-Website.git 'Elektro Nik Website'
-Set-Location 'C:\Users\enric\OneDrive\Dokumente\GitHub\Elektro Nik Website'
+Set-Location 'C:\Users\enric\dev\GitHub\Elektro Nik Website'
 git switch main
 git pull --ff-only origin main
 npm ci
@@ -143,7 +143,7 @@ Es darf keinen Code für ChatGPT-, OpenAI- oder Codex-Authentifizierung geben. D
 Entwicklungsserver:
 
 ```powershell
-Set-Location 'C:\Users\enric\OneDrive\Dokumente\GitHub\Elektro Nik Website'
+Set-Location 'C:\Users\enric\dev\GitHub\Elektro Nik Website'
 npm install
 npm run dev
 ```
@@ -409,4 +409,3 @@ Verwende keine destruktiven Git-Befehle. Bei Branch-Unterschieden zuerst prüfen
 Beginne jetzt mit einer kurzen Bestandsaufnahme anhand des realen Codes. Teile mir konkret mit, welchen Stand du gefunden hast, bevor du größere strukturelle Änderungen vornimmst. Wenn ich dir danach eine konkrete Änderung nenne, setze sie selbstständig um, teste sie angemessen und fasse am Ende knapp zusammen, welche Dateien geändert wurden und was geprüft wurde.
 
 ## ENDE DES MASTERPROMPTS
-
