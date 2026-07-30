@@ -9,7 +9,7 @@
     "dev": "next dev --hostname localhost --port 3000",
     "build": "next build",
     "start": "next start --hostname localhost --port 3000",
-    "lint": "eslint . --ignore-pattern .next"
+    "lint": "eslint . --ignore-pattern .next --ignore-pattern .vinext"
   },
   "dependencies": {
     "next": "16.2.6",

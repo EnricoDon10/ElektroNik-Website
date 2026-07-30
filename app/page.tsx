@@ -1,111 +1,18 @@
-"use client";
+import FaqList from "./components/faq-list";
+import LocationMap from "./components/location-map";
+import SiteHeader from "./components/site-header";
+import WhatsAppForm from "./components/whatsapp-form";
+import { services } from "./data/site-content";
 
-import Image from "next/image";
-import { FormEvent, useState } from "react";
-
-const services = [
-  {
-    number: "01",
-    title: "Elektroinstallation",
-    text: "Sichere, zukunftsfähige Installationen für Neubau, Umbau und Sanierung – sauber geplant und fachgerecht umgesetzt.",
-    tags: ["Neubau", "Sanierung", "Unterverteilung"],
-  },
-  {
-    number: "02",
-    title: "Netzwerkverkabelung",
-    text: "Strukturierte Netzwerkverkabelung für zuverlässige Datenverbindungen – von Netzwerkschränken und Bodentanks bis zu fachgerecht installierten Netzwerkdosen.",
-    tags: ["Netzwerkschränke", "Bodentanks", "Netzwerkdosen"],
-  },
-  {
-    number: "03",
-    title: "E-Mobilität",
-    text: "Wallbox, Lastmanagement und die passende Infrastruktur – vom ersten Check bis zur betriebsbereiten Ladestation.",
-    tags: ["Wallbox", "Lastmanagement", "Prüfung"],
-  },
-  {
-    number: "04",
-    title: "PV & Energiemanagement",
-    text: "Energie sinnvoll erzeugen, speichern und verteilen. Durchdachte Systeme für mehr Unabhängigkeit und Transparenz.",
-    tags: ["Photovoltaik", "Speicher", "Monitoring"],
-  },
-  {
-    number: "05",
-    title: "Prüfung & Sicherheit",
-    text: "Normgerechte Messungen, E-Checks und Prüfprotokolle für private, gewerbliche und vermietete Objekte.",
-    tags: ["E-Check", "DGUV V3", "Dokumentation"],
-  },
-  {
-    number: "06",
-    title: "Service & Störung",
-    text: "Schnelle Hilfe, klare Kommunikation und nachhaltige Fehlerbehebung, wenn elektrische Anlagen nicht funktionieren.",
-    tags: ["Fehlersuche", "Reparatur", "Wartung"],
-  },
-];
-
-const faqs = [
-  {
-    q: "Wie schnell erhalte ich eine Rückmeldung?",
-    a: "Anfragen per WhatsApp oder Telefon beantworten wir in der Regel besonders schnell. Für eine gute Ersteinschätzung helfen uns Fotos und eine kurze Beschreibung des Vorhabens.",
-  },
-  {
-    q: "Übernimmt ElektroNik auch kleinere Aufträge?",
-    a: "Ja. Neben kompletten Installationen unterstützen wir auch bei einzelnen Steckdosen, Leuchten, Reparaturen, Prüfungen und der Fehlersuche.",
-  },
-  {
-    q: "Bekomme ich vorab ein transparentes Angebot?",
-    a: "Nach einer kurzen Abstimmung und – falls nötig – einem Vor-Ort-Termin erhalten Sie eine nachvollziehbare Leistungsübersicht mit klar beschriebenem Umfang.",
-  },
-];
+const chipClasses = ["chip-one", "chip-two", "chip-three", "chip-four", "chip-five", "chip-six"];
 
 export default function Home() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-
-  const sendWhatsApp = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const text = encodeURIComponent(
-      `Hallo ElektroNik, ich bin ${name || "Interessent/in"}.\nE-Mail: ${email}\n\n${message || "Ich möchte ein Projekt besprechen."}`,
-    );
-    window.open(`https://wa.me/4915168488353?text=${text}`, "_blank", "noopener,noreferrer");
-  };
-
-  const closeMenu = () => setMenuOpen(false);
-
   return (
-    <main>
-      <header className="site-header">
-        <a className="brand" href="#start" aria-label="ElektroNik Startseite">
-          <span className="brand-name">ELEKTRO<span>NIK</span></span>
-          <span className="brand-sub">Meisterbetrieb</span>
-        </a>
-        <nav className={menuOpen ? "nav nav-open" : "nav"} aria-label="Hauptnavigation">
-          <a href="#leistungen" onClick={closeMenu}>Leistungen</a>
-          <a href="#warum-wir" onClick={closeMenu}>Warum ElektroNik</a>
-          <a href="#ablauf" onClick={closeMenu}>Ablauf</a>
-          <a href="#kontakt" onClick={closeMenu}>Kontakt</a>
-        </nav>
-        <a className="header-cta" href="#whatsapp-anfrage" aria-label="Zum WhatsApp-Anfrageformular">
-          <span className="whatsapp-mark" aria-hidden="true">
-            <Image src="/whatsapp.svg" alt="" height={22} width={22} />
-          </span>
-          <strong className="header-cta-label">Projekt anfragen</strong>
-          <span className="header-cta-arrow" aria-hidden="true">↓</span>
-        </a>
-        <button
-          className="menu-button"
-          type="button"
-          aria-label={menuOpen ? "Menü schließen" : "Menü öffnen"}
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen((value) => !value)}
-        >
-          <span />
-          <span />
-        </button>
-      </header>
+    <>
+      <a className="skip-link" href="#main-content">Zum Inhalt springen</a>
+      <SiteHeader />
 
+      <main id="main-content" tabIndex={-1}>
       <section className="hero" id="start">
         <div className="hero-grid" aria-hidden="true" />
         <div className="hero-glow" aria-hidden="true" />
@@ -120,13 +27,13 @@ export default function Home() {
             von der klassischen Installation bis zur intelligenten Energielösung.
           </p>
           <div className="hero-actions">
-            <a className="button button-ghost" href="#leistungen">
+            <a className="button button-ghost hero-service-button" href="#leistungen">
               Leistungen ansehen <span aria-hidden="true">↓</span>
             </a>
           </div>
         </div>
 
-        <div className="hero-visual" aria-label="ElektroNik Kompetenzübersicht">
+        <div className="hero-visual" aria-label="ElektroNik Kompetenzübersicht" role="group">
           <div className="visual-orbit orbit-one" />
           <div className="visual-orbit orbit-two" />
           <div className="visual-core">
@@ -134,18 +41,18 @@ export default function Home() {
             <small>ENERGIE</small>
             <strong>mit System</strong>
           </div>
-          <a className="visual-chip chip-one" href="#leistungen"><span>01</span> ELEKTROINSTALLATION</a>
-          <a className="visual-chip chip-two" href="#leistungen"><span>02</span> NETZWERKVERKABELUNG</a>
-          <a className="visual-chip chip-three" href="#leistungen"><span>03</span> E-MOBILITÄT</a>
-          <a className="visual-chip chip-four" href="#leistungen"><span>04</span> PV &amp; ENERGIE</a>
-          <a className="visual-chip chip-five" href="#leistungen"><span>05</span> PRÜFUNG &amp; SICHERHEIT</a>
-          <a className="visual-chip chip-six" href="#leistungen"><span>06</span> SERVICE &amp; STÖRUNG</a>
+          {services.map((service, index) => (
+            <a
+              className={`visual-chip ${chipClasses[index]}`}
+              href={`#${service.id}`}
+              key={service.id}
+            >
+              <span className="visual-chip-number">{service.number}</span>
+              <span className="visual-chip-label">{service.shortTitle}</span>
+            </a>
+          ))}
         </div>
 
-        <a className="hero-phone" href="tel:+4915168488353">
-          <span className="phone-icon" aria-hidden="true">⌕</span>
-          <span><small>Direkt anrufen</small><strong>0151 68488353</strong></span>
-        </a>
       </section>
 
       <section className="ticker" aria-label="Leistungsschwerpunkte">
@@ -172,16 +79,19 @@ export default function Home() {
         </div>
         <div className="service-grid">
           {services.map((service) => (
-            <article className="service-card" key={service.number}>
+            <article className="service-card" id={service.id} key={service.number}>
               <div className="service-top">
                 <span>{service.number}</span>
-                <span className="service-arrow" aria-hidden="true">↗</span>
+                <span className="service-arrow" aria-hidden="true">+</span>
               </div>
               <h3>{service.title}</h3>
               <p>{service.text}</p>
               <div className="tag-list">
                 {service.tags.map((tag) => <span key={tag}>{tag}</span>)}
               </div>
+              <a className="service-cta" href="#whatsapp-anfrage">
+                Projekt besprechen <span aria-hidden="true">↗</span>
+              </a>
             </article>
           ))}
         </div>
@@ -191,12 +101,6 @@ export default function Home() {
         <div className="quality-copy">
           <p className="eyebrow"><span /> Darum ElektroNik</p>
           <h2>Meisterhaft.<br /><em>Menschlich.</em><br />Auf den Punkt.</h2>
-          <p className="quality-text">
-            ElektroNik ist aus der Verbindung von Elektrohandwerk und dem Namen
-            Nikolay Nik entstanden. Dahinter steht ein klarer Anspruch: Technik
-            verständlich machen, Verantwortung übernehmen und Ergebnisse liefern,
-            auf die man sich verlassen kann.
-          </p>
           <a className="text-link" href="#kontakt">Persönlich kennenlernen <span>↗</span></a>
         </div>
         <div className="quality-panel">
@@ -220,18 +124,21 @@ export default function Home() {
             <p className="eyebrow dark"><span /> So läuft es ab</p>
             <h2>Einfach zum<br /><em>guten Ergebnis.</em></h2>
           </div>
-          <p>Klare Schritte, feste Absprachen und ein Ansprechpartner vom ersten Kontakt bis zur fertigen Lösung.</p>
         </div>
         <div className="process-track">
           {[
             ["01", "Anfrage", "Kurz anrufen, schreiben oder Bilder per WhatsApp senden."],
             ["02", "Beratung", "Wir klären Bedarf, Machbarkeit und die sinnvollste Lösung."],
             ["03", "Angebot", "Sie erhalten einen transparenten und verständlichen Umfang."],
-            ["04", "Umsetzung", "Termintreu, fachgerecht, sauber – inklusive Abschlusscheck."],
+            ["04", "Umsetzung", "Fachgerecht, sauber und mit abschließendem Funktionscheck."],
           ].map(([number, title, text]) => (
-            <article key={number}>
+            <article
+              aria-label={`Schritt ${number}: ${title}`}
+              key={number}
+              tabIndex={0}
+            >
               <span>{number}</span>
-              <div className="process-dot" />
+              <div className="process-dot" aria-hidden="true" />
               <h3>{title}</h3>
               <p>{text}</p>
             </article>
@@ -243,18 +150,9 @@ export default function Home() {
         <div>
           <p className="eyebrow dark"><span /> Kurz erklärt</p>
           <h2>Häufige<br /><em>Fragen.</em></h2>
-          <p className="faq-intro">Noch etwas offen? Schreiben Sie uns einfach direkt – ohne Warteschleife.</p>
+          <p className="faq-intro">Noch etwas offen? <br /> Schreiben Sie uns einfach direkt! </p>
         </div>
-        <div className="faq-list">
-          {faqs.map((faq, index) => (
-            <article className={openFaq === index ? "faq-item faq-open" : "faq-item"} key={faq.q}>
-              <button type="button" onClick={() => setOpenFaq(openFaq === index ? null : index)} aria-expanded={openFaq === index}>
-                <span>{faq.q}</span><i>{openFaq === index ? "−" : "+"}</i>
-              </button>
-              <div className="faq-answer"><p>{faq.a}</p></div>
-            </article>
-          ))}
-        </div>
+        <FaqList />
       </section>
 
       <section className="contact" id="kontakt">
@@ -273,61 +171,19 @@ export default function Home() {
               <span className="contact-copy"><small>E-Mail</small><strong>kontakt@elektronik-meisterbetrieb.de</strong></span>
               <i>↗</i>
             </a>
-            <a
-              aria-label="ElektroNik in Google Maps öffnen"
-              className="contact-item"
-              href="https://www.google.com/maps/search/?api=1&query=Krieler+Str.+115%2C+50935+K%C3%B6ln-Lindenthal"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <span className="contact-symbol">A</span>
-              <span className="contact-copy">
-                <small>Adresse</small>
-                <strong className="contact-address">
-                  <span>Krieler Str. 115</span>
-                  <span>50935</span>
-                  <span>Köln-Lindenthal</span>
-                </strong>
-              </span>
-              <i>↗</i>
-            </a>
-            <div className="contact-item contact-item-placeholder">
+            <div className="contact-item contact-hours">
               <span className="contact-symbol">Ö</span>
-              <span className="contact-copy"><small>Öffnungszeiten</small><strong>Öffnungszeiten ergänzen</strong></span>
+              <span className="contact-copy">
+                <small>Öffnungszeiten</small>
+                <strong>Mo–Fr · 07:00–18:00 Uhr</strong>
+              </span>
             </div>
+            <LocationMap />
           </div>
         </div>
-        <form className="contact-form" id="whatsapp-anfrage" onSubmit={sendWhatsApp}>
-          <div className="form-head">
-            <span>WhatsApp-Direktanfrage</span>
-            <span className="online"><i /> Persönlich erreichbar</span>
-          </div>
-          <label>
-            Ihr Name
-            <input autoComplete="name" value={name} onChange={(event) => setName(event.target.value)} placeholder="Vor- und Nachname" />
-          </label>
-          <label>
-            Ihre E-Mail-Adresse
-            <input
-              autoComplete="email"
-              inputMode="email"
-              onChange={(event) => setEmail(event.target.value)}
-              placeholder="name@beispiel.de"
-              required
-              type="email"
-              value={email}
-            />
-          </label>
-          <label>
-            Worum geht es?
-            <textarea value={message} onChange={(event) => setMessage(event.target.value)} placeholder="z. B. Wallbox installieren, Elektroplanung für Neubau ..." rows={4} />
-          </label>
-          <button className="button button-primary form-button" type="submit">
-            Per WhatsApp senden <span aria-hidden="true">↗</span>
-          </button>
-          <p className="form-note">Mit Klick öffnet sich WhatsApp mit Ihrer vorbereiteten Nachricht.</p>
-        </form>
+        <WhatsAppForm />
       </section>
+      </main>
 
       <footer>
         <div className="footer-brand">
@@ -340,7 +196,11 @@ export default function Home() {
         <div className="footer-nav">
           <div><strong>Navigation</strong><a href="#leistungen">Leistungen</a><a href="#warum-wir">Über uns</a><a href="#ablauf">Ablauf</a></div>
           <div><strong>Kontakt</strong><a href="tel:+4915168488353">Telefon</a><a href="https://wa.me/4915168488353">WhatsApp</a><a href="mailto:kontakt@elektronik-meisterbetrieb.de">E-Mail</a></div>
-          <div><strong>Rechtliches</strong><a href="#kontakt">Impressum</a><a href="#kontakt">Datenschutz</a></div>
+          <div className="footer-legal">
+            <strong>Rechtliches</strong>
+            <span>Impressum (folgt)</span>
+            <span>Datenschutz (folgt)</span>
+          </div>
         </div>
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} ElektroNik Meisterbetrieb</span>
@@ -352,6 +212,6 @@ export default function Home() {
         <a href="tel:+4915168488353">Anrufen</a>
         <a href="https://wa.me/4915168488353">WhatsApp</a>
       </div>
-    </main>
+    </>
   );
 }

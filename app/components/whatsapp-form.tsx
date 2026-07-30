@@ -1,0 +1,102 @@
+"use client";
+
+import { type FormEvent, useState } from "react";
+import { services } from "../data/site-content";
+
+export default function WhatsAppForm() {
+  const [projectType, setProjectType] = useState("Allgemeine Anfrage");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [status, setStatus] = useState("");
+
+  const sendWhatsApp = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const contactDetails = [
+      name.trim() ? `Name: ${name.trim()}` : "",
+      email.trim() ? `E-Mail: ${email.trim()}` : "",
+    ].filter(Boolean);
+    const text = encodeURIComponent(
+      [
+        "Hallo ElektroNik,",
+        "",
+        `Thema: ${projectType}`,
+        ...contactDetails,
+        "",
+        message.trim(),
+      ].join("\n"),
+    );
+
+    setStatus("WhatsApp wird mit Ihrer vorbereiteten Nachricht geöffnet.");
+    window.open(`https://wa.me/4915168488353?text=${text}`, "_blank", "noopener,noreferrer");
+  };
+
+  return (
+    <form className="contact-form" id="whatsapp-anfrage" onSubmit={sendWhatsApp}>
+      <div className="form-head">
+        <span>Projekt kurz einordnen</span>
+        <span className="online"><i /> Persönlich erreichbar</span>
+      </div>
+      <label>
+        Gewünschte Leistung
+        <select
+          name="projectType"
+          onChange={(event) => setProjectType(event.target.value)}
+          value={projectType}
+        >
+          <option>Allgemeine Anfrage</option>
+          {services.map((service) => (
+            <option key={service.id} value={service.title}>
+              {service.title}
+            </option>
+          ))}
+        </select>
+      </label>
+      <label>
+        Ihr Name <small>optional</small>
+        <input
+          autoComplete="name"
+          name="name"
+          onChange={(event) => setName(event.target.value)}
+          placeholder="Vor- und Nachname"
+          value={name}
+        />
+      </label>
+      <label>
+        Ihre E-Mail-Adresse <small>optional</small>
+        <input
+          autoComplete="email"
+          inputMode="email"
+          name="email"
+          onChange={(event) => setEmail(event.target.value)}
+          placeholder="name@beispiel.de"
+          type="email"
+          value={email}
+        />
+      </label>
+      <label>
+        Worum geht es?
+        <textarea
+          minLength={8}
+          name="message"
+          onChange={(event) => setMessage(event.target.value)}
+          placeholder="z. B. Wallbox installieren, Elektroplanung für Neubau ..."
+          required
+          rows={4}
+          value={message}
+        />
+      </label>
+      <button
+        aria-describedby="whatsapp-form-note"
+        className="button button-primary form-button"
+        type="submit"
+      >
+        Anfrage in WhatsApp öffnen <span aria-hidden="true">↗</span>
+      </button>
+      <p className="form-note" id="whatsapp-form-note">
+        WhatsApp öffnet eine vorbereitete Nachricht. Sie prüfen und versenden sie dort selbst.
+      </p>
+      <p aria-live="polite" className="form-status">{status}</p>
+    </form>
+  );
+}
