@@ -1971,26 +1971,43 @@ footer {
   }
   .footer-bottom { flex-direction: column; gap: 10px; }
   .mobile-actions {
-    bottom: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    height: calc(58px + env(safe-area-inset-bottom));
-    left: 0;
-    padding-bottom: env(safe-area-inset-bottom);
+    bottom: max(20px, env(safe-area-inset-bottom));
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
     position: fixed;
-    right: 0;
+    right: max(16px, env(safe-area-inset-right));
     z-index: 50;
   }
-  .mobile-actions a {
+  .mobile-actions .mobile-action {
     align-items: center;
-    background: white;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 50%;
+    box-shadow: 0 8px 24px rgba(0, 12, 24, 0.3);
     color: var(--ink);
     display: flex;
-    font-size: 14px;
-    font-weight: 750;
+    height: 56px;
     justify-content: center;
+    transition: box-shadow 180ms ease, transform 180ms ease;
+    width: 56px;
   }
-  .mobile-actions a:last-child { background: var(--acid); }
+  .mobile-actions .mobile-action:hover,
+  .mobile-actions .mobile-action:focus-visible {
+    box-shadow: 0 10px 30px rgba(0, 12, 24, 0.42);
+    transform: translateY(-2px);
+  }
+  .mobile-action-phone { background: var(--acid); }
+  .mobile-action-phone svg {
+    fill: currentColor;
+    height: 26px;
+    width: 26px;
+  }
+  .mobile-action-whatsapp { background: #25d366; }
+  .mobile-action-whatsapp img {
+    display: block;
+    height: 30px;
+    width: 30px;
+  }
 }
 
 @media (max-width: 1024px) {

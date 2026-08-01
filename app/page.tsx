@@ -1,3 +1,4 @@
+import Image from "next/image";
 import FaqList from "./components/faq-list";
 import LocationMap from "./components/location-map";
 import SiteHeader from "./components/site-header";
@@ -208,9 +209,15 @@ export default function Home() {
         </div>
       </footer>
 
-      <div className="mobile-actions">
-        <a href="tel:+4915168488353">Anrufen</a>
-        <a href="https://wa.me/4915168488353">WhatsApp</a>
+      <div className="mobile-actions" aria-label="Schnellkontakt">
+        <a className="mobile-action mobile-action-phone" href="tel:+4915168488353" aria-label="ElektroNik anrufen">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M6.62 10.79a15.46 15.46 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.36 11.36 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.57 1 1 0 0 1-.25 1.02l-2.2 2.2Z" />
+          </svg>
+        </a>
+        <a className="mobile-action mobile-action-whatsapp" href="https://wa.me/4915168488353" aria-label="ElektroNik über WhatsApp kontaktieren">
+          <Image src="/whatsapp.svg" alt="" height={28} width={28} />
+        </a>
       </div>
     </>
   );
