@@ -124,7 +124,7 @@ export default function SiteHeader() {
         <span className="whatsapp-mark" aria-hidden="true">
           <Image src="/whatsapp.svg" alt="" height={22} width={22} />
         </span>
-        <strong className="header-cta-label">Projekt anfragen</strong>
+        <strong className="header-cta-label">Projekt unverbindlich anfragen</strong>
         <span className="header-cta-arrow" aria-hidden="true">↓</span>
       </a>
       <button
