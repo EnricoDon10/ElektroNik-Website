@@ -13,7 +13,7 @@ Du arbeitest ab jetzt als verantwortlicher Senior Frontend-Entwickler und UI/UX-
 Lokaler Windows-Projektordner:
 
 ```text
-C:\Users\enric\dev\GitHub\Elektro Nik Website
+C:\Users\enric\dev\GitHub\ElektroNik Website Neu
 ```
 
 GitHub-Repository:
@@ -55,7 +55,7 @@ Diese lokalen Änderungen enthalten unter anderem den Maps-Bereich und die begon
 Führe zu Beginn diese rein lesenden Prüfungen aus:
 
 ```powershell
-Set-Location 'C:\Users\enric\dev\GitHub\Elektro Nik Website'
+Set-Location 'C:\Users\enric\dev\GitHub\ElektroNik Website Neu'
 git status --short --branch
 git remote -v
 git branch -a
@@ -103,8 +103,8 @@ Für eine komplett neue, leere Arbeitsumgebung kann das private Repository so ge
 
 ```powershell
 Set-Location 'C:\Users\enric\dev\GitHub'
-git clone https://github.com/EnricoDon10/ElektroNik-Website.git 'Elektro Nik Website'
-Set-Location 'C:\Users\enric\dev\GitHub\Elektro Nik Website'
+git clone https://github.com/EnricoDon10/ElektroNik-Website.git 'ElektroNik Website Neu'
+Set-Location 'C:\Users\enric\dev\GitHub\ElektroNik Website Neu'
 git switch main
 git pull --ff-only origin main
 npm ci
@@ -143,7 +143,7 @@ Es darf keinen Code für ChatGPT-, OpenAI- oder Codex-Authentifizierung geben. D
 Entwicklungsserver:
 
 ```powershell
-Set-Location 'C:\Users\enric\dev\GitHub\Elektro Nik Website'
+Set-Location 'C:\Users\enric\dev\GitHub\ElektroNik Website Neu'
 npm install
 npm run dev
 ```

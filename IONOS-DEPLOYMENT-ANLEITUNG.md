@@ -7,14 +7,15 @@ Normalerweise müssen Rechte nicht nach jedem SFTP-Upload gesetzt werden. Bei di
 PowerShell öffnen und ins Projekt wechseln:
 
 ```powershell
-Set-Location 'C:\Users\enric\dev\GitHub\Elektro Nik Website'
+Set-Location 'C:\Users\enric\dev\GitHub\ElektroNik Website Neu'
 ```
 
 Den Code prüfen:
 
 ```powershell
 npm run lint
-npx tsc --noEmit
+npm run typecheck
+npm run test:e2e
 ```
 
 Wenn beide Befehle ohne Fehler durchlaufen, den fertigen Website-Export erstellen:
@@ -26,7 +27,7 @@ npm run build
 Der fertige Upload liegt danach hier:
 
 ```text
-C:\Users\enric\dev\GitHub\Elektro Nik Website\out
+C:\Users\enric\dev\GitHub\ElektroNik Website Neu\out
 ```
 
 Wichtig: Erst nach `npm run build` hochladen. Dadurch enthält `out` immer den neuesten Stand.
@@ -38,7 +39,7 @@ Wichtig: Erst nach `npm run build` hochladen. Dadurch enthält `out` immer den n
 In derselben PowerShell:
 
 ```powershell
-Set-Location 'C:\Users\enric\dev\GitHub\Elektro Nik Website\out'
+Set-Location 'C:\Users\enric\dev\GitHub\ElektroNik Website Neu\out'
 ```
 
 Dann verbinden:
@@ -78,7 +79,7 @@ Remote working directory: /Websites/elektronik
 Lokalen Exportordner festlegen:
 
 ```text
-lcd "C:/Users/enric/dev/GitHub/Elektro Nik Website/out"
+lcd "C:/Users/enric/OneDrive/Dokumente/GitHub/Elektro Nik Website/out"
 ```
 
 Kontrollieren:
@@ -195,7 +196,7 @@ Anschließend prüfen:
 
 - Wird das vollständige Design geladen?
 - Funktioniert die mobile Navigation?
-- Bleiben Telefon- und WhatsApp-Bubble beim Scrollen sichtbar?
+- Bleiben Header, Haupt-CTA und Kontaktwege ohne Überlagerungen bedienbar?
 - Funktionieren Telefon und WhatsApp?
 - Werden Bilder und Symbole angezeigt?
 - Gibt es auf Smartphone und Desktop keine Darstellungsfehler?
@@ -205,11 +206,12 @@ Anschließend prüfen:
 ### Lokaler Export
 
 ```powershell
-Set-Location 'C:\Users\enric\dev\GitHub\Elektro Nik Website'
+Set-Location 'C:\Users\enric\dev\GitHub\ElektroNik Website Neu'
 npm run lint
-npx tsc --noEmit
+npm run typecheck
+npm run test:e2e
 npm run build
-Set-Location 'C:\Users\enric\dev\GitHub\Elektro Nik Website\out'
+Set-Location 'C:\Users\enric\dev\GitHub\ElektroNik Website Neu\out'
 ```
 
 ### SFTP-Upload
@@ -222,7 +224,7 @@ Innerhalb von SFTP:
 
 ```text
 cd Websites/elektronik
-lcd "C:/Users/enric/dev/GitHub/Elektro Nik Website/out"
+lcd "C:/Users/enric/OneDrive/Dokumente/GitHub/Elektro Nik Website/out"
 put -r *
 ls -la
 bye
@@ -243,7 +245,7 @@ find . -type f -exec chmod 644 {} \;
 exit
 ```
 
-Ein Update nur veröffentlichen, wenn `npm run lint`, `npx tsc --noEmit` und `npm run build` erfolgreich durchgelaufen sind.
+Ein Update nur veröffentlichen, wenn `npm run lint`, `npm run typecheck`, `npm run test:e2e` und `npm run build` erfolgreich durchgelaufen sind.
 
 ## Sicherheitshinweise
 

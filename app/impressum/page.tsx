@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Impressum | ElektroNik",
+  title: "Impressum",
   description: "Impressum des Elektro-Meisterbetriebs ElektroNik in Köln.",
+  alternates: { canonical: "/impressum/" },
 };
 
 export default function ImpressumPage() {

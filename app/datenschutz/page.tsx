@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Datenschutz | ElektroNik",
+  title: "Datenschutz",
   description: "Hinweise zum Datenschutz auf der Website von ElektroNik.",
+  alternates: { canonical: "/datenschutz/" },
 };
 
 export default function DatenschutzPage() {

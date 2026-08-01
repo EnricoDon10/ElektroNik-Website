@@ -9,6 +9,7 @@ export default function WhatsAppForm() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState("");
+  const [statusTone, setStatusTone] = useState<"idle" | "success" | "error">("idle");
 
   const sendWhatsApp = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -27,8 +28,22 @@ export default function WhatsAppForm() {
       ].join("\n"),
     );
 
-    setStatus("WhatsApp wird mit Ihrer vorbereiteten Nachricht geöffnet.");
-    window.open(`https://wa.me/4915168488353?text=${text}`, "_blank", "noopener,noreferrer");
+    const whatsAppWindow = window.open(
+      `https://wa.me/4915168488353?text=${text}`,
+      "_blank",
+    );
+
+    if (whatsAppWindow) {
+      whatsAppWindow.opener = null;
+      setStatusTone("success");
+      setStatus("WhatsApp wurde mit Ihrer vorbereiteten Nachricht geöffnet.");
+      return;
+    }
+
+    setStatusTone("error");
+    setStatus(
+      "WhatsApp konnte nicht geöffnet werden. Bitte erlauben Sie Pop-ups oder nutzen Sie den direkten WhatsApp-Link.",
+    );
   };
 
   return (
@@ -96,7 +111,9 @@ export default function WhatsAppForm() {
       <p className="form-note" id="whatsapp-form-note">
         WhatsApp öffnet eine vorbereitete Nachricht. Sie prüfen und versenden sie dort selbst.
       </p>
-      <p aria-live="polite" className="form-status">{status}</p>
+      <p aria-live="polite" className="form-status" data-state={statusTone} role="status">
+        {status}
+      </p>
     </form>
   );
 }
