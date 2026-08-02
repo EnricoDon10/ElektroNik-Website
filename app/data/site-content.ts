@@ -56,17 +56,16 @@ export const services = [
 ] as const;
 
 export const siteContact = {
-  phoneDisplay: "0151 68488353",
-  phoneHref: "tel:+4915168488353",
-  whatsappHref: "https://wa.me/4915168488353",
-  email: "kontakt@elektronik-meisterbetrieb.de",
-  emailHref: "mailto:kontakt@elektronik-meisterbetrieb.de",
-  street: "Krieler Str. 115",
-  postalCode: "50935",
-  city: "Köln",
-  district: "Lindenthal",
-  openingHoursLabel: "Mo–Fr · 07:00–18:00 Uhr",
-  openingHoursLong: "Montag bis Freitag, 07:00 bis 18:00 Uhr",
+  businessName: "Elektro - NIK",
+  ownerName: "Nikolay Shirotskiy",
+  phoneDisplay: "0157 / 742 99 367",
+  phoneHref: "tel:+4915774299367",
+  whatsappHref: "https://wa.me/4915774299367",
+  email: "Elektro-nik@t-online.de",
+  emailHref: "mailto:Elektro-nik@t-online.de",
+  street: "Lindengraben 6",
+  postalCode: "44803",
+  city: "Bochum",
 } as const;
 
 export const trustSignals = [
@@ -79,7 +78,7 @@ export const competenceSignals = [
   "Meisterbetrieb",
   "Persönliche Beratung",
   "Saubere Ausführung",
-  "Köln & Umgebung",
+  "Bochum & Umgebung",
 ] as const;
 
 export const qualityPoints = [
@@ -130,9 +129,9 @@ export const faqs = [
       "Eine kurze Beschreibung, Fotos der Situation, der Einsatzort und das gewünschte Ergebnis helfen dabei, Ihr Vorhaben schnell einzuordnen. Details können anschließend persönlich geklärt werden.",
   },
   {
-    question: "Übernimmt ElektroNik auch kleinere Aufträge?",
+    question: "Übernimmt Elektro - NIK auch kleinere Aufträge?",
     answer:
-      "Ja. Neben kompletten Installationen unterstützt ElektroNik auch bei einzelnen Steckdosen, Leuchten, Reparaturen, Prüfungen und der Fehlersuche.",
+      "Ja. Neben kompletten Installationen unterstützt Elektro - NIK auch bei einzelnen Steckdosen, Leuchten, Reparaturen, Prüfungen und der Fehlersuche.",
   },
   {
     question: "Wie entsteht ein transparentes Angebot?",
@@ -140,7 +139,7 @@ export const faqs = [
       "Nach einer kurzen Abstimmung und – falls nötig – einem Vor-Ort-Termin erhalten Sie eine nachvollziehbare Leistungsübersicht mit klar beschriebenem Umfang.",
   },
   {
-    question: "Arbeitet ElektroNik für Privat- und Gewerbekunden?",
+    question: "Arbeitet Elektro - NIK für Privat- und Gewerbekunden?",
     answer:
       "Ja. Die Leistungen reichen von Elektroarbeiten in Wohngebäuden bis zu Installations-, Netzwerk- und Prüfaufgaben im gewerblichen Umfeld.",
   },

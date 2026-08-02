@@ -1,7 +1,7 @@
 "use client";
 
 import { type FormEvent, useState } from "react";
-import { services } from "../data/site-content";
+import { services, siteContact } from "../data/site-content";
 
 export default function WhatsAppForm() {
   const [projectType, setProjectType] = useState("Allgemeine Anfrage");
@@ -19,7 +19,7 @@ export default function WhatsAppForm() {
     ].filter(Boolean);
     const text = encodeURIComponent(
       [
-        "Hallo ElektroNik,",
+        `Hallo ${siteContact.businessName},`,
         "",
         `Thema: ${projectType}`,
         ...contactDetails,
@@ -29,7 +29,7 @@ export default function WhatsAppForm() {
     );
 
     const whatsAppWindow = window.open(
-      `https://wa.me/4915168488353?text=${text}`,
+      `${siteContact.whatsappHref}?text=${text}`,
       "_blank",
     );
 

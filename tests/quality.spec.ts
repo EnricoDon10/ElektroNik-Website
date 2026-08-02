@@ -29,20 +29,16 @@ test("Semantik, IDs und Formularbeschriftungen besitzen eine belastbare Basis", 
   await expect(page.locator("[data-process-step][tabindex]")).toHaveCount(0);
 });
 
-test("Startseite erzeugt vor der Kartenfreigabe keine Drittanbieter-Anfrage", async ({ page }) => {
-  const externalRequests = new Set<string>();
-  page.on("request", (request) => {
-    const url = new URL(request.url());
-    if (!["localhost", "127.0.0.1"].includes(url.hostname)) {
-      externalRequests.add(url.origin);
-    }
+test("Startseite zeigt die Google-Maps-Karte ohne Freigabeschritt", async ({ page }) => {
+  await page.route(/https:\/\/www\.google\.com\/maps.*/, async (route) => {
+    await route.fulfill({ body: "<!doctype html><title>Map test stub</title>", contentType: "text/html" });
   });
-
   await gotoHome(page);
   await page.locator("#kontakt").scrollIntoViewIfNeeded();
-  await expect(page.getByRole("button", { name: "Interaktive Karte laden" })).toBeVisible();
-
-  expect(Array.from(externalRequests)).toEqual([]);
+  await expect(page.locator(".contact-map iframe")).toHaveAttribute(
+    "src",
+    /google\.com\/maps\?.*Lindengraben%206.*44803%20Bochum.*output=embed/,
+  );
 });
 
 test("Hydration und viewportabhängige Interaktionen bleiben ohne Laufzeitfehler", async ({ page }) => {

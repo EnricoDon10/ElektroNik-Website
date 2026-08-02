@@ -78,7 +78,7 @@ npm run preview -- --port 3002
 
 - Ist `elektronik-meisterbetrieb.de` die tatsächlich gewünschte und registrierte Domain?
 - Sind IONOS-DNS, HTTPS-Zertifikat und Weiterleitungen eingerichtet?
-- Sind MX-Einträge und das Postfach `kontakt@elektronik-meisterbetrieb.de` eingerichtet und getestet?
+- Ist das Postfach `Elektro-nik@t-online.de` aktiv und getestet?
 - Falls eine andere Domain vorgesehen ist, müssen `NEXT_PUBLIC_SITE_URL`, Kontaktmail, Canonicals, Open Graph, JSON-LD, `robots.txt` und `sitemap.xml` gemeinsam angepasst werden.
 
 ### 2. Rechtstexte
@@ -91,7 +91,7 @@ Impressum und Datenschutz sind bewusst als unvollständige Platzhalter gekennzei
 - verantwortliche Person für Inhalte, soweit erforderlich;
 - Angaben zu IONOS-Hosting und Logfiles;
 - Rechtsgrundlagen, Speicherdauer, Empfänger, Drittlandübermittlungen und Betroffenenrechte;
-- fachliche Prüfung der Google-Maps-Zwei-Klick-Lösung und der WhatsApp-Übergabe.
+- fachliche Prüfung der direkten Google-Maps-Einbettung und der WhatsApp-Übergabe.
 
 Die Texte dürfen erst nach fachlicher beziehungsweise rechtlicher Freigabe als fertig gelten.
 

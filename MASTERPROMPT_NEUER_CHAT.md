@@ -239,30 +239,30 @@ strukturierte Netzwerkverkabelung
 Telefon und WhatsApp:
 
 ```text
-0151 68488353
-international für Links: +49 151 68488353
-tel-Link: tel:+4915168488353
-WhatsApp-Link: https://wa.me/4915168488353
+0157 / 742 99 367
+international für Links: +49 157 74299367
+tel-Link: tel:+4915774299367
+WhatsApp-Link: https://wa.me/4915774299367 (noch als WhatsApp-fähig zu bestätigen)
 ```
 
 E-Mail:
 
 ```text
-kontakt@elektronik-meisterbetrieb.de
-mailto:kontakt@elektronik-meisterbetrieb.de
+Elektro-nik@t-online.de
+mailto:Elektro-nik@t-online.de
 ```
 
 Adresse:
 
 ```text
-Krieler Str. 115
-50935 Köln-Lindenthal
+Lindengraben 6
+44803 Bochum
 ```
 
 Öffnungszeiten:
 
 ```text
-Mo–Fr · 07:00–18:00 Uhr
+Noch nicht vom Kunden bestätigt; bis dahin nicht öffentlich ausgeben.
 ```
 
 Google Maps:
@@ -277,7 +277,7 @@ WhatsApp:
 - Der obere Button `Projekt anfragen` enthält das lokale offizielle WhatsApp-Symbol aus `public/whatsapp.svg`.
 - Der Button springt zum unteren Formular `#whatsapp-anfrage`.
 - Das Formular fragt Name, E-Mail-Adresse und Nachricht ab.
-- Beim Absenden wird keine Server-E-Mail verschickt. JavaScript öffnet WhatsApp über `wa.me` mit einer vorbereiteten Nachricht an `0151 68488353`.
+- Beim Absenden wird keine Server-E-Mail verschickt. JavaScript öffnet WhatsApp über `wa.me` mit einer vorbereiteten Nachricht an `0157 / 742 99 367`; die WhatsApp-Fähigkeit dieser Nummer muss noch bestätigt werden.
 - Die eingegebene E-Mail-Adresse wird in den vorbereiteten WhatsApp-Text aufgenommen.
 
 ### 9. Bestehende Interaktionen

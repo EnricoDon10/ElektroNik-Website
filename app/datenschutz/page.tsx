@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { siteContact } from "../data/site-content";
 
 export const metadata: Metadata = {
   title: "Datenschutz",
-  description: "Hinweise zum Datenschutz auf der Website von ElektroNik.",
+  description: "Hinweise zum Datenschutz auf der Website von Elektro - NIK.",
   alternates: { canonical: "/datenschutz/" },
 };
 
@@ -21,8 +22,7 @@ export default function DatenschutzPage() {
           geprüft und vervollständigt werden.
         </p>
         <h2>Verantwortliche Stelle</h2>
-        <p>Die vollständige verantwortliche Person beziehungsweise Unternehmensbezeichnung muss noch ergänzt werden.</p>
-        <p>ElektroNik<br />Krieler Str. 115<br />50935 Köln<br />E-Mail: kontakt@elektronik-meisterbetrieb.de</p>
+        <p>{siteContact.ownerName}<br />{siteContact.businessName}<br />{siteContact.street}<br />{siteContact.postalCode} {siteContact.city}<br />E-Mail: <a href={siteContact.emailHref}>{siteContact.email}</a></p>
         <h2>Auf dieser Website eingesetzte Dienste</h2>
         <ul>
           <li>Webhosting bei IONOS</li>

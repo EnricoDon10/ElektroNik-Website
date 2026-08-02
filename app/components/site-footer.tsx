@@ -5,9 +5,9 @@ export default function SiteFooter() {
     <footer>
       <div className="footer-inner">
         <div className="footer-brand">
-          <a className="brand brand-footer" href="#start" aria-label="ElektroNik Startseite">
+          <a className="brand brand-footer" href="#start" aria-label={`${siteContact.businessName} Startseite`}>
             <span className="brand-name">
-              ELEKTRO<span>NIK</span>
+              ELEKTRO <span>– NIK</span>
             </span>
             <span className="brand-sub">Meisterbetrieb</span>
           </a>
@@ -39,7 +39,7 @@ export default function SiteFooter() {
         </nav>
 
         <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} ElektroNik Meisterbetrieb</span>
+          <span>© {new Date().getFullYear()} {siteContact.businessName} Meisterbetrieb</span>
           <span>Mit Energie. Mit Verstand.</span>
         </div>
       </div>

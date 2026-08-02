@@ -70,7 +70,7 @@ Statuslegende: **Vorhanden** = im Quellcode belegt; **Browsergeprüft** = mit Pl
 
 - [x] **Vorhanden:** iframe hat einen aussagekräftigen Titel und `loading="lazy"`.
 - [x] **Vorhanden:** Adresse und externer Maps-Link stehen außerhalb der eigentlichen Kartenbedienung zur Verfügung.
-- [ ] **Teilweise umgesetzt (P0):** Technisches Zwei-Klick-Laden ist browsergeprüft; Datenschutzerklärung, Rechtsgrundlage und rechtliche Freigabe bleiben offen.
+- [ ] **Teilweise umgesetzt (P0):** Die direkte Einbettung ist technisch browsergeprüft; Datenschutzerklärung, Rechtsgrundlage und rechtliche Freigabe bleiben offen.
 - [ ] **Später testen:** Karte mit Tastatur, Screenreader, Content-Blocker, ausgeschaltetem JavaScript und langsamer Verbindung.
 - [ ] **Offen:** Fehler-/Blockierzustand mit weiterhin lesbarer Adresse und Wegbeschreibungslink definieren.
 

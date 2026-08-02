@@ -6,7 +6,7 @@ Dieses Dokument beschreibt die fachlich und gestalterisch abnehmbare Grundlage f
 
 ## Unternehmen und Angebot
 
-ElektroNik wird im vorhandenen Inhalt als persönlicher Elektro-Meisterbetrieb in Köln und Umgebung positioniert. Das Angebot umfasst:
+Elektro - NIK wird als persönlicher Elektro-Meisterbetrieb in Bochum und Umgebung positioniert. Das Angebot umfasst:
 
 1. Elektroinstallation
 2. Netzwerkverkabelung
@@ -21,7 +21,7 @@ Die vorhandene Kernbotschaft „Elektromeister für Haus und Industrie“ deckt 
 
 ### Primär
 
-- Private Eigentümer und Bauherren im Raum Köln, die Renovierung, Neubau, Wallbox, PV oder eine sichere Modernisierung planen.
+- Private Eigentümer und Bauherren im Raum Bochum, die Renovierung, Neubau, Wallbox, PV oder eine sichere Modernisierung planen.
 - Kleine und mittlere Gewerbekunden, Hausverwaltungen und Vermieter mit Bedarf an Installation, Netzwerk, Prüfung oder Störungsbehebung.
 
 ### Nutzungssituationen
@@ -52,10 +52,10 @@ Die Website soll deshalb nicht primär „Technologie-Show“, sondern kontrolli
 
 ### Sekundäre Conversions
 
-- direkte Telefonnummer `0151 68488353`
-- WhatsApp `+49 151 68488353`
-- E-Mail `kontakt@elektronik-meisterbetrieb.de`
-- Route zu `Krieler Str. 115, 50935 Köln-Lindenthal`
+- direkte Telefonnummer `0157 / 742 99 367`
+- WhatsApp vorläufig `+49 157 74299367` (Bestätigung ausstehend)
+- E-Mail `Elektro-nik@t-online.de`
+- Route zu `Lindengraben 6, 44803 Bochum`
 - vertiefender Einstieg über eine konkrete Leistung
 
 ### Empfohlener Hauptpfad
@@ -109,10 +109,12 @@ Der Bereich „Warum ElektroNik“ enthält nur eine als solche bezeichnete Foto
 
 Folgende Angaben werden unverändert bewahrt:
 
-- Telefon: 0151 68488353
-- E-Mail: kontakt@elektronik-meisterbetrieb.de
-- Adresse: Krieler Str. 115, 50935 Köln
-- Öffnungszeiten: Montag bis Freitag, 07:00 bis 18:00 Uhr
+- Unternehmensname: Elektro - NIK
+- Inhaber: Nikolay Shirotskiy
+- Telefon: 0157 / 742 99 367
+- E-Mail: Elektro-nik@t-online.de
+- Adresse: Lindengraben 6, 44803 Bochum
+- Öffnungszeiten: noch nicht bestätigt und daher derzeit nicht öffentlich dargestellt
 - vorhandene Leistungen, FAQ-Inhalte und Kontaktlogik
 
 Nicht ohne Kundennachweis ergänzen: Bewertungen, Mitarbeiter, Betriebsalter, Reaktionszeiten, Partnerlogos, Zertifikate, Referenzprojekte oder Garantiezusagen.

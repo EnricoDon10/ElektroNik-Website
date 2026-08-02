@@ -30,7 +30,7 @@ test("WhatsApp-Formular erzeugt die korrekt kodierte Popup-URL", async ({ page }
   await page.getByLabel("Gewünschte Leistung").selectOption({ label: "E-Mobilität" });
   await page.getByLabel(/Ihr Name/).fill("Jörg Müller");
   await page.getByLabel(/Ihre E-Mail-Adresse/).fill("joerg@example.de");
-  await page.getByLabel("Worum geht es?").fill("Wallbox & Prüfung – Köln");
+  await page.getByLabel("Worum geht es?").fill("Wallbox & Prüfung – Bochum");
   await page.getByRole("button", { name: /Anfrage in WhatsApp öffnen/ }).click();
 
   const openedUrl = await page.evaluate(() => {
@@ -42,13 +42,13 @@ test("WhatsApp-Formular erzeugt die korrekt kodierte Popup-URL", async ({ page }
   expect(`${url.origin}${url.pathname}`).toBe(contactTargets.whatsapp);
   expect(url.searchParams.get("text")).toBe(
     [
-      "Hallo ElektroNik,",
+      "Hallo Elektro - NIK,",
       "",
       "Thema: E-Mobilität",
       "Name: Jörg Müller",
       "E-Mail: joerg@example.de",
       "",
-      "Wallbox & Prüfung – Köln",
+      "Wallbox & Prüfung – Bochum",
     ].join("\n"),
   );
   await expect(page.getByRole("status")).toContainText("WhatsApp wurde");
@@ -109,22 +109,18 @@ test("Ungültiges optionales E-Mail-Format verhindert den WhatsApp-Aufruf", asyn
   expect(await page.evaluate(() => Reflect.get(window, "popupAttempted"))).toBe(false);
 });
 
-test("Google Maps wird erst nach bewusster Auswahl eingebettet", async ({ page }) => {
+test("Google Maps wird ohne Aktivierungsklick direkt eingebettet", async ({ page }) => {
   await page.route(/https:\/\/www\.google\.com\/maps.*/, async (route) => {
     await route.fulfill({ body: "<!doctype html><title>Map test stub</title>", contentType: "text/html" });
   });
   await gotoHome(page);
 
   const map = page.locator(".contact-map");
-  const consentButton = page.getByRole("button", { name: "Interaktive Karte laden" });
-  await expect(map.locator("iframe")).toHaveCount(0);
-  await expect(consentButton).toBeVisible();
-  await consentButton.click();
-
   const iframe = map.locator("iframe");
   await expect(iframe).toHaveCount(1);
   await expect(iframe).toHaveAttribute("src", /google\.com\/maps\?.*output=embed/);
-  await expect(iframe).toHaveAttribute("title", /Google Maps.*ElektroNik/);
+  await expect(iframe).toHaveAttribute("title", /Google Maps.*Elektro - NIK.*Lindengraben 6.*44803 Bochum/);
+  await expect(page.getByRole("button", { name: "Interaktive Karte laden" })).toHaveCount(0);
 
   const directions = map.getByRole("link", { name: /In Maps öffnen/ });
   await expect(directions).toHaveAttribute("target", "_blank");

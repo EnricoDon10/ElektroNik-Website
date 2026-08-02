@@ -3,9 +3,9 @@ import { expect, type Locator, type Page } from "@playwright/test";
 export const MOBILE_NAVIGATION_MAX_WIDTH = 1279;
 
 export const contactTargets = {
-  email: "mailto:kontakt@elektronik-meisterbetrieb.de",
-  phone: "tel:+4915168488353",
-  whatsapp: "https://wa.me/4915168488353",
+  email: "mailto:Elektro-nik@t-online.de",
+  phone: "tel:+4915774299367",
+  whatsapp: "https://wa.me/4915774299367",
 } as const;
 
 export async function gotoHome(page: Page) {

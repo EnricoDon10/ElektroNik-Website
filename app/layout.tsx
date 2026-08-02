@@ -8,14 +8,14 @@ const metadataBaseUrl =
   ?? (process.env.NODE_ENV === "production" ? productionSiteUrl : "http://localhost:3001");
 
 export const metadata: Metadata = {
-  applicationName: "ElektroNik",
+  applicationName: "Elektro - NIK",
   metadataBase: new URL(metadataBaseUrl),
   title: {
-    default: "ElektroNik | Elektro-Meisterbetrieb in Köln",
-    template: "%s | ElektroNik",
+    default: "Elektro - NIK | Elektro-Meisterbetrieb in Bochum",
+    template: "%s | Elektro - NIK",
   },
   description:
-    "ElektroNik in Köln-Lindenthal: moderne Elektrotechnik, Netzwerkverkabelung, E-Mobilität und Energielösungen – meisterhaft und persönlich umgesetzt.",
+    "Elektro - NIK in Bochum: moderne Elektrotechnik, Netzwerkverkabelung, E-Mobilität und Energielösungen – meisterhaft und persönlich umgesetzt.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",

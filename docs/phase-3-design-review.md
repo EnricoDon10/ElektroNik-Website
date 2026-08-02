@@ -66,7 +66,7 @@ Der Bestand besitzt bereits die richtige Navy/Paper/Grün-Basis, den 1320-px-Con
 
 ### 3. Kompetenzübergang
 
-- Inhalt unverändert: „MEISTERBETRIEB · PERSÖNLICHE BERATUNG · SAUBERE AUSFÜHRUNG · KÖLN & UMGEBUNG“.
+- Inhalt: „MEISTERBETRIEB · PERSÖNLICHE BERATUNG · SAUBERE AUSFÜHRUNG · BOCHUM & UMGEBUNG“.
 - Desktop einzeilig und zentriert; Mobile zwei Zeilen oder bewusst verkürzt, niemals als unsichtbar horizontal scrollende Zeile.
 - Keine Rotation, kein schneller Marquee. Optional nur ein einmaliger Linienimpuls beim Eintritt.
 
@@ -111,11 +111,11 @@ Der Bestand besitzt bereits die richtige Navy/Paper/Grün-Basis, den 1320-px-Con
 ### 8. Kontakt
 
 - 1240–1320 px Gesamtbreite. Desktop: Kontaktinformationen/Karte links, helles WhatsApp-Formular rechts; Mobile vollständig einspaltig.
-- Reihenfolge links: Aussage, Telefon, E-Mail, Öffnungszeiten, Karte. Karte bleibt nachrangig und wird erst nach bewusster Auswahl interaktiv geladen.
+- Reihenfolge links: Aussage, Telefon, E-Mail und direkt eingebettete Karte. Öffnungszeiten werden erst nach Kundenbestätigung ergänzt.
 - Primary CTA des Formulars bleibt „Anfrage in WhatsApp öffnen“. Der bestehende Hinweis, dass erst in WhatsApp versendet wird, bleibt sichtbar.
 - Keine feste Aktion darf Karte, Feldlabel, Statusmeldung oder Submit-Button verdecken.
 
-**Abnahme:** Telefonnummer `0151 68488353`, E-Mail `kontakt@elektronik-meisterbetrieb.de`, Adresse `Krieler Str. 115, 50935 Köln` und Zeiten `Montag bis Freitag, 07:00 bis 18:00 Uhr` bleiben unverändert. E-Mail bricht bei 375 px kontrolliert um. Statusfehler und Erfolg unterscheiden sich zusätzlich durch Text/Icon, nicht nur Farbe.
+**Aktueller Kundenstand:** Elektro - NIK, Inhaber Nikolay Shirotskiy, Telefonnummer `0157 / 742 99 367`, E-Mail `Elektro-nik@t-online.de`, Adresse `Lindengraben 6, 44803 Bochum`. Öffnungszeiten und WhatsApp-Fähigkeit der Mobilnummer sind noch zu bestätigen. E-Mail bricht bei 375 px kontrolliert um. Statusfehler und Erfolg unterscheiden sich zusätzlich durch Text/Icon, nicht nur Farbe.
 
 ### 9. Footer und Rechtliches
 

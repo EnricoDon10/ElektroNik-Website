@@ -44,7 +44,7 @@ Empfohlene Aufteilung im 1320-px-Container:
 
 Hero-Inhalt:
 
-1. Eyebrow „Elektro-Meisterbetrieb · Köln & Umgebung“
+1. Eyebrow „Elektro-Meisterbetrieb · Bochum & Umgebung“
 2. „Elektromeister / für Haus und Industrie“
 3. kurze Leistungs- und Qualitätsaussage
 4. linksbündiger CTA „Leistungen ansehen“

@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { siteContact } from "../data/site-content";
 
 export const metadata: Metadata = {
   title: "Impressum",
-  description: "Impressum des Elektro-Meisterbetriebs ElektroNik in Köln.",
+  description: "Impressum des Elektro-Meisterbetriebs Elektro - NIK in Bochum.",
   alternates: { canonical: "/impressum/" },
 };
 
@@ -16,16 +17,15 @@ export default function ImpressumPage() {
         <h1>Impressum</h1>
         <p className="legal-notice">
           Hinweis für den Betreiber: Diese Seite ist strukturell vorbereitet, aber noch nicht
-          rechtssicher vollständig. Vor der Veröffentlichung müssen insbesondere vollständiger
-          Inhabername, Rechtsform, zuständige Handwerkskammer, Berufsbezeichnung und weitere
+          rechtssicher vollständig. Vor der Veröffentlichung müssen insbesondere Rechtsform,
+          zuständige Handwerkskammer, Berufsbezeichnung und weitere
           gesetzlich erforderliche Angaben geprüft und ergänzt werden.
         </p>
-        <h2>Kontakt</h2>
-        <p>ElektroNik<br />Krieler Str. 115<br />50935 Köln</p>
-        <p>Telefon: 0151 68488353<br />E-Mail: kontakt@elektronik-meisterbetrieb.de</p>
+        <h2>Anbieter und Kontakt</h2>
+        <p>{siteContact.businessName}<br />Inhaber: {siteContact.ownerName}<br />{siteContact.street}<br />{siteContact.postalCode} {siteContact.city}</p>
+        <p>Telefon: {siteContact.phoneDisplay}<br />E-Mail: <a href={siteContact.emailHref}>{siteContact.email}</a></p>
         <h2>Noch zu ergänzende Pflichtangaben</h2>
         <ul>
-          <li>Vollständiger Name des verantwortlichen Inhabers</li>
           <li>Rechtsform und gegebenenfalls Registerangaben</li>
           <li>Zuständige Handwerkskammer und Berufsbezeichnung</li>
           <li>Umsatzsteuer-ID, sofern vorhanden und erforderlich</li>

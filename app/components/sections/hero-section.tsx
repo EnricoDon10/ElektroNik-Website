@@ -14,7 +14,7 @@ const chipClasses = [
 function EnergyVisual() {
   return (
     <div
-      aria-label="ElektroNik Kompetenzübersicht"
+      aria-label="Elektro - NIK Kompetenzübersicht"
       className="hero-visual energy-visual"
       data-hero-visual
       role="group"
@@ -87,7 +87,7 @@ export default function HeroSection() {
       <div className="hero-inner">
         <div className="hero-content" data-hero-copy>
           <p className="eyebrow">
-            <span /> Elektro-Meisterbetrieb · Köln &amp; Umgebung
+            <span /> Elektro-Meisterbetrieb · Bochum &amp; Umgebung
           </p>
           <h1>
             Elektromeister <span>für Haus und Industrie</span>
@@ -102,7 +102,7 @@ export default function HeroSection() {
               <ArrowDown aria-hidden="true" focusable="false" size={18} />
             </a>
           </div>
-          <ul className="hero-trust" aria-label="ElektroNik Vorteile">
+          <ul className="hero-trust" aria-label="Elektro - NIK Vorteile">
             {trustSignals.map((signal) => (
               <li key={signal}>{signal}</li>
             ))}

@@ -8,7 +8,7 @@ Diese Liste ist eine Abnahmevorlage. Phase 3 enthält automatisierte Chromium-Na
 - [ ] **BLOCKER:** Produktionsdomain, IONOS-DNS, HTTPS sowie Mail/MX bestätigen; `elektronik-meisterbetrieb.de` und `www` lieferten im Finalaudit NXDOMAIN.
 - [ ] **BLOCKER:** Vollständiger Inhabername, Rechtsform, Kammer-/Berufsangaben und ggf. Register-/USt-ID-Angaben geliefert und Impressum fachlich geprüft.
 - [ ] **BLOCKER:** Datenschutzerklärung für IONOS-Hosting, Logs, Google Maps, WhatsApp und Kontaktwege fachlich geprüft.
-- [x] Technisches Google-Maps-Zwei-Klick-Laden umgesetzt und browsergeprüft.
+- [x] Google Maps wird auf Kundenwunsch direkt und ohne Aktivierungsklick eingebettet.
 - [ ] **BLOCKER:** Google-Maps-Verarbeitung in der Datenschutzerklärung fachlich/rechtlich freigegeben.
 - [ ] Alle Telefonnummern, E-Mail-Adressen, Adresse, Öffnungszeiten und Leistungsangaben mit dem Betrieb abgeglichen.
 - [ ] Keine erfundenen Bewertungen, Zertifikate, Referenzen oder Mitarbeiterdarstellungen.
@@ -30,13 +30,13 @@ Diese Liste ist eine Abnahmevorlage. Phase 3 enthält automatisierte Chromium-Na
 - [x] Desktopnavigation und alle Ankerziele funktionieren in der Chromium-Zielmatrix.
 - [x] Mobiles Menü öffnet/schließt, Escape funktioniert, Fokus bleibt kontrolliert und kehrt zum Auslöser zurück.
 - [x] Aktive Navigation ist visuell und programmatisch nach Linkklick geprüft.
-- [x] Telefonlinks verwenden `+4915168488353`.
-- [x] E-Mail-Links verwenden `kontakt@elektronik-meisterbetrieb.de`.
-- [x] Direkte WhatsApp-Links verwenden `4915168488353`.
+- [x] Telefonlinks verwenden `+4915774299367`.
+- [x] E-Mail-Links verwenden `Elektro-nik@t-online.de`.
+- [ ] WhatsApp-Fähigkeit der vorläufig verwendeten Nummer `4915774299367` vom Kunden bestätigen lassen.
 - [x] WhatsApp-Formular kodiert Thema, optionale Kontaktdaten, Nachricht und Sonderzeichen korrekt.
 - [x] Nachrichten-Mindestlänge, ungültiges E-Mail-Format und Popup-Blockierung verhindern fehlerhafte Aufrufe und besitzen verständliche Browserzustände.
 - [x] FAQ funktioniert automatisiert per Enter und Leertaste; reale Touch-/Screenreaderprüfung bleibt offen.
-- [x] Karte wird erst nach Auswahl geladen; Adresse, iframe-Ziel und „In Maps öffnen“ sind geprüft.
+- [x] Karte wird direkt geladen; Adresse, iframe-Ziel und „In Maps öffnen“ sind geprüft.
 - [x] Impressum und Datenschutz sind direkt ladbar und intern korrekt verlinkt; ihre Inhalte bleiben rechtlich unvollständig.
 
 ## 4. Accessibility
@@ -88,7 +88,7 @@ Diese Liste ist eine Abnahmevorlage. Phase 3 enthält automatisierte Chromium-Na
 - [x] Automatisierter CLS-Wert blieb in allen neun Chromium-Viewports bei höchstens `0.1`.
 - [x] Keine sichtbaren Layout Shifts bei Header, Hero, Karte oder Platzhalterfläche im automatisierten und visuellen Chromium-Lauf.
 - [ ] Animationen laufen ohne auffällige Paint-/GPU-Probleme; schwaches Mobilgerät stichprobenartig geprüft.
-- [x] Google Maps lädt technisch erst nach bewusster Auswahl; rechtliche Freigabe bleibt separat offen.
+- [x] Google Maps lädt direkt ohne Aktivierungsklick; rechtliche Freigabe und Datenschutztext bleiben separat offen.
 - [x] Client-Grenzen und Motion-/GSAP-Bundles geprüft; GSAP lädt erst bei Annäherung des Prozessbereichs.
 - [x] Keine Console-/Page-Errors, Hydrationfehler oder Drittanbieterrequests vor Kartenfreigabe im automatisierten Chromium-Lauf.
 

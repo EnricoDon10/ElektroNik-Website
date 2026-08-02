@@ -26,7 +26,7 @@ Abgedeckt wurden:
 - unveränderte Telefon-, E-Mail- und direkte WhatsApp-Ziele;
 - WhatsApp-Nachrichtenkodierung einschließlich Umlauten/Sonderzeichen, native Mindestlänge sowie Erfolg und Popup-Blockierung;
 - FAQ per Enter und Leertaste sowie synchrones `aria-expanded`, `aria-controls` und `aria-hidden`;
-- Google-Maps-Zwei-Klick-Verhalten, iframe-Quelle/-Titel und sicherer externer Maps-Link;
+- direkte Google-Maps-Einbettung, iframe-Quelle/-Titel und sicherer externer Maps-Link;
 - horizontale Dokumentüberbreite sowie abgeschnittene Kerntexte/Bedienelemente;
 - Sichtbarkeit, Mindestgröße und Überlagerungsfreiheit der zentralen Projekt-CTAs;
 - Reduced-Motion-Endzustand, eindeutige IDs, Formularlabels, Semantik und fehlende unnötige Prozess-Tabstopps;
@@ -42,7 +42,7 @@ Abgedeckt wurden:
 ### Weiterhin offene Nachweise und Launch-Gates
 
 - Impressum und Datenschutzerklärung benötigen vollständige Kundendaten und fachliche/rechtliche Freigabe.
-- Das technische Google-Maps-Zwei-Klick-Verfahren ist verifiziert; Datenschutzerklärung und Rechtsgrundlage sind damit noch nicht rechtlich freigegeben.
+- Die direkte Google-Maps-Einbettung ist technisch verifiziert; Datenschutzerklärung und Rechtsgrundlage sind damit noch nicht rechtlich freigegeben.
 - Ein echtes, freigegebenes ElektroNik-Projektfoto fehlt; der sichtbare lokale Platzhalter bleibt ein Launch-Gate.
 - NVDA/Firefox, VoiceOver/Safari, 200-%-Zoom, 320-CSS-px-Reflow, Forced Colors und eine vollständige manuelle WCAG-Kontrastmessung stehen aus.
 - Lighthouse, LCP, INP, TBT, Bundle-/Main-Thread-Analyse und Prüfung auf einem schwächeren realen Mobilgerät stehen aus. Der automatisierte CLS-Test ersetzt diese Messungen nicht.
@@ -71,7 +71,7 @@ Vor einer Veröffentlichung sind insbesondere das mobile Dialog-/Fokusverhalten,
 ### P0 – Veröffentlichung blockierend
 
 1. **Impressum und Datenschutzerklärung sind ausdrücklich unvollständig.** Beide Seiten nennen fehlende Pflichtangaben. Sie dürfen nicht als rechtssicher fertig behandelt werden. Fachliche/rechtliche Freigabe ist erforderlich.
-2. **Google Maps lädt als direktes Drittanbieter-iframe.** `LocationMap` setzt die Google-URL unmittelbar als `src`; `loading="lazy"` verzögert nur den Zeitpunkt und stellt keine Einwilligung dar. Datenschutztext, Rechtsgrundlage und gewünschtes Consent-/Zwei-Klick-Modell müssen vor Launch verbindlich geklärt werden.
+2. **Google Maps lädt auf Kundenwunsch als direktes Drittanbieter-iframe.** `LocationMap` setzt die Google-URL unmittelbar als `src`; `loading="lazy"` verzögert nur den Zeitpunkt. Datenschutztext, Rechtsgrundlage und diese Produktentscheidung müssen vor Launch verbindlich geprüft werden.
 
 ### P1 – hoch
 

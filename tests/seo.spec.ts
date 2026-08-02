@@ -8,7 +8,7 @@ test("SEO-Metadaten, strukturierte Daten und statische Indexdateien sind konsist
 }) => {
   await page.goto("/");
 
-  await expect(page).toHaveTitle("ElektroNik | Elektro-Meisterbetrieb in Köln");
+  await expect(page).toHaveTitle("Elektro - NIK | Elektro-Meisterbetrieb in Bochum");
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
     "href",
     `${productionOrigin}/`,
@@ -33,6 +33,15 @@ test("SEO-Metadaten, strukturierte Daten und statische Indexdateien sind konsist
   const graph = structuredData[0]?.["@graph"] as Array<Record<string, unknown>>;
   expect(graph.map((entry) => entry["@type"])).toEqual(["Electrician", "FAQPage"]);
   expect(graph[0]?.url).toBe(productionOrigin);
+  expect(graph[0]?.name).toBe("Elektro - NIK");
+  expect(graph[0]?.telephone).toBe("+49 157 74299367");
+  expect(graph[0]?.email).toBe("Elektro-nik@t-online.de");
+  expect(graph[0]?.address).toMatchObject({
+    streetAddress: "Lindengraben 6",
+    postalCode: "44803",
+    addressLocality: "Bochum",
+  });
+  expect(graph[0]).not.toHaveProperty("openingHoursSpecification");
   await expect(page.getByRole("link", { name: "Impressum" })).toHaveAttribute(
     "href",
     "/impressum/",
