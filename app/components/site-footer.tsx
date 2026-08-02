@@ -1,4 +1,5 @@
 import { siteContact } from "../data/site-content";
+import ConsentSettingsLink from "./consent/consent-settings-link";
 
 export default function SiteFooter() {
   return (
@@ -7,7 +8,7 @@ export default function SiteFooter() {
         <div className="footer-brand">
           <a className="brand brand-footer" href="#start" aria-label={`${siteContact.businessName} Startseite`}>
             <span className="brand-name">
-              ELEKTRO <span>– NIK</span>
+              ELEKTRO <span>- NIK</span>
             </span>
             <span className="brand-sub">Meisterbetrieb</span>
           </a>
@@ -35,6 +36,7 @@ export default function SiteFooter() {
             <strong>Rechtliches</strong>
             <a href="/impressum/">Impressum</a>
             <a href="/datenschutz/">Datenschutz</a>
+            <ConsentSettingsLink />
           </div>
         </nav>
 

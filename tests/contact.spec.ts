@@ -109,18 +109,21 @@ test("Ungültiges optionales E-Mail-Format verhindert den WhatsApp-Aufruf", asyn
   expect(await page.evaluate(() => Reflect.get(window, "popupAttempted"))).toBe(false);
 });
 
-test("Google Maps wird ohne Aktivierungsklick direkt eingebettet", async ({ page }) => {
+test("Google Maps wird erst nach Einwilligung eingebettet", async ({ page }) => {
   await page.route(/https:\/\/www\.google\.com\/maps.*/, async (route) => {
     await route.fulfill({ body: "<!doctype html><title>Map test stub</title>", contentType: "text/html" });
   });
   await gotoHome(page);
 
   const map = page.locator(".contact-map");
+  await expect(map.locator("iframe")).toHaveCount(0);
+  await page.getByRole("button", { name: "Karte laden" }).click();
+
   const iframe = map.locator("iframe");
   await expect(iframe).toHaveCount(1);
   await expect(iframe).toHaveAttribute("src", /google\.com\/maps\?.*output=embed/);
   await expect(iframe).toHaveAttribute("title", /Google Maps.*Elektro - NIK.*Lindengraben 6.*44803 Bochum/);
-  await expect(page.getByRole("button", { name: "Interaktive Karte laden" })).toHaveCount(0);
+  await expect(page.getByRole("button", { name: "Karte laden" })).toHaveCount(0);
 
   const directions = map.getByRole("link", { name: /In Maps öffnen/ });
   await expect(directions).toHaveAttribute("target", "_blank");

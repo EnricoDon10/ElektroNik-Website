@@ -4,7 +4,7 @@ import { siteContact } from "../data/site-content";
 
 export const metadata: Metadata = {
   title: "Impressum",
-  description: "Impressum des Elektro-Meisterbetriebs Elektro - NIK in Bochum.",
+  description: "Impressum des Elektro-Meisterbetriebs ElektroNIK in Bochum.",
   alternates: { canonical: "/impressum/" },
 };
 

@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import ConsentProvider from "./components/consent/consent-provider";
 import "./globals.css";
 
 const configuredSiteUrl = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
@@ -33,7 +34,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de">
-      <body>{children}</body>
+      <body>
+        <ConsentProvider>{children}</ConsentProvider>
+      </body>
     </html>
   );
 }

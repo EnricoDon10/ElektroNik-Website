@@ -17,13 +17,13 @@ const productionSiteUrl = (
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Elektro - NIK | Elektro-Meisterbetrieb in Bochum",
+    absolute: "ElektroNIK | Elektro-Meisterbetrieb in Bochum",
   },
   description:
-    "Elektro - NIK in Bochum: moderne Elektrotechnik, Netzwerkverkabelung, E-Mobilität und Energielösungen – meisterhaft und persönlich umgesetzt.",
+    "ElektroNIK in Bochum: moderne Elektrotechnik, Netzwerkverkabelung, E-Mobilität und Energielösungen – meisterhaft und persönlich umgesetzt.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Elektro - NIK | Verkabeln. Vernetzen. Vertrauen.",
+    title: "ElektroNIK | Verkabeln. Vernetzen. Vertrauen.",
     description:
       "Meisterstrom für Haus und Industrie – moderne Elektrotechnik, persönlich umgesetzt.",
     images: [
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
         url: "/og-v3.png",
         width: 1734,
         height: 907,
-        alt: "Elektro - NIK – Verkabeln. Vernetzen. Vertrauen.",
+        alt: "ElektroNIK – Verkabeln. Vernetzen. Vertrauen.",
       },
     ],
     locale: "de_DE",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Elektro - NIK | Verkabeln. Vernetzen. Vertrauen.",
+    title: "ElektroNIK | Verkabeln. Vernetzen. Vertrauen.",
     description:
       "Meisterstrom für Haus und Industrie – moderne Elektrotechnik, persönlich umgesetzt.",
     images: ["/og-v3.png"],

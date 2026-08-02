@@ -91,7 +91,7 @@ Impressum und Datenschutz sind bewusst als unvollständige Platzhalter gekennzei
 - verantwortliche Person für Inhalte, soweit erforderlich;
 - Angaben zu IONOS-Hosting und Logfiles;
 - Rechtsgrundlagen, Speicherdauer, Empfänger, Drittlandübermittlungen und Betroffenenrechte;
-- fachliche Prüfung der direkten Google-Maps-Einbettung und der WhatsApp-Übergabe.
+- fachliche Prüfung der Consent-geschützten Google-Maps-Einbettung und der WhatsApp-Übergabe.
 
 Die Texte dürfen erst nach fachlicher beziehungsweise rechtlicher Freigabe als fertig gelten.
 

@@ -161,7 +161,7 @@ Kontaktoptionen, Karte und Formular werden einspaltig. Floating Actions dürfen 
 
 ### Conversion- und Datenschutzklarheit
 
-Die bestehende Formulierung, dass WhatsApp nur eine vorbereitete Nachricht öffnet und der Nutzer dort selbst versendet, ist stark und bleibt erhalten. Google Maps lädt derzeit direkt als externes Iframe; rechtliche Prüfung und eine mögliche Consent-/Click-to-load-Lösung sind vor Launch erforderlich.
+Die bestehende Formulierung, dass WhatsApp nur eine vorbereitete Nachricht öffnet und der Nutzer dort selbst versendet, bleibt erhalten. Google Maps wird erst nach Zustimmung zu „Externe Medien“ geladen. Vorher bleiben Adresse, Routenlink und ein lokaler Kartenplatzhalter sichtbar; die Auswahl kann über den Footer widerrufen werden.
 
 ## 9. Footer und Rechtliches
 
@@ -210,7 +210,7 @@ Für alle Viewports gelten: keine horizontale Scrollbar, keine abgeschnittenen H
 - feinere Typografiehierarchie
 - ruhigere Karten-Hover
 - vertikale Mobile-Prozesslinie
-- Click-to-load-/Consent-Entscheidung für Google Maps
+- rechtliche Freigabe der umgesetzten Consent- und Google-Maps-Strategie
 
 ### Kann
 

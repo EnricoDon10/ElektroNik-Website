@@ -8,7 +8,8 @@ Diese Liste ist eine Abnahmevorlage. Phase 3 enthält automatisierte Chromium-Na
 - [ ] **BLOCKER:** Produktionsdomain, IONOS-DNS, HTTPS sowie Mail/MX bestätigen; `elektronik-meisterbetrieb.de` und `www` lieferten im Finalaudit NXDOMAIN.
 - [ ] **BLOCKER:** Vollständiger Inhabername, Rechtsform, Kammer-/Berufsangaben und ggf. Register-/USt-ID-Angaben geliefert und Impressum fachlich geprüft.
 - [ ] **BLOCKER:** Datenschutzerklärung für IONOS-Hosting, Logs, Google Maps, WhatsApp und Kontaktwege fachlich geprüft.
-- [x] Google Maps wird auf Kundenwunsch direkt und ohne Aktivierungsklick eingebettet.
+- [x] Consent-Banner mit „Alle akzeptieren“, „Alle ablehnen“ und „Einstellungen“ umgesetzt.
+- [x] Google Maps wird erst nach Zustimmung zu „Externe Medien“ eingebettet.
 - [ ] **BLOCKER:** Google-Maps-Verarbeitung in der Datenschutzerklärung fachlich/rechtlich freigegeben.
 - [ ] Alle Telefonnummern, E-Mail-Adressen, Adresse, Öffnungszeiten und Leistungsangaben mit dem Betrieb abgeglichen.
 - [ ] Keine erfundenen Bewertungen, Zertifikate, Referenzen oder Mitarbeiterdarstellungen.
@@ -36,7 +37,7 @@ Diese Liste ist eine Abnahmevorlage. Phase 3 enthält automatisierte Chromium-Na
 - [x] WhatsApp-Formular kodiert Thema, optionale Kontaktdaten, Nachricht und Sonderzeichen korrekt.
 - [x] Nachrichten-Mindestlänge, ungültiges E-Mail-Format und Popup-Blockierung verhindern fehlerhafte Aufrufe und besitzen verständliche Browserzustände.
 - [x] FAQ funktioniert automatisiert per Enter und Leertaste; reale Touch-/Screenreaderprüfung bleibt offen.
-- [x] Karte wird direkt geladen; Adresse, iframe-Ziel und „In Maps öffnen“ sind geprüft.
+- [x] Karte zeigt vor Zustimmung einen lokalen Platzhalter; „Karte laden“, Adresse, iframe-Ziel und „In Maps öffnen“ sind geprüft.
 - [x] Impressum und Datenschutz sind direkt ladbar und intern korrekt verlinkt; ihre Inhalte bleiben rechtlich unvollständig.
 
 ## 4. Accessibility
@@ -88,7 +89,8 @@ Diese Liste ist eine Abnahmevorlage. Phase 3 enthält automatisierte Chromium-Na
 - [x] Automatisierter CLS-Wert blieb in allen neun Chromium-Viewports bei höchstens `0.1`.
 - [x] Keine sichtbaren Layout Shifts bei Header, Hero, Karte oder Platzhalterfläche im automatisierten und visuellen Chromium-Lauf.
 - [ ] Animationen laufen ohne auffällige Paint-/GPU-Probleme; schwaches Mobilgerät stichprobenartig geprüft.
-- [x] Google Maps lädt direkt ohne Aktivierungsklick; rechtliche Freigabe und Datenschutztext bleiben separat offen.
+- [x] Google Maps lädt technisch erst nach Einwilligung; Widerruf entfernt das iframe sofort. Rechtliche Freigabe und Datenschutztext bleiben separat offen.
+- [x] Versionierte Auswahl wird lokal gespeichert und kann über den Footer erneut geöffnet werden.
 - [x] Client-Grenzen und Motion-/GSAP-Bundles geprüft; GSAP lädt erst bei Annäherung des Prozessbereichs.
 - [x] Keine Console-/Page-Errors, Hydrationfehler oder Drittanbieterrequests vor Kartenfreigabe im automatisierten Chromium-Lauf.
 

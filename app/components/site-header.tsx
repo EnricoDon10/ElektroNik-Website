@@ -13,7 +13,7 @@ import { siteContact } from "../data/site-content";
 
 const navigationItems = [
   { href: "#leistungen", id: "leistungen", label: "Leistungen" },
-  { href: "#warum-wir", id: "warum-wir", label: "Warum Elektro - NIK" },
+  { href: "#warum-wir", id: "warum-wir", label: "Warum ElektroNIK" },
   { href: "#ablauf", id: "ablauf", label: "Ablauf" },
   { href: "#kontakt", id: "kontakt", label: "Kontakt" },
 ] as const;

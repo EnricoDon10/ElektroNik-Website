@@ -4,7 +4,7 @@ import { siteContact } from "../data/site-content";
 
 export const metadata: Metadata = {
   title: "Datenschutz",
-  description: "Hinweise zum Datenschutz auf der Website von Elektro - NIK.",
+  description: "Hinweise zum Datenschutz auf der Website von ElektroNIK.",
   alternates: { canonical: "/datenschutz/" },
 };
 
@@ -26,10 +26,22 @@ export default function DatenschutzPage() {
         <h2>Auf dieser Website eingesetzte Dienste</h2>
         <ul>
           <li>Webhosting bei IONOS</li>
-          <li>Eingebettete Karte von Google Maps</li>
+          <li>Google Maps als optionales externes Medium nach Einwilligung</li>
           <li>Verlinkung und vorbereitete Nachrichtenübergabe an WhatsApp</li>
           <li>Telefon- und E-Mail-Verlinkungen</li>
         </ul>
+        <h2>Speicherung der Datenschutzauswahl</h2>
+        <p>
+          Die Website speichert Ihre Auswahl lokal im Browser. Gespeichert werden die Version
+          der Einwilligung, der notwendige Status, die Auswahl für externe Medien und der
+          Zeitpunkt der letzten Änderung. Über „Datenschutzeinstellungen“ im Footer können Sie
+          Ihre Entscheidung jederzeit ändern oder widerrufen.
+        </p>
+        <p>
+          Die Google-Maps-Karte wird erst nach Zustimmung zu externen Medien eingebettet. Ohne
+          Zustimmung bleiben Adresse und der freiwillig nutzbare Link zur Routenplanung sichtbar,
+          das Karten-Iframe wird jedoch nicht geladen.
+        </p>
         <h2>Noch zu ergänzen</h2>
         <p>Rechtsgrundlagen, Speicherdauer, Betroffenenrechte, Hosting-Logfiles, Empfänger und mögliche Drittlandübermittlungen müssen fachlich geprüft und ergänzt werden.</p>
       </div>

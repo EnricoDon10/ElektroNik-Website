@@ -1,4 +1,5 @@
 import { expect, type Locator, type Page } from "@playwright/test";
+import { consentConfig } from "../app/consent/consent-config";
 
 export const MOBILE_NAVIGATION_MAX_WIDTH = 1279;
 
@@ -8,7 +9,23 @@ export const contactTargets = {
   whatsapp: "https://wa.me/4915774299367",
 } as const;
 
+export async function setStoredConsent(page: Page, externalMedia = false) {
+  await page.addInitScript(
+    ({ storageKey, value }) => window.localStorage.setItem(storageKey, JSON.stringify(value)),
+    {
+      storageKey: consentConfig.storageKey,
+      value: {
+        consentVersion: consentConfig.consentVersion,
+        necessary: true,
+        externalMedia,
+        updatedAt: "2026-08-02T00:00:00.000Z",
+      },
+    },
+  );
+}
+
 export async function gotoHome(page: Page) {
+  await setStoredConsent(page);
   await page.goto("/", { waitUntil: "domcontentloaded" });
   await expect(page.locator("main#main-content")).toBeVisible();
   await page.waitForFunction(() => (

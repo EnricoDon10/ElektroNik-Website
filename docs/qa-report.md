@@ -2,7 +2,7 @@
 
 ## Finale automatisierte Browserverifikation
 
-Stand: 1. August 2026  
+Stand: 2. August 2026
 Testziel: lokaler Next.js-Devserver auf `http://localhost:3100` sowie lokaler statischer Server für den erzeugten `out/`-Ordner; kein Deployment und noch kein Test im IONOS-Zielsystem.
 
 ### Ergebnis
@@ -12,9 +12,9 @@ Testziel: lokaler Next.js-Devserver auf `http://localhost:3100` sowie lokaler st
 | `npm run lint` | erfolgreich |
 | `npx tsc --noEmit` | erfolgreich |
 | `npm run build` | erfolgreich; 7/7 statische Seiten erzeugt |
-| `npx playwright test` | **162 bestanden, 9 erwartete Breakpoint-Skips, 0 fehlgeschlagen** |
+| `npx playwright test` | **216 bestanden, 9 erwartete Breakpoint-Skips, 0 fehlgeschlagen** |
 | Browser/Projekte | Chromium in allen neun Pflicht-Viewports |
-| Laufzeit finaler Matrixlauf | 5,0 Minuten |
+| Laufzeit finaler Matrixlauf | 4,8 Minuten |
 | `npm audit --json` | 6 Advisories: 1 niedrig, 5 hoch; kein automatischer Fix ausgeführt |
 
 Die neun Skips sind beabsichtigt: In fünf Menü-Viewports wird der reine Desktop-Menütest ausgelassen, in vier Desktop-Viewports der reine Overlay-Menütest. Es gibt keine übersprungenen fachlichen Prüffälle innerhalb ihres jeweils relevanten Breakpoints.
@@ -26,7 +26,7 @@ Abgedeckt wurden:
 - unveränderte Telefon-, E-Mail- und direkte WhatsApp-Ziele;
 - WhatsApp-Nachrichtenkodierung einschließlich Umlauten/Sonderzeichen, native Mindestlänge sowie Erfolg und Popup-Blockierung;
 - FAQ per Enter und Leertaste sowie synchrones `aria-expanded`, `aria-controls` und `aria-hidden`;
-- direkte Google-Maps-Einbettung, iframe-Quelle/-Titel und sicherer externer Maps-Link;
+- Consent-Banner, Einstellungsdialog, versionierte lokale Auswahl, Widerruf und Google-Maps-Blockierung;
 - horizontale Dokumentüberbreite sowie abgeschnittene Kerntexte/Bedienelemente;
 - Sichtbarkeit, Mindestgröße und Überlagerungsfreiheit der zentralen Projekt-CTAs;
 - Reduced-Motion-Endzustand, eindeutige IDs, Formularlabels, Semantik und fehlende unnötige Prozess-Tabstopps;
@@ -42,7 +42,7 @@ Abgedeckt wurden:
 ### Weiterhin offene Nachweise und Launch-Gates
 
 - Impressum und Datenschutzerklärung benötigen vollständige Kundendaten und fachliche/rechtliche Freigabe.
-- Die direkte Google-Maps-Einbettung ist technisch verifiziert; Datenschutzerklärung und Rechtsgrundlage sind damit noch nicht rechtlich freigegeben.
+- Die Consent-geschützte Google-Maps-Einbettung ist technisch verifiziert; Datenschutzerklärung und Rechtsgrundlage sind damit noch nicht rechtlich freigegeben.
 - Ein echtes, freigegebenes ElektroNik-Projektfoto fehlt; der sichtbare lokale Platzhalter bleibt ein Launch-Gate.
 - NVDA/Firefox, VoiceOver/Safari, 200-%-Zoom, 320-CSS-px-Reflow, Forced Colors und eine vollständige manuelle WCAG-Kontrastmessung stehen aus.
 - Lighthouse, LCP, INP, TBT, Bundle-/Main-Thread-Analyse und Prüfung auf einem schwächeren realen Mobilgerät stehen aus. Der automatisierte CLS-Test ersetzt diese Messungen nicht.
@@ -71,7 +71,7 @@ Vor einer Veröffentlichung sind insbesondere das mobile Dialog-/Fokusverhalten,
 ### P0 – Veröffentlichung blockierend
 
 1. **Impressum und Datenschutzerklärung sind ausdrücklich unvollständig.** Beide Seiten nennen fehlende Pflichtangaben. Sie dürfen nicht als rechtssicher fertig behandelt werden. Fachliche/rechtliche Freigabe ist erforderlich.
-2. **Google Maps lädt auf Kundenwunsch als direktes Drittanbieter-iframe.** `LocationMap` setzt die Google-URL unmittelbar als `src`; `loading="lazy"` verzögert nur den Zeitpunkt. Datenschutztext, Rechtsgrundlage und diese Produktentscheidung müssen vor Launch verbindlich geprüft werden.
+2. **Google Maps ist technisch blockiert, bis „Externe Medien“ erlaubt werden.** Vorher wird kein iframe erzeugt. Einwilligung, Ablehnung, individuelle Auswahl und Widerruf sind umgesetzt; Datenschutztext und Rechtsgrundlage müssen vor Launch dennoch verbindlich geprüft werden.
 
 ### P1 – hoch
 
@@ -111,7 +111,7 @@ Vor einer Veröffentlichung sind insbesondere das mobile Dialog-/Fokusverhalten,
 - Daueranimationen existieren für Orbit und Energiepuls. Sie verwenden überwiegend Transform/Opacity-orientierte CSS-Effekte; Reduced Motion ist vorhanden.
 - `backdrop-filter`, große Schatten, radiale Verläufe und dauerhaft animierte Flächen können auf schwächeren Mobilgeräten GPU-/Paint-Kosten verursachen.
 - IntersectionObserver und passiver Scroll-Listener im Header sind begrenzt und werden aufgeräumt.
-- Das Google-Maps-iframe ist voraussichtlich der größte externe Laufzeit-/Privacy-Kostenblock, wenn der Kontaktbereich in die Nähe des Viewports kommt.
+- Das Google-Maps-iframe ist der einzige optionale externe Laufzeitdienst und wird erst nach Einwilligung erzeugt.
 - Systemschriftarten vermeiden Font-Downloads und Font Layout Shift.
 
 ### Phase 1 nicht getestet
