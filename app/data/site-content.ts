@@ -5,7 +5,7 @@ export const services = [
     icon: "cable",
     title: "Elektroinstallation",
     shortTitle: "Elektroinstallation",
-    text: "Sichere, zukunftsfähige Installationen für Neubau, Umbau und Sanierung – sauber geplant und fachgerecht umgesetzt.",
+    text: "Sichere, zukunftsfähige Installationen für Neubau, Umbau und Sanierung. Sauber geplant und fachgerecht umgesetzt.",
     tags: ["Neubau", "Sanierung", "Unterverteilung"],
   },
   {
@@ -14,7 +14,7 @@ export const services = [
     icon: "network",
     title: "Netzwerkverkabelung",
     shortTitle: "Netzwerkverkabelung",
-    text: "Strukturierte Netzwerkverkabelung für zuverlässige Datenverbindungen – von Netzwerkschränken und Bodentanks bis zu fachgerecht installierten Netzwerkdosen.",
+    text: "Strukturierte Netzwerkverkabelung für zuverlässige Datenverbindungen. Von Netzwerkschränken und Bodentanks bis zu fachgerecht installierten Netzwerkdosen.",
     tags: ["Netzwerkschränke", "Bodentanks", "Netzwerkdosen"],
   },
   {
@@ -23,7 +23,7 @@ export const services = [
     icon: "battery-charging",
     title: "E-Mobilität",
     shortTitle: "E-Mobilität",
-    text: "Wallbox, Lastmanagement und die passende Infrastruktur – vom ersten Check bis zur betriebsbereiten Ladestation.",
+    text: "Wallbox, Lastmanagement und die passende Infrastruktur. Vom ersten Check bis zur betriebsbereiten Ladestation.",
     tags: ["Wallbox", "Lastmanagement", "Prüfung"],
   },
   {
@@ -56,7 +56,7 @@ export const services = [
 ] as const;
 
 export const siteContact = {
-  businessName: "Elektro - NIK",
+  businessName: "ElektroNIK",
   ownerName: "Nikolay Shirotskiy",
   phoneDisplay: "0157 / 742 99 367",
   phoneHref: "tel:+4915774299367",
@@ -129,17 +129,17 @@ export const faqs = [
       "Eine kurze Beschreibung, Fotos der Situation, der Einsatzort und das gewünschte Ergebnis helfen dabei, Ihr Vorhaben schnell einzuordnen. Details können anschließend persönlich geklärt werden.",
   },
   {
-    question: "Übernimmt Elektro - NIK auch kleinere Aufträge?",
+    question: "Übernimmt ElektroNIK auch kleinere Aufträge?",
     answer:
-      "Ja. Neben kompletten Installationen unterstützt Elektro - NIK auch bei einzelnen Steckdosen, Leuchten, Reparaturen, Prüfungen und der Fehlersuche.",
+      "Ja. Neben kompletten Installationen unterstützt ElektroNIK auch bei einzelnen Steckdosen, Leuchten, Reparaturen, Prüfungen und der Fehlersuche.",
   },
   {
     question: "Wie entsteht ein transparentes Angebot?",
     answer:
-      "Nach einer kurzen Abstimmung und – falls nötig – einem Vor-Ort-Termin erhalten Sie eine nachvollziehbare Leistungsübersicht mit klar beschriebenem Umfang.",
+      "Nach einer kurzen Abstimmung folgt bei Bedarf ein Vor-Ort-Termin. Anschließend erhalten Sie eine nachvollziehbare Leistungsübersicht mit klar beschriebenem Umfang.",
   },
   {
-    question: "Arbeitet Elektro - NIK für Privat- und Gewerbekunden?",
+    question: "Arbeitet ElektroNIK für Privat- und Gewerbekunden?",
     answer:
       "Ja. Die Leistungen reichen von Elektroarbeiten in Wohngebäuden bis zu Installations-, Netzwerk- und Prüfaufgaben im gewerblichen Umfeld.",
   },

@@ -312,7 +312,7 @@ export default function SiteHeader() {
         aria-label={`${siteContact.businessName} Startseite`}
         onClick={() => menuOpen && closeMenu({ restoreFocus: true })}
       >
-        <span className="brand-name">ELEKTRO <span>– NIK</span></span>
+        <span className="brand-name">ELEKTRO<span>NIK</span></span>
         <span className="brand-sub">Meisterbetrieb</span>
       </a>
       <nav

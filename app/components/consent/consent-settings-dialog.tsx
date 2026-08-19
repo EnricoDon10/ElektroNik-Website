@@ -82,7 +82,8 @@ export default function ConsentSettingsDialog({
       </div>
 
       <p id="consent-dialog-description">
-        Optionale Inhalte bleiben deaktiviert, bis Sie ausdrücklich zustimmen.
+        Optionale Inhalte bleiben deaktiviert, bis Sie ausdrücklich zustimmen. Ihre Auswahl
+        wird für sechs Monate gespeichert und kann jederzeit geändert werden.
       </p>
 
       <div className="consent-category-list">
@@ -128,10 +129,10 @@ export default function ConsentSettingsDialog({
         <button className="consent-button consent-button-primary" onClick={() => onSave(externalMedia)} type="button">
           Auswahl speichern
         </button>
-        <button className="consent-button consent-button-equal" onClick={onAcceptAll} type="button">
+        <button className="consent-button consent-button-decision" onClick={onAcceptAll} type="button">
           Alle akzeptieren
         </button>
-        <button className="consent-button consent-button-equal" onClick={onRejectAll} type="button">
+        <button className="consent-button consent-button-decision" onClick={onRejectAll} type="button">
           Alle ablehnen
         </button>
       </div>

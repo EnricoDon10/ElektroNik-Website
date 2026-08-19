@@ -2,6 +2,9 @@
 
 Diese Liste ist eine Abnahmevorlage. Phase 3 enthält automatisierte Chromium-Nachweise; offene Kästchen bleiben ausstehende Nachweise und nicht automatisch bestätigte Fehler – außer wenn ausdrücklich als Blocker markiert.
 
+Der ausführliche aktuelle Rechts-, Datenschutz- und Consent-Befund steht in
+[`legal-launch-audit-2026-08-19.md`](./legal-launch-audit-2026-08-19.md).
+
 ## 1. Freigaben und Inhalte
 
 - [x] Visuelle Richtung vom Auftraggeber am 1. August 2026 freigegeben.
@@ -9,6 +12,8 @@ Diese Liste ist eine Abnahmevorlage. Phase 3 enthält automatisierte Chromium-Na
 - [ ] **BLOCKER:** Vollständiger Inhabername, Rechtsform, Kammer-/Berufsangaben und ggf. Register-/USt-ID-Angaben geliefert und Impressum fachlich geprüft.
 - [ ] **BLOCKER:** Datenschutzerklärung für IONOS-Hosting, Logs, Google Maps, WhatsApp und Kontaktwege fachlich geprüft.
 - [x] Consent-Banner mit „Alle akzeptieren“, „Alle ablehnen“ und „Einstellungen“ umgesetzt.
+- [x] Dauerhafter Cookie-Button unten links öffnet die Einstellungen auf allen Routen erneut.
+- [x] Consent-Datensatz ist versioniert, wird validiert und nach spätestens 180 Tagen erneuert.
 - [x] Google Maps wird erst nach Zustimmung zu „Externe Medien“ eingebettet.
 - [ ] **BLOCKER:** Google-Maps-Verarbeitung in der Datenschutzerklärung fachlich/rechtlich freigegeben.
 - [ ] Alle Telefonnummern, E-Mail-Adressen, Adresse, Öffnungszeiten und Leistungsangaben mit dem Betrieb abgeglichen.
@@ -17,10 +22,10 @@ Diese Liste ist eine Abnahmevorlage. Phase 3 enthält automatisierte Chromium-Na
 
 ## 2. Codequalität
 
-- [x] `npm run lint` am 1. August 2026 erfolgreich.
-- [x] `npx tsc --noEmit` am 1. August 2026 erfolgreich.
-- [x] `npm run build` am 1. August 2026 erfolgreich; 7/7 statische Seiten erzeugt.
-- [x] `npx playwright test` am 1. August 2026: 162 bestanden, 9 erwartete Breakpoint-Skips, 0 fehlgeschlagen.
+- [x] `npm run lint` am 19. August 2026 erfolgreich.
+- [x] `npx tsc --noEmit` am 19. August 2026 erfolgreich.
+- [x] `npm run build` am 19. August 2026 erfolgreich; 7/7 statische Seiten erzeugt.
+- [x] `npx playwright test` gegen den statischen Export am 19. August 2026: 234 bestanden, 9 erwartete Breakpoint-Skips, 0 fehlgeschlagen.
 - [x] `npx eslint playwright.config.ts tests` am 1. August 2026 erfolgreich.
 - [x] Keine Prüfung wurde durch Deaktivieren oder pauschales Ignorieren umgangen.
 - [x] Nur die freigegebenen und fachlich begründeten Dependencies hinzugefügt; Lockfile, Lizenzen und Bundlegrenzen geprüft.
@@ -38,7 +43,8 @@ Diese Liste ist eine Abnahmevorlage. Phase 3 enthält automatisierte Chromium-Na
 - [x] Nachrichten-Mindestlänge, ungültiges E-Mail-Format und Popup-Blockierung verhindern fehlerhafte Aufrufe und besitzen verständliche Browserzustände.
 - [x] FAQ funktioniert automatisiert per Enter und Leertaste; reale Touch-/Screenreaderprüfung bleibt offen.
 - [x] Karte zeigt vor Zustimmung einen lokalen Platzhalter; „Karte laden“, Adresse, iframe-Ziel und „In Maps öffnen“ sind geprüft.
-- [x] Impressum und Datenschutz sind direkt ladbar und intern korrekt verlinkt; ihre Inhalte bleiben rechtlich unvollständig.
+- [x] Impressum und Datenschutz sind direkt ladbar, intern korrekt verlinkt und technisch umfassend überarbeitet.
+- [ ] **BLOCKER:** Offene Betreiberangaben aus dem Legal-Audit einarbeiten und Rechtstexte fachlich freigeben.
 
 ## 4. Accessibility
 
@@ -89,8 +95,8 @@ Diese Liste ist eine Abnahmevorlage. Phase 3 enthält automatisierte Chromium-Na
 - [x] Automatisierter CLS-Wert blieb in allen neun Chromium-Viewports bei höchstens `0.1`.
 - [x] Keine sichtbaren Layout Shifts bei Header, Hero, Karte oder Platzhalterfläche im automatisierten und visuellen Chromium-Lauf.
 - [ ] Animationen laufen ohne auffällige Paint-/GPU-Probleme; schwaches Mobilgerät stichprobenartig geprüft.
-- [x] Google Maps lädt technisch erst nach Einwilligung; Widerruf entfernt das iframe sofort. Rechtliche Freigabe und Datenschutztext bleiben separat offen.
-- [x] Versionierte Auswahl wird lokal gespeichert und kann über den Footer erneut geöffnet werden.
+- [x] Google Maps lädt technisch erst nach Einwilligung; Widerruf entfernt das iframe sofort. Die Datenschutzerklärung beschreibt den Dienst ausführlich, die fachliche Betreiberfreigabe bleibt offen.
+- [x] Versionierte Auswahl wird lokal gespeichert und kann über Footer und festen Cookie-Button erneut geöffnet werden.
 - [x] Client-Grenzen und Motion-/GSAP-Bundles geprüft; GSAP lädt erst bei Annäherung des Prozessbereichs.
 - [x] Keine Console-/Page-Errors, Hydrationfehler oder Drittanbieterrequests vor Kartenfreigabe im automatisierten Chromium-Lauf.
 

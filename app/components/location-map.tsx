@@ -20,7 +20,7 @@ export default function LocationMap() {
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
           src={mapEmbedUrl}
-          title={`Google Maps – ${siteContact.businessName}, ${mapAddress}`}
+          title={`Google Maps: ${siteContact.businessName}, ${mapAddress}`}
         />
       ) : (
         <div className="map-placeholder">

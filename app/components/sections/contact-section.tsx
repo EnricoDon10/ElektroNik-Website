@@ -8,7 +8,7 @@ export default function ContactSection() {
     <section className="contact" data-reveal-group id="kontakt">
       <div className="contact-inner">
         <div className="contact-intro" data-reveal>
-          <p className="chapter light">06 — Kontakt</p>
+          <p className="chapter light">06 / Kontakt</p>
           <p className="eyebrow">
             <span /> Direkt &amp; unkompliziert
           </p>

@@ -8,7 +8,7 @@ export default function SiteFooter() {
         <div className="footer-brand">
           <a className="brand brand-footer" href="#start" aria-label={`${siteContact.businessName} Startseite`}>
             <span className="brand-name">
-              ELEKTRO <span>- NIK</span>
+              ELEKTRO<span>NIK</span>
             </span>
             <span className="brand-sub">Meisterbetrieb</span>
           </a>

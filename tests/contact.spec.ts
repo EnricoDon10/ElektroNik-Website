@@ -42,7 +42,7 @@ test("WhatsApp-Formular erzeugt die korrekt kodierte Popup-URL", async ({ page }
   expect(`${url.origin}${url.pathname}`).toBe(contactTargets.whatsapp);
   expect(url.searchParams.get("text")).toBe(
     [
-      "Hallo Elektro - NIK,",
+      "Hallo ElektroNIK,",
       "",
       "Thema: E-Mobilität",
       "Name: Jörg Müller",
@@ -122,7 +122,7 @@ test("Google Maps wird erst nach Einwilligung eingebettet", async ({ page }) => 
   const iframe = map.locator("iframe");
   await expect(iframe).toHaveCount(1);
   await expect(iframe).toHaveAttribute("src", /google\.com\/maps\?.*output=embed/);
-  await expect(iframe).toHaveAttribute("title", /Google Maps.*Elektro - NIK.*Lindengraben 6.*44803 Bochum/);
+  await expect(iframe).toHaveAttribute("title", /Google Maps.*ElektroNIK.*Lindengraben 6.*44803 Bochum/);
   await expect(page.getByRole("button", { name: "Karte laden" })).toHaveCount(0);
 
   const directions = map.getByRole("link", { name: /In Maps öffnen/ });

@@ -6,7 +6,7 @@ export default function QualitySection() {
     <section className="quality" data-reveal-group id="warum-wir">
       <div className="quality-inner">
         <div className="quality-copy" data-reveal>
-          <p className="chapter light">03 — Warum Elektro - NIK</p>
+          <p className="chapter light">03 / Warum ElektroNIK</p>
           <p className="eyebrow">
             <span /> Qualität mit Haltung
           </p>
@@ -27,13 +27,13 @@ export default function QualitySection() {
         </div>
 
         <div
-          aria-label="Vorbereitete Bildfläche für ein zukünftiges Foto von Elektro - NIK"
+          aria-label="Vorbereitete Bildfläche für ein zukünftiges Foto von ElektroNIK"
           className="quality-panel quality-photo-placeholder"
           data-reveal
           role="group"
         >
           <div className="panel-grid" aria-hidden="true" />
-          <span className="panel-kicker">Foto · Elektro - NIK bei der Arbeit</span>
+          <span className="panel-kicker">Foto · ElektroNIK bei der Arbeit</span>
           <div className="photo-placeholder-copy">
             <span aria-hidden="true">+</span>
             <strong>Projektfoto vorbereitet</strong>

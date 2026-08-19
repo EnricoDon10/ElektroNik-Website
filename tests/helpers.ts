@@ -18,7 +18,7 @@ export async function setStoredConsent(page: Page, externalMedia = false) {
         consentVersion: consentConfig.consentVersion,
         necessary: true,
         externalMedia,
-        updatedAt: "2026-08-02T00:00:00.000Z",
+        updatedAt: new Date().toISOString(),
       },
     },
   );

@@ -33,10 +33,10 @@ export default function ConsentBanner({
       </div>
 
       <div className="consent-banner-actions">
-        <button className="consent-button consent-button-primary" onClick={onAcceptAll} type="button">
+        <button className="consent-button consent-button-decision" onClick={onAcceptAll} type="button">
           Alle akzeptieren
         </button>
-        <button className="consent-button consent-button-equal" onClick={onRejectAll} type="button">
+        <button className="consent-button consent-button-decision" onClick={onRejectAll} type="button">
           Alle ablehnen
         </button>
         <button className="consent-button consent-button-settings" onClick={onOpenSettings} type="button">

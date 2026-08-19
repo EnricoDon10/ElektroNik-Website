@@ -15,6 +15,7 @@ import {
   readStoredConsent,
 } from "../../consent/consent-config";
 import ConsentBanner from "./consent-banner";
+import ConsentFloatingButton from "./consent-floating-button";
 import ConsentSettingsDialog from "./consent-settings-dialog";
 
 type ConsentContextValue = {
@@ -114,6 +115,7 @@ export default function ConsentProvider({ children }: { children: ReactNode }) {
   return (
     <ConsentContext.Provider value={contextValue}>
       {children}
+      <ConsentFloatingButton onOpen={openSettings} />
       {ready && !preferences ? (
         <ConsentBanner
           onAcceptAll={acceptAll}

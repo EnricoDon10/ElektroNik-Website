@@ -34,6 +34,8 @@ test("erster Besuch zeigt drei gleichwertig erreichbare Hauptaktionen und blocki
   const rejectBox = await rejectAll.boundingBox();
   expect(Math.abs((acceptBox?.width ?? 0) - (rejectBox?.width ?? 0))).toBeLessThanOrEqual(1);
   expect(Math.abs((acceptBox?.height ?? 0) - (rejectBox?.height ?? 0))).toBeLessThanOrEqual(1);
+  await expect(acceptAll).toHaveClass(/consent-button-decision/);
+  await expect(rejectAll).toHaveClass(/consent-button-decision/);
   await expect(banner.getByRole("link", { name: "Datenschutzerklärung" })).toHaveAttribute("href", "/datenschutz/");
   await expect(banner.getByRole("link", { name: "Impressum" })).toHaveAttribute("href", "/impressum/");
   await expect(page.locator(".contact-map iframe")).toHaveCount(0);
@@ -123,4 +125,46 @@ test("Karte laden erteilt gezielt die Einwilligung für externe Medien", async (
 
   await expect(page.locator(".contact-map iframe")).toHaveCount(1);
   await expect.poll(() => readConsent(page)).toMatchObject({ externalMedia: true });
+});
+
+test("Cookie-Einstellungen bleiben unten links auf allen Seiten erreichbar", async ({ page }) => {
+  await page.goto("/");
+  await page.getByTestId("consent-banner").getByRole("button", { name: "Alle ablehnen" }).click();
+
+  const floatingButton = page.getByTestId("floating-consent-settings");
+  await expect(floatingButton).toBeVisible();
+  await expect(floatingButton).toHaveCSS("position", "fixed");
+  await expect(floatingButton).toHaveAttribute("aria-label", "Cookie-Einstellungen öffnen");
+  await expectLocatorInsideViewport(floatingButton);
+
+  await floatingButton.click();
+  await expect(page.getByTestId("consent-settings-dialog")).toBeVisible();
+  await page.keyboard.press("Escape");
+  await expect(floatingButton).toBeFocused();
+
+  await page.goto("/datenschutz/");
+  await expect(page.getByTestId("floating-consent-settings")).toBeVisible();
+  await expectLocatorInsideViewport(page.getByTestId("floating-consent-settings"));
+});
+
+test("abgelaufene, veraltete und beschädigte Consent-Daten werden sicher verworfen", async ({ page }) => {
+  await page.addInitScript(({ storageKey }) => {
+    window.localStorage.setItem(storageKey, JSON.stringify({
+      consentVersion: 1,
+      necessary: true,
+      externalMedia: true,
+      updatedAt: "2020-01-01T00:00:00.000Z",
+    }));
+  }, { storageKey: consentConfig.storageKey });
+
+  await page.goto("/");
+  await expect(page.getByTestId("consent-banner")).toBeVisible();
+  await expect(page.locator(".contact-map iframe")).toHaveCount(0);
+
+  await page.evaluate((storageKey) => {
+    window.localStorage.setItem(storageKey, "{nicht-valide");
+  }, consentConfig.storageKey);
+  await page.reload();
+  await expect(page.getByTestId("consent-banner")).toBeVisible();
+  await expect(page.locator(".contact-map iframe")).toHaveCount(0);
 });

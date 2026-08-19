@@ -20,18 +20,18 @@ export const metadata: Metadata = {
     absolute: "ElektroNIK | Elektro-Meisterbetrieb in Bochum",
   },
   description:
-    "ElektroNIK in Bochum: moderne Elektrotechnik, Netzwerkverkabelung, E-Mobilität und Energielösungen – meisterhaft und persönlich umgesetzt.",
+    "ElektroNIK in Bochum: moderne Elektrotechnik, Netzwerkverkabelung, E-Mobilität und Energielösungen. Meisterhaft und persönlich umgesetzt.",
   alternates: { canonical: "/" },
   openGraph: {
     title: "ElektroNIK | Verkabeln. Vernetzen. Vertrauen.",
     description:
-      "Meisterstrom für Haus und Industrie – moderne Elektrotechnik, persönlich umgesetzt.",
+      "Meisterstrom für Haus und Industrie. Moderne Elektrotechnik, persönlich umgesetzt.",
     images: [
       {
         url: "/og-v3.png",
         width: 1734,
         height: 907,
-        alt: "ElektroNIK – Verkabeln. Vernetzen. Vertrauen.",
+        alt: "ElektroNIK: Verkabeln. Vernetzen. Vertrauen.",
       },
     ],
     locale: "de_DE",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "ElektroNIK | Verkabeln. Vernetzen. Vertrauen.",
     description:
-      "Meisterstrom für Haus und Industrie – moderne Elektrotechnik, persönlich umgesetzt.",
+      "Meisterstrom für Haus und Industrie. Moderne Elektrotechnik, persönlich umgesetzt.",
     images: ["/og-v3.png"],
   },
 };

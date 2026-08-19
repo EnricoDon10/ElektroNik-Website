@@ -45,7 +45,7 @@ Set-Location 'C:\Users\enric\dev\GitHub\ElektroNik Website Neu\out'
 Dann verbinden:
 
 ```powershell
-sftp -P 22 su8995@access-5021047713.webspace-host.com
+sftp -P 22 IONOS_SFTP_USER@IONOS_SFTP_HOST
 ```
 
 Das Passwort eingeben. Während der Eingabe werden keine Zeichen angezeigt.
@@ -79,7 +79,7 @@ Remote working directory: /Websites/elektronik
 Lokalen Exportordner festlegen:
 
 ```text
-lcd "C:/Users/enric/OneDrive/Dokumente/GitHub/Elektro Nik Website/out"
+lcd "C:/Users/enric/dev/GitHub/ElektroNik Website Neu/out"
 ```
 
 Kontrollieren:
@@ -130,7 +130,7 @@ bye
 Jetzt über SSH verbinden:
 
 ```powershell
-ssh -p 22 su8995@access-5021047713.webspace-host.com
+ssh -p 22 IONOS_SFTP_USER@IONOS_SFTP_HOST
 ```
 
 Auf dem Server in den Websiteordner wechseln:
@@ -217,7 +217,7 @@ Set-Location 'C:\Users\enric\dev\GitHub\ElektroNik Website Neu\out'
 ### SFTP-Upload
 
 ```powershell
-sftp -P 22 su8995@access-5021047713.webspace-host.com
+sftp -P 22 IONOS_SFTP_USER@IONOS_SFTP_HOST
 ```
 
 Innerhalb von SFTP:
@@ -233,7 +233,7 @@ bye
 ### Berechtigungen
 
 ```powershell
-ssh -p 22 su8995@access-5021047713.webspace-host.com
+ssh -p 22 IONOS_SFTP_USER@IONOS_SFTP_HOST
 ```
 
 Innerhalb von SSH:

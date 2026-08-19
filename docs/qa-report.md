@@ -1,5 +1,36 @@
 # QA-, Accessibility- und Performance-Bericht
 
+## Legal-Launch-Update vom 19. August 2026
+
+Testziel war der frisch erzeugte statische Export unter `out/`, isoliert ausgeliefert auf
+`http://localhost:3200`. Der bereits vorhandene Next.js-Entwicklungsserver auf Port 3001 wurde nicht
+beendet und nicht als Abnahmenachweis verwendet. Ein Deployment in das IONOS-Zielsystem fand nicht
+statt.
+
+| Prüfung | Ergebnis |
+| --- | --- |
+| `npm run lint` | erfolgreich |
+| `npx tsc --noEmit` | erfolgreich |
+| `npm run build` | erfolgreich; 7/7 statische Seiten erzeugt |
+| `npx playwright test` gegen `out/` | **234 bestanden, 9 erwartete Breakpoint-Skips, 0 fehlgeschlagen** |
+| Browser/Projekte | Chromium in allen neun Pflicht-Viewports |
+| Laufzeit Matrixlauf | 2,9 Minuten |
+| `git diff --check` | erfolgreich |
+
+Neu verifiziert wurden der dauerhaft feste Cookie-Button auf Start- und Rechtsseiten, die
+gleichwertigen Erstentscheidungen, die sechsmonatige Consent-Gültigkeit, die sichere Behandlung
+veralteter und beschädigter Datensätze, Escape und Fokuswiederherstellung sowie die unveränderte
+Blockierung von Google Maps vor Einwilligung. Direkte Routen für Impressum und Datenschutz,
+Canonical-Ziele, Sitemap und Robots-Datei waren im statischen Export erreichbar.
+
+Die sichtbare Prüfung umfasste das Consent-Banner bei 375 × 667 und 1440 × 900, das Impressum bei
+390 × 844 sowie die Datenschutzerklärung bei 1440 × 900. Banner, Rechtsseiten und der feste Button
+waren ohne horizontale Überbreite oder abgeschnittene Hauptaktionen nutzbar.
+
+Die technische Prüfung macht die offenen echten Betreiberangaben nicht automatisch rechtlich
+vollständig. Diese Blocker stehen im separaten
+[`legal-launch-audit-2026-08-19.md`](./legal-launch-audit-2026-08-19.md).
+
 ## Finale automatisierte Browserverifikation
 
 Stand: 2. August 2026

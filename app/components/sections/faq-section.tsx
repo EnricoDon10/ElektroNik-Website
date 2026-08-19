@@ -5,7 +5,7 @@ export default function FaqSection() {
   return (
     <section className="faq-section" data-reveal-group id="faq">
       <div className="faq-intro-block" data-reveal>
-        <p className="chapter">05 — FAQ</p>
+        <p className="chapter">05 / FAQ</p>
         <p className="eyebrow dark">
           <span /> Kurz erklärt
         </p>
