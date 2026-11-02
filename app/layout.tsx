@@ -12,11 +12,11 @@ export const metadata: Metadata = {
   applicationName: "ElektroNIK",
   metadataBase: new URL(metadataBaseUrl),
   title: {
-    default: "ElektroNIK | Elektro-Meisterbetrieb in Bochum",
+    default: "ElektroNIK | Elektro-Meisterbetrieb in Wattenscheid",
     template: "%s | ElektroNIK",
   },
   description:
-    "ElektroNIK in Bochum: moderne Elektrotechnik, Netzwerkverkabelung, E-Mobilität und Energielösungen. Meisterhaft und persönlich umgesetzt.",
+    "ElektroNIK in Wattenscheid und Bochum: Elektrotechnik, Netzwerk, E-Mobilität, PV-Beratung und Industrieservice.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",

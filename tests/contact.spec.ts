@@ -30,7 +30,7 @@ test("WhatsApp-Formular erzeugt die korrekt kodierte Popup-URL", async ({ page }
   await page.getByLabel("Gewünschte Leistung").selectOption({ label: "E-Mobilität" });
   await page.getByLabel(/Ihr Name/).fill("Jörg Müller");
   await page.getByLabel(/Ihre E-Mail-Adresse/).fill("joerg@example.de");
-  await page.getByLabel("Worum geht es?").fill("Wallbox & Prüfung – Bochum");
+  await page.getByLabel("Worum geht es?").fill("Wallbox in Wattenscheid");
   await page.getByRole("button", { name: /Anfrage in WhatsApp öffnen/ }).click();
 
   const openedUrl = await page.evaluate(() => {
@@ -48,7 +48,7 @@ test("WhatsApp-Formular erzeugt die korrekt kodierte Popup-URL", async ({ page }
       "Name: Jörg Müller",
       "E-Mail: joerg@example.de",
       "",
-      "Wallbox & Prüfung – Bochum",
+      "Wallbox in Wattenscheid",
     ].join("\n"),
   );
   await expect(page.getByRole("status")).toContainText("WhatsApp wurde");
@@ -122,11 +122,34 @@ test("Google Maps wird erst nach Einwilligung eingebettet", async ({ page }) => 
   const iframe = map.locator("iframe");
   await expect(iframe).toHaveCount(1);
   await expect(iframe).toHaveAttribute("src", /google\.com\/maps\?.*output=embed/);
-  await expect(iframe).toHaveAttribute("title", /Google Maps.*ElektroNIK.*Lindengraben 6.*44803 Bochum/);
+  await expect(iframe).toHaveAttribute("title", /Google Maps.*ElektroNIK.*Kantstraße 10.*44867 Wattenscheid/);
   await expect(page.getByRole("button", { name: "Karte laden" })).toHaveCount(0);
 
   const directions = map.getByRole("link", { name: /In Maps öffnen/ });
   await expect(directions).toHaveAttribute("target", "_blank");
   await expect(directions).toHaveAttribute("rel", /noopener/);
   await expect(directions).toHaveAttribute("href", /google\.com\/maps\/search/);
+});
+
+test("Leistungskarten, FAQ und WhatsApp-Auswahl zeigen die bestätigten Angebote", async ({ page }) => {
+  await gotoHome(page);
+
+  const serviceCards = page.locator("[data-service-card]");
+  await expect(serviceCards).toHaveCount(6);
+  await expect(page.getByRole("heading", { name: "PV & Energieberatung" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Industriemaschinen & Anlagen" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Prüfung & Sicherheit" })).toHaveCount(0);
+
+  const serviceOptions = await page.getByLabel("Gewünschte Leistung").locator("option").allTextContents();
+  expect(serviceOptions).toContain("PV & Energieberatung");
+  expect(serviceOptions).toContain("Industriemaschinen & Anlagen");
+  expect(serviceOptions).not.toContain("Prüfung & Sicherheit");
+
+  await expect(page.getByRole("button", { name: "Wie entsteht ein transparentes Angebot?" })).toHaveCount(0);
+  await page.getByRole("button", { name: "Arbeitet ElektroNIK für Privat- und Gewerbekunden?" }).click();
+  await expect(page.getByText(/große Industriekunden, auch aus der Schwerindustrie/)).toBeVisible();
+
+  await expect(page.locator(".quality-photo-placeholder")).toHaveCount(0);
+  await expect(page.locator(".quality-points article")).toHaveCount(3);
+  await expect(page.locator(".quality-quote")).toHaveText("Wir hinterlassen Lösungen. Keine Fragen.");
 });

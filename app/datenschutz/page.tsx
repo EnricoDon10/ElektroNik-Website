@@ -4,7 +4,7 @@ import { siteContact } from "../data/site-content";
 
 export const metadata: Metadata = {
   title: "Datenschutzerklärung",
-  description: "Datenschutzerklärung von ElektroNIK in Bochum.",
+  description: "Datenschutzerklärung von ElektroNIK in Wattenscheid.",
   alternates: { canonical: "/datenschutz/" },
 };
 
@@ -20,14 +20,14 @@ export default function DatenschutzPage() {
         <Link className="legal-back" href="/">← Zurück zur Startseite</Link>
         <p className="chapter">Rechtliches</p>
         <h1>Datenschutzerklärung</h1>
-        <p className="legal-updated">Stand: 19. August 2026</p>
+        <p className="legal-updated">Stand: 2. November 2026</p>
 
         <p className="legal-notice">
-          Diese Erklärung bildet den aktuell geprüften technischen Stand der Website ab. Vor der
-          Veröffentlichung muss der Betreiber noch den konkreten IONOS-Vertrag, die betriebliche
-          Löschpraxis für Kontaktanfragen und eine mögliche Pflicht zur Benennung eines
-          Datenschutzbeauftragten bestätigen. Die offenen Punkte sind in der Launch-Dokumentation
-          einzeln aufgeführt.
+          Diese Erklärung beschreibt die Verarbeitung auf der ElektroNIK-Website, das IONOS-Hosting
+          und die technische Betreuung durch ME Digitale. Vor der Veröffentlichung muss der Betreiber
+          noch den konkreten Hostingvertrag, die Rollen und Vereinbarungen mit den Dienstleistern,
+          WebAnalytics-Einstellungen, die betriebliche Löschpraxis und eine mögliche Pflicht zur
+          Benennung eines Datenschutzbeauftragten bestätigen.
         </p>
 
         <section>
@@ -74,29 +74,35 @@ export default function DatenschutzPage() {
         </section>
 
         <section>
-          <h2>3. Hosting bei IONOS und Serverprotokolle</h2>
+          <h2>3. IONOS-Hosting und technische Betreuung</h2>
           <p>
-            Die Website ist als statischer Export für das Webhosting der IONOS SE, Elgendorfer Straße
-            57, 56410 Montabaur, vorgesehen. Beim Abruf einer Seite verarbeitet der Webserver technisch
-            erforderliche Zugriffsdaten. Nach den aktuellen Produktinformationen von IONOS gehören
-            dazu die aufgerufene Seite oder Datei, der Zeitpunkt des Zugriffs, der Referrer, Browsertyp
-            und Browserversion, Betriebssystem, Gerätetyp und eine direkt bei der Erhebung anonymisierte
-            IP-Adresse.
+            Die Website wird als statischer Export auf IONOS-Webhosting-Infrastruktur betrieben und
+            innerhalb eines eigenen Verzeichnisses für ElektroNIK bereitgestellt. Die Gestaltung und
+            technische Betreuung übernimmt {siteContact.websiteAdministrator}. Beim Abruf einer Seite
+            verarbeitet der Webserver technisch erforderliche Zugriffsdaten. Nach den
+            Produktinformationen von IONOS zum Produkt Webhosting gehören dazu die aufgerufene Seite
+            oder Datei, der Zeitpunkt des Zugriffs, der Referrer, Browsertyp und Browserversion,
+            Betriebssystem, Gerätetyp und eine direkt bei der Erhebung anonymisierte IP-Adresse.
           </p>
           <p>
             Zweck ist die sichere und stabile Bereitstellung der Website. Rechtsgrundlage ist Art. 6
-            Abs. 1 lit. f DSGVO. Nach der aktuellen IONOS-Produktinformation werden Besucherdaten acht
-            Wochen gespeichert. IONOS erklärt für dieses Webhosting-Produkt, dass keine Weitergabe an
-            Dritte und kein Transfer in Staaten außerhalb der Europäischen Union stattfindet. Zusätzlich
-            erfolgt innerhalb des Hosting-Produkts eine Verarbeitung durch IONOS WebAnalytics. Im
-            Quellcode dieser Website ist kein eigener Analytics- oder Trackingcode eingebunden.
+            Abs. 1 lit. f DSGVO. Für das Produkt Webhosting nennt IONOS eine Speicherdauer von acht
+            Wochen, keine Weitergabe an Dritte und keinen Drittlandtransfer. IONOS beschreibt außerdem
+            eine Verarbeitung durch WebAnalytics. Im Quellcode dieser Website ist kein eigener
+            Analytics- oder Trackingcode eingebunden. Ob genau dieses IONOS-Produkt und diese
+            Einstellungen für den genutzten Webspace gelten, muss vor Veröffentlichung im Konto geprüft
+            werden.
           </p>
           <p>
-            IONOS verarbeitet Hostingdaten im Auftrag des Verantwortlichen. Dies wird durch eine
-            Vereinbarung zur Auftragsverarbeitung nach Art. 28 DSGVO geregelt. Laut IONOS ist diese
-            Vereinbarung seit dem 19. Juli 2022 Bestandteil der AGB für neue Verträge. Bei älteren
-            Verträgen ist der Status im IONOS-Konto zu prüfen und die Vereinbarung erforderlichenfalls
-            dort abzuschließen.
+            Datenschutzrechtlich Verantwortlicher für die Zwecke und Mittel der Websiteverarbeitung
+            bleibt ElektroNIK, Inhaber {siteContact.ownerName}. Die technische Betreuung durch
+            {siteContact.websiteAdministrator} begründet keine eigene Verantwortlichkeit für die vom
+            Betreiber festgelegten Zwecke. Soweit die Agentur oder IONOS personenbezogene Daten im
+            Auftrag verarbeitet, müssen die dafür erforderlichen Vereinbarungen zur
+            Auftragsverarbeitung die tatsächliche Vertrags- und Kontostruktur abbilden. IONOS gibt an,
+            dass die AVV seit dem 19. Juli 2022 Bestandteil der AGB für neue Verträge ist; bei älteren
+            Verträgen ist der Status im IONOS-Konto zu prüfen. Ob IONOS hier direkt oder über die
+            technische Betreuung eingebunden ist, richtet sich nach dem tatsächlich genutzten Vertrag.
           </p>
           <p className="legal-source-links">
             <a href={ionosHostingUrl} rel="noreferrer" target="_blank">IONOS: Datenverarbeitung im Webhosting</a>
@@ -229,9 +235,11 @@ export default function DatenschutzPage() {
           <h2>9. Empfänger und internationale Übermittlungen</h2>
           <p>
             Empfänger personenbezogener Daten sind nur solche Stellen, die für die beschriebenen Zwecke
-            erforderlich sind. Dazu können IONOS als Auftragsverarbeiter, Kommunikationsdienstleister,
-            Google nach Ihrer Einwilligung, WhatsApp nach Ihrer bewussten Nutzung sowie Behörden und
-            Beratende bei einer gesetzlichen Verpflichtung oder zur Rechtsverteidigung gehören.
+            erforderlich sind. Dazu können IONOS als Hostinganbieter, {siteContact.websiteAdministrator}
+            als technische Betreuung, Kommunikationsdienstleister, Google nach Ihrer Einwilligung,
+            WhatsApp nach Ihrer bewussten Nutzung sowie Behörden und Beratende bei einer gesetzlichen
+            Verpflichtung oder zur Rechtsverteidigung gehören. Die konkrete Rolle von IONOS und der
+            technischen Betreuung ist anhand der bestehenden Verträge zu bestimmen.
           </p>
           <p>
             Eine Übermittlung außerhalb des Europäischen Wirtschaftsraums ist im normalen, nicht

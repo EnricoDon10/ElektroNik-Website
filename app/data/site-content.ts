@@ -23,26 +23,26 @@ export const services = [
     icon: "battery-charging",
     title: "E-Mobilität",
     shortTitle: "E-Mobilität",
-    text: "Wallbox, Lastmanagement und die passende Infrastruktur. Vom ersten Check bis zur betriebsbereiten Ladestation.",
-    tags: ["Wallbox", "Lastmanagement", "Prüfung"],
+    text: "Wallbox, Lastmanagement und die passende Infrastruktur. Von der Planung bis zur betriebsbereiten Ladestation.",
+    tags: ["Wallbox", "Lastmanagement", "Infrastruktur"],
   },
   {
-    id: "pv-energiemanagement",
+    id: "pv-energieberatung",
     number: "04",
     icon: "solar-panel",
-    title: "PV & Energiemanagement",
-    shortTitle: "PV & Energie",
-    text: "Energie sinnvoll erzeugen, speichern und verteilen. Durchdachte Systeme für mehr Unabhängigkeit und Transparenz.",
-    tags: ["Photovoltaik", "Speicher", "Monitoring"],
+    title: "PV & Energieberatung",
+    shortTitle: "PV & Energieberatung",
+    text: "Wir beraten zu Photovoltaik, prüfen die Machbarkeit und übernehmen die Wartung. Netzanalyse mit modernem Messsystem.",
+    tags: ["Photovoltaik", "Machbarkeit", "Wartung", "Netzanalyse"],
   },
   {
-    id: "pruefung-sicherheit",
+    id: "industriemaschinen-anlagen",
     number: "05",
-    icon: "shield-check",
-    title: "Prüfung & Sicherheit",
-    shortTitle: "Prüfung & Sicherheit",
-    text: "Normgerechte Messungen, E-Checks und Prüfprotokolle für private, gewerbliche und vermietete Objekte.",
-    tags: ["E-Check", "DGUV V3", "Dokumentation"],
+    icon: "factory",
+    title: "Industriemaschinen & Anlagen",
+    shortTitle: "Industrieservice",
+    text: "Reparatur, Fehlersuche und Wartung von Industriemaschinen und Anlagen. Netzanalyse mit modernem Messsystem.",
+    tags: ["Reparatur", "Fehlersuche", "Wartung", "Netzanalyse"],
   },
   {
     id: "service-stoerung",
@@ -58,14 +58,19 @@ export const services = [
 export const siteContact = {
   businessName: "ElektroNIK",
   ownerName: "Nikolay Shirotskiy",
+  legalForm: "Einzelunternehmen",
+  chamber: "Handwerkskammer Dortmund",
+  professionalTitle: "Elektrotechnikermeister",
+  industrySpecialty: "Elektronik und Automatisierungstechnik für die Industrie",
+  websiteAdministrator: "ME Digitale Maximilian Dirr & Enrico Mancuso GbR",
   phoneDisplay: "0157 / 742 99 367",
   phoneHref: "tel:+4915774299367",
   whatsappHref: "https://wa.me/4915774299367",
   email: "Elektro-nik@t-online.de",
   emailHref: "mailto:Elektro-nik@t-online.de",
-  street: "Lindengraben 6",
-  postalCode: "44803",
-  city: "Bochum",
+  street: "Kantstraße 10",
+  postalCode: "44867",
+  city: "Wattenscheid",
 } as const;
 
 export const trustSignals = [
@@ -113,7 +118,7 @@ export const processSteps = [
   {
     number: "03",
     title: "Angebot",
-    text: "Sie erhalten einen transparenten und verständlichen Umfang.",
+    text: "Nach Terminvereinbarung erhalten Sie einen transparenten und verständlichen Leistungsumfang. Vor-Ort-Beratungen sind kostenpflichtig; die Kosten stimmen wir vorab mit Ihnen ab.",
   },
   {
     number: "04",
@@ -131,17 +136,12 @@ export const faqs = [
   {
     question: "Übernimmt ElektroNIK auch kleinere Aufträge?",
     answer:
-      "Ja. Neben kompletten Installationen unterstützt ElektroNIK auch bei einzelnen Steckdosen, Leuchten, Reparaturen, Prüfungen und der Fehlersuche.",
-  },
-  {
-    question: "Wie entsteht ein transparentes Angebot?",
-    answer:
-      "Nach einer kurzen Abstimmung folgt bei Bedarf ein Vor-Ort-Termin. Anschließend erhalten Sie eine nachvollziehbare Leistungsübersicht mit klar beschriebenem Umfang.",
+      "Ja. Neben kompletten Installationen unterstützt ElektroNIK auch bei einzelnen Steckdosen, Leuchten, Reparaturen und der Fehlersuche.",
   },
   {
     question: "Arbeitet ElektroNIK für Privat- und Gewerbekunden?",
     answer:
-      "Ja. Die Leistungen reichen von Elektroarbeiten in Wohngebäuden bis zu Installations-, Netzwerk- und Prüfaufgaben im gewerblichen Umfeld.",
+      "Ja. ElektroNIK arbeitet für Privatkunden, Gewerbebetriebe und große Industriekunden, auch aus der Schwerindustrie.",
   },
   {
     question: "Was passiert bei einer Anfrage über WhatsApp?",

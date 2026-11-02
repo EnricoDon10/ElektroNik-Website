@@ -1,5 +1,35 @@
 # QA-, Accessibility- und Performance-Bericht
 
+## Inhalts- und Legal-Update vom 2. November 2026
+
+Die geänderten Leistungsangaben, Startseitenbereiche, Metadaten, Impressums- und
+Datenschutzhinhalte wurden gegen den frisch erzeugten statischen Export in `out/` geprüft.
+Der Export wurde isoliert auf `http://localhost:3200` ausgeliefert. Der bereits laufende
+Next.js-Entwicklungsserver auf Port 3001 blieb unangetastet. Ein Upload auf IONOS oder ein
+Produktivdeployment fand nicht statt.
+
+| Prüfung | Ergebnis |
+| --- | --- |
+| `npm run lint` | erfolgreich |
+| `npx tsc --noEmit` | erfolgreich |
+| `npm run build` | erfolgreich; 7/7 statische Seiten erzeugt |
+| `npx playwright test` gegen `out/` | **243 bestanden, 9 erwartete Breakpoint-Skips, 0 fehlgeschlagen** |
+| Browser/Projekte | Chromium in allen neun Pflicht-Viewports |
+| `git diff --check` | erfolgreich |
+
+Die neun geprüften Viewports: 375 × 667, 390 × 844, 430 × 932, 768 × 1024, 1024 × 768,
+1366 × 768, 1440 × 900, 1920 × 1080 und 2560 × 1440. Ergänzende Inhaltsprüfungen bestätigen
+die neuen Leistungsnamen und Texte, die aktualisierte WhatsApp-Auswahl, die entfernte FAQ zum
+Angebot, die Antwort zu Großkunden und Schwerindustrie sowie den Foto-freien Qualitätsabschnitt.
+
+Die erste Playwright-Ausführung konnte wegen einer bereits belegten Next.js-Entwicklungssperre
+nicht starten. Der bestehende Prozess wurde nicht beendet; die vollständige Suite lief danach gegen
+den isolierten statischen Export erfolgreich durch.
+
+Die automatisierten Prüfungen bestätigen weder die Richtigkeit unbekannter Betreiberangaben noch
+die Vertragslage bei IONOS, AVV-Kette, DNS, HTTPS oder Serverheadern. Diese Punkte bleiben im
+separaten Legal-Audit und in der Launch-Checkliste offen.
+
 ## Legal-Launch-Update vom 19. August 2026
 
 Testziel war der frisch erzeugte statische Export unter `out/`, isoliert ausgeliefert auf

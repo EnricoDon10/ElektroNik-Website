@@ -17,15 +17,15 @@ const productionSiteUrl = (
 
 export const metadata: Metadata = {
   title: {
-    absolute: "ElektroNIK | Elektro-Meisterbetrieb in Bochum",
+    absolute: "ElektroNIK | Elektro-Meisterbetrieb in Wattenscheid",
   },
   description:
-    "ElektroNIK in Bochum: moderne Elektrotechnik, Netzwerkverkabelung, E-Mobilität und Energielösungen. Meisterhaft und persönlich umgesetzt.",
+    "ElektroNIK in Wattenscheid und Bochum: Elektrotechnik, Netzwerk, E-Mobilität, PV-Beratung und Industrieservice.",
   alternates: { canonical: "/" },
   openGraph: {
     title: "ElektroNIK | Verkabeln. Vernetzen. Vertrauen.",
     description:
-      "Meisterstrom für Haus und Industrie. Moderne Elektrotechnik, persönlich umgesetzt.",
+      "Elektrotechnik für Haus, Gewerbe und Industrie. Persönlich beraten und fachgerecht umgesetzt.",
     images: [
       {
         url: "/og-v3.png",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "ElektroNIK | Verkabeln. Vernetzen. Vertrauen.",
     description:
-      "Meisterstrom für Haus und Industrie. Moderne Elektrotechnik, persönlich umgesetzt.",
+      "Elektrotechnik für Haus, Gewerbe und Industrie. Persönlich beraten und fachgerecht umgesetzt.",
     images: ["/og-v3.png"],
   },
 };
@@ -54,7 +54,7 @@ const structuredData = {
       "@type": "Electrician",
       name: siteContact.businessName,
       description:
-        "Elektro-Meisterbetrieb für Elektroinstallation, Netzwerkverkabelung, E-Mobilität, Photovoltaik, Prüfung und Service.",
+        "Elektro-Meisterbetrieb für Elektroinstallation, Netzwerkverkabelung, E-Mobilität, PV-Beratung sowie Reparatur, Wartung und Netzanalyse für Industrieanlagen.",
       telephone: "+49 157 74299367",
       email: siteContact.email,
       url: productionSiteUrl,

@@ -8,24 +8,27 @@ Der ausführliche aktuelle Rechts-, Datenschutz- und Consent-Befund steht in
 ## 1. Freigaben und Inhalte
 
 - [x] Visuelle Richtung vom Auftraggeber am 1. August 2026 freigegeben.
-- [ ] **BLOCKER:** Produktionsdomain, IONOS-DNS, HTTPS sowie Mail/MX bestätigen; `elektronik-meisterbetrieb.de` und `www` lieferten im Finalaudit NXDOMAIN.
-- [ ] **BLOCKER:** Vollständiger Inhabername, Rechtsform, Kammer-/Berufsangaben und ggf. Register-/USt-ID-Angaben geliefert und Impressum fachlich geprüft.
-- [ ] **BLOCKER:** Datenschutzerklärung für IONOS-Hosting, Logs, Google Maps, WhatsApp und Kontaktwege fachlich geprüft.
+- [ ] **BLOCKER:** Produktionsdomain, IONOS-DNS, HTTPS sowie Mail/MX bestätigen; die bisher eingetragene Domain ließ sich beim letzten Check nicht auflösen.
+- [x] ElektroNIK als Markenname, Einzelunternehmen Nikolay Shirotskiy, Anschrift Kantstraße 10, 44867 Wattenscheid, Handwerkskammer Dortmund und Berufsbezeichnung Elektrotechnikermeister eingetragen.
+- [ ] **BLOCKER:** Handwerksrollen-Nummer und registriertes Gewerk, Verleihungsstaat, Registerstatus, eventuell erteilte USt-ID/Wirtschafts-ID und Verbraucherstreitbeilegung klären; Impressum fachlich freigeben.
+- [ ] **BLOCKER:** Datenschutzerklärung anhand des tatsächlichen IONOS-Vertrags, der Agenturbetreuung, Logs, WebAnalytics, Google Maps, WhatsApp und Kontaktwege fachlich prüfen.
+- [x] ME Digitale Maximilian Dirr & Enrico Mancuso GbR als Gestaltung, Inhalts- und technischer Betreuungsdienstleister benannt; Vertrags- und AVV-Kette bleibt zu prüfen.
 - [x] Consent-Banner mit „Alle akzeptieren“, „Alle ablehnen“ und „Einstellungen“ umgesetzt.
 - [x] Dauerhafter Cookie-Button unten links öffnet die Einstellungen auf allen Routen erneut.
 - [x] Consent-Datensatz ist versioniert, wird validiert und nach spätestens 180 Tagen erneuert.
 - [x] Google Maps wird erst nach Zustimmung zu „Externe Medien“ eingebettet.
 - [ ] **BLOCKER:** Google-Maps-Verarbeitung in der Datenschutzerklärung fachlich/rechtlich freigegeben.
-- [ ] Alle Telefonnummern, E-Mail-Adressen, Adresse, Öffnungszeiten und Leistungsangaben mit dem Betrieb abgeglichen.
+- [x] Telefonnummer und E-Mail bestätigt; neue Anschrift durch den Betreiber mitgeteilt.
+- [ ] Öffnungszeiten und Leistungsangaben final mit dem Betrieb abgleichen; WhatsApp-Fähigkeit der Nummer bestätigen.
+- [x] Nicht angebotene Prüfungen nach DGUV V3 und E-Checks aus den Leistungskarten entfernt.
+- [x] Kein Foto im Qualitätsabschnitt vorgesehen; der frühere Foto-Platzhalter wurde entfernt.
 - [ ] Keine erfundenen Bewertungen, Zertifikate, Referenzen oder Mitarbeiterdarstellungen.
-- [ ] Alle neuen Bilder besitzen dokumentierte Herkunft/Lizenz, passende Formate/Crops und geprüfte Alt-Texte.
 
 ## 2. Codequalität
 
-- [x] `npm run lint` am 19. August 2026 erfolgreich.
-- [x] `npx tsc --noEmit` am 19. August 2026 erfolgreich.
-- [x] `npm run build` am 19. August 2026 erfolgreich; 7/7 statische Seiten erzeugt.
-- [x] `npx playwright test` gegen den statischen Export am 19. August 2026: 234 bestanden, 9 erwartete Breakpoint-Skips, 0 fehlgeschlagen.
+- [x] Neue Copy- und Rechtsseitenänderungen vom 2. November 2026 mit Lint, TypeScript und Build erfolgreich geprüft; Playwright: 243 bestanden, 9 erwartete Breakpoint-Skips, 0 fehlgeschlagen.
+- [x] Vorheriger Stand: `npm run lint`, `npx tsc --noEmit` und `npm run build` am 19. August 2026 erfolgreich; 7/7 statische Seiten erzeugt.
+- [x] Vorheriger Stand: Playwright gegen den statischen Export am 19. August 2026: 234 bestanden, 9 erwartete Breakpoint-Skips, 0 fehlgeschlagen.
 - [x] `npx eslint playwright.config.ts tests` am 1. August 2026 erfolgreich.
 - [x] Keine Prüfung wurde durch Deaktivieren oder pauschales Ignorieren umgangen.
 - [x] Nur die freigegebenen und fachlich begründeten Dependencies hinzugefügt; Lockfile, Lizenzen und Bundlegrenzen geprüft.
@@ -44,7 +47,7 @@ Der ausführliche aktuelle Rechts-, Datenschutz- und Consent-Befund steht in
 - [x] FAQ funktioniert automatisiert per Enter und Leertaste; reale Touch-/Screenreaderprüfung bleibt offen.
 - [x] Karte zeigt vor Zustimmung einen lokalen Platzhalter; „Karte laden“, Adresse, iframe-Ziel und „In Maps öffnen“ sind geprüft.
 - [x] Impressum und Datenschutz sind direkt ladbar, intern korrekt verlinkt und technisch umfassend überarbeitet.
-- [ ] **BLOCKER:** Offene Betreiberangaben aus dem Legal-Audit einarbeiten und Rechtstexte fachlich freigeben.
+- [ ] **BLOCKER:** Verbleibende Betreiberangaben aus dem Legal-Audit einarbeiten und Rechtstexte fachlich freigeben.
 
 ## 4. Accessibility
 
@@ -81,7 +84,7 @@ Der ausführliche aktuelle Rechts-, Datenschutz- und Consent-Befund steht in
 ## 6. SEO und strukturierte Daten
 
 - [x] Seitentitel, Beschreibungen, Canonical, Open Graph und Twitter Card im gebauten Export geprüft.
-- [x] Das aktuelle Build-Artefakt enthält für SEO-Ziele ausschließlich `https://elektronik-meisterbetrieb.de`; die Domain selbst bleibt extern unbestätigt.
+- [x] Das zuletzt geprüfte Build-Artefakt enthielt für SEO-Ziele ausschließlich `https://elektronik-meisterbetrieb.de`; die Domain selbst bleibt extern unbestätigt.
 - [ ] OG-Bild unter realer Produktions-URL erreichbar und visuell geprüft.
 - [ ] Electrician- und FAQ-JSON-LD sind technisch geprüft; Unternehmensdaten benötigen weiterhin inhaltliche Kundenbestätigung.
 - [x] `robots.txt` ist im Export vorhanden, erlaubt Crawling und verweist auf die Sitemap.

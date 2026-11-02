@@ -87,7 +87,7 @@ export default function HeroSection() {
       <div className="hero-inner">
         <div className="hero-content" data-hero-copy>
           <p className="eyebrow">
-            <span /> Elektro-Meisterbetrieb · Bochum &amp; Umgebung
+            <span /> Elektro-Meisterbetrieb · Wattenscheid, Bochum &amp; Umgebung
           </p>
           <h1>
             Elektromeister <span>für Haus und Industrie</span>

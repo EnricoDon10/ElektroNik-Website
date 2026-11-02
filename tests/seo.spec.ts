@@ -8,7 +8,7 @@ test("SEO-Metadaten, strukturierte Daten und statische Indexdateien sind konsist
 }) => {
   await page.goto("/");
 
-  await expect(page).toHaveTitle("ElektroNIK | Elektro-Meisterbetrieb in Bochum");
+  await expect(page).toHaveTitle("ElektroNIK | Elektro-Meisterbetrieb in Wattenscheid");
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
     "href",
     `${productionOrigin}/`,
@@ -37,9 +37,9 @@ test("SEO-Metadaten, strukturierte Daten und statische Indexdateien sind konsist
   expect(graph[0]?.telephone).toBe("+49 157 74299367");
   expect(graph[0]?.email).toBe("Elektro-nik@t-online.de");
   expect(graph[0]?.address).toMatchObject({
-    streetAddress: "Lindengraben 6",
-    postalCode: "44803",
-    addressLocality: "Bochum",
+    streetAddress: "Kantstraße 10",
+    postalCode: "44867",
+    addressLocality: "Wattenscheid",
   });
   expect(graph[0]).not.toHaveProperty("openingHoursSpecification");
   const footer = page.getByRole("contentinfo");

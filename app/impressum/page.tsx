@@ -4,7 +4,7 @@ import { siteContact } from "../data/site-content";
 
 export const metadata: Metadata = {
   title: "Impressum",
-  description: "Impressum des Elektro-Meisterbetriebs ElektroNIK in Bochum.",
+  description: "Impressum von ElektroNIK in Wattenscheid.",
   alternates: { canonical: "/impressum/" },
 };
 
@@ -15,21 +15,21 @@ export default function ImpressumPage() {
         <Link className="legal-back" href="/">← Zurück zur Startseite</Link>
         <p className="chapter">Rechtliches</p>
         <h1>Impressum</h1>
-        <p className="legal-updated">Stand: 19. August 2026</p>
+        <p className="legal-updated">Stand: 2. November 2026</p>
 
         <p className="legal-notice">
-          Launch-Hinweis: Name, Anschrift und Kontakt sind eingetragen. Vor der Veröffentlichung
-          muss der Betreiber noch die genaue Rechtsform, die Handwerksrollendaten, Berufsbezeichnung,
-          mögliche Register- und Umsatzsteuerdaten sowie seine Entscheidung zur
-          Verbraucherstreitbeilegung bestätigen. Bis dahin ist das Impressum nicht abschließend
-          freigegeben.
+          Betreiber, Einzelunternehmen, Anschrift, zuständige Handwerkskammer und Berufsbezeichnung
+          wurden bestätigt. Vor der Veröffentlichung sind noch die Handwerksrollendaten, der Staat
+          der Verleihung, ein möglicher Registereintrag, eine eventuell erteilte Umsatzsteuer- oder
+          Wirtschafts-Identifikationsnummer sowie die Angaben zur Verbraucherstreitbeilegung zu
+          prüfen und fachlich freizugeben.
         </p>
 
         <section>
           <h2>Angaben gemäß § 5 DDG</h2>
           <p>
-            {siteContact.businessName}<br />
-            Inhaber: {siteContact.ownerName}<br />
+            {siteContact.businessName} (Markenname)<br />
+            Inhaber: {siteContact.ownerName}, Einzelunternehmer<br />
             {siteContact.street}<br />
             {siteContact.postalCode} {siteContact.city}<br />
             Deutschland
@@ -47,9 +47,7 @@ export default function ImpressumPage() {
         <section>
           <h2>Rechtsform und Vertretung</h2>
           <p>
-            Als Inhaber ist {siteContact.ownerName} angegeben. Ob das Unternehmen als nicht im
-            Handelsregister eingetragenes Einzelunternehmen oder in einer anderen Rechtsform geführt
-            wird, muss vor Veröffentlichung anhand der Gewerbe- und Registerunterlagen bestätigt werden.
+            {siteContact.businessName} ist der Markenname des Einzelunternehmens von {siteContact.ownerName}.
           </p>
         </section>
 
@@ -58,19 +56,23 @@ export default function ImpressumPage() {
           <dl className="legal-definition-list">
             <div>
               <dt>Zuständige Handwerkskammer</dt>
-              <dd>Betreiberangabe erforderlich</dd>
+              <dd>
+                {siteContact.chamber}<br />
+                Reinoldistraße 7-9<br />
+                44135 Dortmund
+              </dd>
             </div>
             <div>
               <dt>Eintragung in die Handwerksrolle</dt>
-              <dd>Nummer und eingetragenes Gewerk erforderlich</dd>
+              <dd>Nummer und genau eingetragenes Gewerk sind noch zu bestätigen.</dd>
             </div>
             <div>
               <dt>Gesetzliche Berufsbezeichnung</dt>
-              <dd>Exakte Bezeichnung laut Meisterbrief erforderlich</dd>
+              <dd>{siteContact.professionalTitle}</dd>
             </div>
             <div>
               <dt>Staat der Verleihung</dt>
-              <dd>Betreiberangabe erforderlich</dd>
+              <dd>Staat der Verleihung muss noch bestätigt werden.</dd>
             </div>
             <div>
               <dt>Berufsrechtliche Regelungen</dt>
@@ -78,8 +80,16 @@ export default function ImpressumPage() {
             </div>
           </dl>
           <p>
-            Die Website verwendet den Begriff „Meisterbetrieb“. Der zugrunde liegende Meisterbrief
+            Als Tätigkeitsschwerpunkt wurde {siteContact.industrySpecialty} angegeben. Der Meisterbrief
             und die Eintragung in die Handwerksrolle müssen vor dem Launch als Nachweis vorliegen.
+          </p>
+        </section>
+
+        <section>
+          <h2>Konzeption, Inhalte, Gestaltung und technische Betreuung der Website</h2>
+          <p>
+            {siteContact.websiteAdministrator}<br />
+            Unternehmens- und Leistungsangaben werden vom Betreiber bereitgestellt und bestätigt.
           </p>
         </section>
 

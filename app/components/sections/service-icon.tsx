@@ -1,8 +1,8 @@
 import {
   BatteryCharging,
   Cable,
+  Factory,
   Network,
-  ShieldCheck,
   SolarPanel,
   Wrench,
   type LucideIcon,
@@ -14,8 +14,8 @@ type ServiceIconName = (typeof services)[number]["icon"];
 const serviceIcons = {
   "battery-charging": BatteryCharging,
   cable: Cable,
+  factory: Factory,
   network: Network,
-  "shield-check": ShieldCheck,
   "solar-panel": SolarPanel,
   wrench: Wrench,
 } satisfies Record<ServiceIconName, LucideIcon>;

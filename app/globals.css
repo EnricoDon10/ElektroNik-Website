@@ -941,7 +941,7 @@ h2 em {
   color: var(--color-energy);
 }
 
-.quality-copy > p:not(.chapter):not(.eyebrow) {
+.quality-copy > p:not(.chapter):not(.eyebrow):not(.quality-quote) {
   color: rgba(255, 255, 255, 0.68);
   font-size: 16px;
   line-height: 1.75;
@@ -949,115 +949,38 @@ h2 em {
   max-width: 560px;
 }
 
-.quality-panel {
-  aspect-ratio: 1.28;
-  background: linear-gradient(145deg, #10243a, #091522);
-  border: 1px solid var(--dark-line);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-dark);
-  overflow: hidden;
-  padding: 30px;
-  position: relative;
-}
-
-.panel-grid {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
-  background-size: 52px 52px;
-  inset: 0;
-  mask-image: linear-gradient(135deg, black, transparent 82%);
-  position: absolute;
-}
-
-.panel-kicker {
-  color: rgba(255, 255, 255, 0.52);
-  font-family: var(--font-mono);
-  font-size: 9px;
-  letter-spacing: 1.35px;
-  position: relative;
-  text-transform: uppercase;
-}
-
-.photo-placeholder-copy {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  inset: 48% auto auto 50%;
-  max-width: 300px;
-  position: absolute;
-  text-align: center;
-  transform: translate(-50%, -50%);
-  width: calc(100% - 60px);
-}
-
-.photo-placeholder-copy > span {
-  align-items: center;
-  border: 1px solid rgba(207, 255, 25, 0.36);
-  border-radius: 50%;
-  color: var(--color-energy);
-  display: flex;
-  font-size: 25px;
-  font-weight: 300;
-  height: 56px;
-  justify-content: center;
-  margin-bottom: 18px;
-  width: 56px;
-}
-
-.photo-placeholder-copy strong {
-  font-size: 17px;
-}
-
-.photo-placeholder-copy small {
-  color: rgba(255, 255, 255, 0.52);
-  font-size: 11px;
-  line-height: 1.55;
-  margin-top: 8px;
-}
-
-.panel-card {
-  background: rgba(7, 17, 31, 0.88);
-  border: 1px solid rgba(207, 255, 25, 0.2);
-  border-radius: var(--radius-md);
-  bottom: 24px;
-  left: 24px;
-  max-width: 350px;
-  padding: 18px 20px;
-  position: absolute;
-}
-
-.panel-card span {
-  color: var(--color-energy);
-  display: block;
-  font-family: var(--font-mono);
-  font-size: 8px;
-  letter-spacing: 1.2px;
-  margin-bottom: 8px;
-  text-transform: uppercase;
-}
-
-.panel-card strong {
-  font-size: 15px;
+.quality-quote {
+  border-left: 2px solid var(--color-energy);
+  color: white;
+  font-size: clamp(17px, 1.8vw, 22px);
   font-weight: 650;
-  line-height: 1.35;
+  line-height: 1.4;
+  margin: 26px 0 24px;
+  padding-left: 18px;
 }
 
 .quality-points {
-  border-top: 1px solid var(--dark-line);
+  align-self: center;
+  border-left: 1px solid var(--dark-line);
   display: grid;
-  grid-column: 1 / -1;
-  grid-template-columns: repeat(3, 1fr);
+  grid-column: auto;
+  grid-template-columns: 1fr;
+  padding-left: clamp(24px, 3vw, 42px);
 }
 
 .quality-points article {
   display: grid;
-  gap: 18px;
-  grid-template-columns: auto 1fr;
-  padding: 32px 32px 0 0;
+  gap: 16px;
+  grid-template-columns: 32px 1fr;
+  padding: 22px 0;
+}
+
+.quality-points article:first-child {
+  border-top: 1px solid var(--dark-line);
 }
 
 .quality-points article + article {
-  border-left: 1px solid var(--dark-line);
-  padding-left: 32px;
+  border-top: 1px solid var(--dark-line);
 }
 
 .quality-points article > strong {
@@ -2245,13 +2168,10 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .quality-panel {
-    max-width: 700px;
-    width: 100%;
-  }
-
   .quality-points {
     grid-template-columns: 1fr;
+    border-left: 0;
+    padding-left: 0;
   }
 
   .quality-points article {
@@ -2260,8 +2180,7 @@ footer {
   }
 
   .quality-points article + article {
-    border-left: 0;
-    padding-left: 0;
+    border-top: 0;
   }
 
   .process-track {
@@ -2498,17 +2417,6 @@ footer {
     min-height: 340px;
   }
 
-  .quality-panel {
-    aspect-ratio: 1;
-    min-height: 340px;
-  }
-
-  .panel-card {
-    bottom: 18px;
-    left: 18px;
-    right: 18px;
-  }
-
   .quality-points article {
     grid-template-columns: 32px 1fr;
   }
@@ -2612,10 +2520,6 @@ footer {
 
   .visual-chip-label {
     font-size: 8px;
-  }
-
-  .quality-panel {
-    min-height: 330px;
   }
 
   .form-head {

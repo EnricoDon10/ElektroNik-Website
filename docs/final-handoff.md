@@ -95,15 +95,13 @@ Impressum und Datenschutz sind bewusst als unvollständige Platzhalter gekennzei
 
 Die Texte dürfen erst nach fachlicher beziehungsweise rechtlicher Freigabe als fertig gelten.
 
-### 3. Echtes Projektfoto und Inhaltsfreigabe
+### 3. Qualitätsabschnitt ohne Foto
 
-Der Qualitätsbereich verwendet weiterhin einen klar gekennzeichneten lokalen Platzhalter. Benötigt wird ein echtes freigegebenes ElektroNik-Projektfoto, idealerweise:
-
-- technische Installation, Verteilung, Wallbox, Netzwerk oder Photovoltaik;
-- Querformat ungefähr `3:2`, mindestens 2000 Pixel Breite;
-- ruhige, saubere Perspektive mit Reserve für einen mobilen Hochformat-Crop;
-- dokumentierte Herkunft, Nutzungsrechte und gegebenenfalls Einwilligungen;
-- final abgestimmter Alt-Text.
+Am 2. November 2026 wurde der Foto-Platzhalter auf Wunsch des Betreibers entfernt. Die drei
+Qualitätspunkte stehen jetzt untereinander neben der Positionierung. Der Satz „Wir hinterlassen
+Lösungen. Keine Fragen.“ ist als Markenformulierung freigegeben. Ein Foto ist für diesen
+Seitenabschnitt aktuell nicht erforderlich. Wird später eines ergänzt, müssen Herkunft, Rechte,
+Einwilligung und Alt-Text vor Veröffentlichung geklärt werden.
 
 Zusätzlich müssen Telefonnummer, E-Mail, Adresse, Öffnungszeiten, Leistungen und alle vertrauensbildenden Aussagen durch den Betrieb bestätigt werden.
 
@@ -121,7 +119,7 @@ Ein später verfügbares kompatibles Next.js-/Lockfile-Update muss separat einge
 
 1. Domain, DNS, HTTPS und Mail bestätigen.
 2. Unternehmensdaten und Rechtstexte liefern und freigeben.
-3. Echtes Projektfoto samt Rechten und Crop liefern.
+3. Unternehmensangaben und Leistungsumfang final schriftlich bestätigen.
 4. Finale visuelle, mobile und inhaltliche Abnahme durchführen.
 5. `NEXT_PUBLIC_SITE_URL` auf die bestätigte Domain setzen.
 6. `npm run verify` ausführen und `out/` statisch prüfen.

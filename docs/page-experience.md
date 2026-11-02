@@ -106,15 +106,15 @@ Dieser Bereich wechselt von Leistungsbehauptung zu Vertrauensbeleg.
 
 ### Komposition
 
-- Desktop: Copy und echtes Projektbild zweispaltig; darunter drei Qualitätspunkte.
-- Tablet/Mobile: Copy → Bild → Qualitätspunkte.
-- Bildfläche reserviert feste Maße und schützt den Mobile Crop.
+- Desktop: Positionierung und drei vertikal gestapelte Qualitätspunkte zweispaltig.
+- Tablet/Mobile: Positionierung → Qualitätspunkte.
+- Ein Foto-Platzhalter wird nicht verwendet.
 
 ### Offener Inhalt
 
-Der aktuelle Platzhalter benennt transparent, dass ein Bild fehlt. Vor visueller Finalisierung ist ein echtes freigegebenes Projektfoto erforderlich. Bis dahin bleibt ein hochwertiger, eindeutig interner Platzhalter besser als ein zufälliges Stockbild.
+Auf Wunsch des Betreibers wurde der Foto-Platzhalter entfernt. Ein Foto ist für den aktuellen Entwurf nicht erforderlich.
 
-Die Aussage „Wir hinterlassen Lösungen. Keine Fragen.“ ist als Markenclaim zu bestätigen und darf nicht wie ein Kunden-Zitat inszeniert werden.
+Die Aussage „Wir hinterlassen Lösungen. Keine Fragen.“ ist als Markenclaim freigegeben und darf nicht wie ein Kunden-Zitat inszeniert werden.
 
 ## 6. Ablauf
 
