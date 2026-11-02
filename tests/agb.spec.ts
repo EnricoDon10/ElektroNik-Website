@@ -8,6 +8,8 @@ test("AGB sind vollständig erreichbar und stimmen mit den vereinbarten Vor-Ort-
   await expect(page.getByRole("heading", { name: "§ 25 Schlussbestimmungen" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "§ 22 Verbraucherschlichtung" })).toBeVisible();
   await expect(page.getByText(/Beratungen oder Besichtigungen vor Ort sind kostenpflichtig/)).toBeVisible();
+  await expect(page.getByText(/Ein Angebot oder Kostenanschlag wird auf Wunsch des Auftraggebers erstellt/)).toBeVisible();
+  await expect(page.getByText(/grundsätzlich kostenlos/)).toHaveCount(0);
   await expect(page.getByText(/Netzanalysen mit modernem Messsystem/)).toBeVisible();
   await expect(page.getByText(/Messungen und Prüfungen elektrischer Anlagen/)).toHaveCount(0);
   await expect(page.getByText(/DGUV V3|Prüfprotokolle oder Gutachten/)).toHaveCount(0);

@@ -81,7 +81,7 @@ test("Header-Projekt-CTA und linksbündiger Hero-Leistungslink sind korrekt", as
     expect(Math.abs(servicesCtaBox.x - contentBox.x)).toBeLessThanOrEqual(1);
   }
 
-  for (const serviceName of ["Netzwerkverkabelung", "E-Mobilität"]) {
+  for (const serviceName of ["Netzwerkverkabelung und IT-Beratung", "E-Mobilität"]) {
     const satellite = page.locator(`[data-hero-chip][aria-label^="${serviceName}:"]`);
     const icon = satellite.locator(".visual-chip-icon svg");
     await expect(satellite).toBeVisible();
@@ -107,6 +107,37 @@ test("Header-Projekt-CTA und linksbündiger Hero-Leistungslink sind korrekt", as
     const hit = document.elementFromPoint(rect.left + rect.width / 2, rect.top + rect.height / 2);
     return hit === element || Boolean(hit && element.contains(hit));
   })).toBe(true);
+});
+
+test("Kontaktformular ist im zweispaltigen Layout leicht nach unten versetzt", async ({ page }) => {
+  await gotoHome(page);
+
+  const width = page.viewportSize()?.width ?? 0;
+  const marginTop = await page.locator(".contact-form-shell").evaluate(
+    (element) => Number.parseFloat(getComputedStyle(element).marginTop),
+  );
+
+  if (width > 900) {
+    expect(marginTop).toBeGreaterThanOrEqual(28);
+  } else {
+    expect(marginTop).toBe(0);
+  }
+});
+
+test("Cookie-Einstellungsbutton verdeckt den Footer-Credit nicht", async ({ page }) => {
+  await gotoHome(page);
+  await page.locator(".footer-bottom").scrollIntoViewIfNeeded();
+
+  const [creditBox, consentButtonBox] = await Promise.all([
+    page.locator(".footer-credit").boundingBox(),
+    page.getByTestId("floating-consent-settings").boundingBox(),
+  ]);
+
+  expect(creditBox).not.toBeNull();
+  expect(consentButtonBox).not.toBeNull();
+  if (creditBox && consentButtonBox) {
+    expect(creditBox.x).toBeGreaterThanOrEqual(consentButtonBox.x + consentButtonBox.width);
+  }
 });
 
 test("Reduced Motion reagiert auch während der Sitzung und zeigt den statischen Endzustand", async ({ page }) => {

@@ -8,11 +8,11 @@ Die Seite führt von „Passt dieser Betrieb zu meinem Projekt?“ zu „Ich kan
 
 | Kapitel | Nutzerfrage | Kerninhalt | Hauptaktion |
 | --- | --- | --- | --- |
-| Header/Hero | Wer ist ElektroNik und was kann ich tun? | Meisterbetrieb, Region, Nutzen, technisches Markensignet | Header: Projekt anfragen; Hero: Leistungen ansehen |
+| Header/Hero | Wer ist ElektroNik und was kann ich tun? | Meisterbetrieb, Region, Nutzen, technisches Markensignet | Header: Leistung anfragen; Hero: Leistungen ansehen |
 | Kompetenzleiste | Warum sollte ich weiterlesen? | Meisterbetrieb, Beratung, Ausführung, Region | Orientierung |
-| Leistungen | Wird mein Thema abgedeckt? | sechs bestehende Leistungen | Projekt besprechen |
-| Warum ElektroNik | Kann ich Qualität und Haltung vertrauen? | echtes Projektbild, drei bestehende Qualitätsargumente | persönlich kennenlernen |
-| Ablauf | Wie geht es nach der Anfrage weiter? | Anfrage, Beratung, Angebot, Umsetzung | Unsicherheit reduzieren |
+| Leistungen | Wird mein Thema abgedeckt? | sechs bestehende Leistungen | Leistung anfragen |
+| Warum ElektroNik | Kann ich Qualität und Haltung vertrauen? | drei konkrete Qualitätsargumente ohne Foto | persönlich kennenlernen |
+| Ablauf | Wie geht es nach der Anfrage weiter? | Anfrage, Beratung, Terminvereinbarung, Umsetzung | Unsicherheit reduzieren |
 | FAQ | Was muss ich noch wissen? | fünf bestehende Fragen | Kontakt aufnehmen |
 | Kontakt | Wie starte ich konkret? | Telefon, E-Mail, Zeiten, Karte, WhatsApp-Formular | Anfrage in WhatsApp öffnen |
 | Footer | Wo finde ich Navigation und Rechtliches? | Navigation, Kontakt, Impressum, Datenschutz | gezielter Abschluss |

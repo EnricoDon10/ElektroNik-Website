@@ -49,7 +49,7 @@ Deutschland
 
 2. Beratungen oder Besichtigungen vor Ort sind kostenpflichtig. ElektroNik informiert den Auftraggeber vorab über die Kosten. Die Kosten werden vor dem Termin ausdrücklich vereinbart.
 
-3. Die Erstellung eines üblichen Angebots oder Kostenanschlags ist grundsätzlich kostenlos.
+3. Ein Angebot oder Kostenanschlag wird auf Wunsch des Auftraggebers erstellt. Bei größeren Aufträgen kann der Auftraggeber ein Angebot zur schriftlichen Festlegung des Leistungsumfangs anfordern.
 
 4. Von einer kostenlosen Beratung zu unterscheiden sind eigenständige technische Leistungen, insbesondere:
 

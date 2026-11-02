@@ -12,9 +12,9 @@ export const services = [
     id: "netzwerkverkabelung",
     number: "02",
     icon: "network",
-    title: "Netzwerkverkabelung",
+    title: "Netzwerkverkabelung und IT-Beratung",
     shortTitle: "Netzwerkverkabelung",
-    text: "Strukturierte Netzwerkverkabelung für zuverlässige Datenverbindungen. Von Netzwerkschränken und Bodentanks bis zu fachgerecht installierten Netzwerkdosen.",
+    text: "Strukturierte Netzwerkverkabelung für zuverlässige Datenverbindungen, von Netzwerkschränken und Bodentanks bis zu Netzwerkdosen.",
     tags: ["Netzwerkschränke", "Bodentanks", "Netzwerkdosen"],
   },
   {
@@ -41,7 +41,7 @@ export const services = [
     icon: "factory",
     title: "Industriemaschinen & Anlagen",
     shortTitle: "Industrieservice",
-    text: "Reparatur, Fehlersuche und Wartung von Industriemaschinen und Anlagen. Netzanalyse mit modernem Messsystem.",
+    text: "Reparatur, Fehlersuche und Wartung von Industrieanlagen. Netzanalyse mit modernem Messsystem.",
     tags: ["Reparatur", "Fehlersuche", "Wartung", "Netzanalyse"],
   },
   {
@@ -117,8 +117,8 @@ export const processSteps = [
   },
   {
     number: "03",
-    title: "Angebot",
-    text: "Nach Terminvereinbarung erhalten Sie einen transparenten und verständlichen Leistungsumfang. Vor-Ort-Beratungen sind kostenpflichtig; die Kosten stimmen wir vorab mit Ihnen ab.",
+    title: "Terminvereinbarung",
+    text: "Wir vereinbaren einen passenden Termin und klären den Umfang der gewünschten Arbeiten.",
   },
   {
     number: "04",

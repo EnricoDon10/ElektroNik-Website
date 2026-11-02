@@ -1,5 +1,25 @@
 # QA-, Accessibility- und Performance-Bericht
 
+## Abschluss der Copy- und Layoutanpassungen vom 2. November 2026
+
+Netzwerkleistung, Industrieservice, Terminablauf, WhatsApp-Button, Kontaktformular, Footer und
+AGB wurden am statischen Export geprüft. Der Export lief auf `http://localhost:3201`; der bereits
+laufende Next.js-Entwicklungsserver wurde nicht beendet. Ein IONOS-Upload fand nicht statt.
+
+| Prüfung | Ergebnis |
+| --- | --- |
+| `npm run lint` | erfolgreich |
+| `npx tsc --noEmit` | erfolgreich |
+| `npm run build` | erfolgreich; statische Seiten erzeugt |
+| `npx playwright test` gegen `out/` | **279 bestanden, 9 erwartete Breakpoint-Skips, 0 fehlgeschlagen** |
+| Browser/Projekte | Chromium in allen neun Pflicht-Viewports |
+| Sichtkontrolle | Kontaktformular, WhatsApp-Logo, Footer-Credit und Cookie-Button geprüft |
+| `git diff --check` | erfolgreich |
+
+Die erste Browserausführung konnte wegen einer bestehenden Next.js-Entwicklungssperre nicht
+starten. Der vorhandene Server blieb unangetastet; die vollständige Suite lief danach gegen den
+frischen statischen Export erfolgreich durch.
+
 ## AGB- und Impressumsupdate vom 2. November 2026
 
 Der neue AGB-Endpunkt, die gekürzte Impressumsseite, der Footerlink und der Sitemap-Eintrag wurden
@@ -16,8 +36,8 @@ ein IONOS-Upload fand nicht statt.
 | Browser/Projekte | Chromium in allen neun Pflicht-Viewports |
 | `git diff --check` | erfolgreich |
 
-Die AGB-Prüfung bestätigte alle Vertragsabschnitte bis § 25, die angeglichene Kostenregel für
-Vor-Ort-Termine, die Netzanalyse und die Verbraucherstreitbeilegung. Die Impressumsprüfung bestätigte
+Die AGB-Prüfung bestätigte alle Vertragsabschnitte bis § 25, die Kostenregel für
+Vor-Ort-Termine, Angebote auf Wunsch, die Netzanalyse und die Verbraucherstreitbeilegung. Die Impressumsprüfung bestätigte
 den Verleihungsstaat Deutschland und die Entfernung interner Prüfhinweise. Die internen Hinweisboxen
 auf Impressum und Datenschutzerklärung sind entfernt; die datenschutzrechtlichen Vertragsbedingungen
 bleiben im passenden Abschnitt beschrieben. Geprüft wurden außerdem Footerlink, Canonical und Sitemap.

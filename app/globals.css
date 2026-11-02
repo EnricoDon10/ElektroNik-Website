@@ -1387,6 +1387,7 @@ a.contact-item:hover {
 
 .contact-form-shell {
   align-self: start;
+  margin-top: clamp(28px, 3vw, 44px);
 }
 
 .contact-form {
@@ -1485,6 +1486,12 @@ a.contact-item:hover {
   cursor: pointer;
   margin-top: 22px;
   width: 100%;
+}
+
+.form-button-content {
+  align-items: center;
+  display: inline-flex;
+  gap: 10px;
 }
 
 .form-note {
@@ -1891,8 +1898,16 @@ footer {
   justify-content: space-between;
   letter-spacing: 0.6px;
   margin-top: 14px;
+  padding-inline-start: max(12px, calc(72px - var(--page-padding)));
   padding-top: 20px;
   text-transform: uppercase;
+}
+
+.footer-credit {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
 }
 
 .legal-page {
@@ -2262,6 +2277,7 @@ footer {
 
   .contact-form-shell {
     max-width: 680px;
+    margin-top: 0;
     width: 100%;
   }
 }
@@ -2502,6 +2518,11 @@ footer {
     align-items: flex-start;
     flex-direction: column;
     gap: 9px;
+  }
+
+  .footer-credit {
+    flex-direction: column;
+    gap: 6px;
   }
 
 }

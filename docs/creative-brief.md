@@ -13,10 +13,10 @@ Dieses Dokument beschreibt die fachlich und gestalterisch abnehmbare Grundlage f
 Elektro - NIK wird als persönlicher Elektro-Meisterbetrieb in Bochum und Umgebung positioniert. Das Angebot umfasst:
 
 1. Elektroinstallation
-2. Netzwerkverkabelung
+2. Netzwerkverkabelung und IT-Beratung
 3. E-Mobilität
 4. PV und Energieberatung mit Machbarkeitsprüfung, Wartung und Netzanalyse mit modernem Messsystem
-5. Reparatur, Fehlersuche und Wartung von Industriemaschinen und Anlagen sowie Netzanalyse
+5. Reparatur, Fehlersuche und Wartung von Industrieanlagen sowie Netzanalyse
 6. Service und Störung
 
 Die vorhandene Kernbotschaft „Elektromeister für Haus und Industrie“ deckt Privat- und Gewerbekunden ab. Der Text verbindet moderne Technik mit „Handschlagqualität“, sauberer Ausführung und persönlicher Begleitung. Diese Kombination ist der stärkste differenzierende Kern und soll erhalten bleiben.
@@ -52,7 +52,7 @@ Die Website soll deshalb nicht primär „Technologie-Show“, sondern kontrolli
 
 ### Primäre Conversion
 
-„Projekt unverbindlich anfragen“ führt zum vorhandenen WhatsApp-Formular und bleibt als primäre Aktion im festen Header jederzeit erreichbar. Nach der Nutzerentscheidung vom 1. August 2026 wird dieser CTA im Hero nicht wiederholt. Dort steht ausschließlich der linksbündige Orientierungslink „Leistungen ansehen“.
+„Leistung anfragen“ führt zum vorhandenen WhatsApp-Formular und bleibt als primäre Aktion im festen Header jederzeit erreichbar. Dieser CTA wird im Hero nicht wiederholt. Dort steht ausschließlich der linksbündige Orientierungslink „Leistungen ansehen“.
 
 ### Sekundäre Conversions
 

@@ -131,19 +131,28 @@ test("Google Maps wird erst nach Einwilligung eingebettet", async ({ page }) => 
   await expect(directions).toHaveAttribute("href", /google\.com\/maps\/search/);
 });
 
-test("Leistungskarten, FAQ und WhatsApp-Auswahl zeigen die bestätigten Angebote", async ({ page }) => {
+test("Leistungskarten, Kontakt, Ablauf und Footer zeigen die bestätigten Angaben", async ({ page }) => {
   await gotoHome(page);
 
   const serviceCards = page.locator("[data-service-card]");
   await expect(serviceCards).toHaveCount(6);
+  await expect(page.getByRole("heading", { name: "Netzwerkverkabelung und IT-Beratung" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "PV & Energieberatung" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Industriemaschinen & Anlagen" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Prüfung & Sicherheit" })).toHaveCount(0);
 
   const serviceOptions = await page.getByLabel("Gewünschte Leistung").locator("option").allTextContents();
+  expect(serviceOptions).toContain("Netzwerkverkabelung und IT-Beratung");
   expect(serviceOptions).toContain("PV & Energieberatung");
   expect(serviceOptions).toContain("Industriemaschinen & Anlagen");
   expect(serviceOptions).not.toContain("Prüfung & Sicherheit");
+
+  await expect(page.locator(".header-cta-label")).toHaveText("Leistung anfragen");
+  await expect(page.locator(".form-head")).toContainText("Leistung anfragen");
+  await expect(page.locator(".form-button-content img[src='/whatsapp.svg']")).toBeVisible();
+  await expect(page.getByRole("listitem", { name: "Schritt 03: Terminvereinbarung" })).toBeVisible();
+  await expect(page.locator("#ablauf")).not.toContainText("Vor-Ort-Beratungen sind kostenpflichtig");
+  await expect(page.locator(".footer-credit")).toContainText("Website Powered by ME Digitale");
 
   await expect(page.getByRole("button", { name: "Wie entsteht ein transparentes Angebot?" })).toHaveCount(0);
   await page.getByRole("button", { name: "Arbeitet ElektroNIK für Privat- und Gewerbekunden?" }).click();

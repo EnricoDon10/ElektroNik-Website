@@ -42,7 +42,10 @@ export default function SiteFooter() {
         </nav>
 
         <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} {siteContact.businessName} Meisterbetrieb</span>
+          <span className="footer-credit">
+            <span>© {new Date().getFullYear()} {siteContact.businessName} Meisterbetrieb</span>
+            <span>Website Powered by ME Digitale</span>
+          </span>
           <span>Mit Energie. Mit Verstand.</span>
         </div>
       </div>

@@ -13,7 +13,7 @@ Der ausführliche aktuelle Rechts-, Datenschutz- und Consent-Befund steht in
 - [ ] **BLOCKER:** USt-ID beziehungsweise Wirtschafts-ID vor Veröffentlichung ergänzen, falls erteilt; persönliche Steuernummer nicht veröffentlichen.
 - [ ] **BLOCKER:** Datenschutzerklärung anhand des tatsächlichen IONOS-Vertrags, der Agenturbetreuung, Logs, WebAnalytics, Google Maps, WhatsApp und Kontaktwege fachlich prüfen.
 - [x] ME Digitale Maximilian Dirr & Enrico Mancuso GbR als Gestaltung, Inhalts- und technischer Betreuungsdienstleister benannt; Vertrags- und AVV-Kette bleibt zu prüfen.
-- [x] AGB aus den vom Betreiber gelieferten Unterlagen als eigene Route aufgenommen; Vor-Ort-Kostenregelung mit der freigegebenen Website-Aussage abgeglichen. Fachliche Prüfung der AGB bleibt offen.
+- [x] AGB aus den vom Betreiber gelieferten Unterlagen als eigene Route aufgenommen; Angebote werden laut Betreiberwunsch nur auf Wunsch erstellt. Vor-Ort-Kostenregelung bleibt in den AGB. Fachliche Prüfung bleibt offen.
 - [x] Handelsregisterangabe entfernt, weil der Betreiber mitgeteilt hat, nicht eingetragen zu sein. § 18 MStV-Abschnitt für journalistisch-redaktionelle Angebote entfernt; die Website enthält keinen solchen Angebotsbereich.
 - [x] Kurzangabe zur Verbraucherstreitbeilegung aus den bereitgestellten AGB in Impressum und AGB übernommen.
 - [x] Consent-Banner mit „Alle akzeptieren“, „Alle ablehnen“ und „Einstellungen“ umgesetzt.
@@ -29,7 +29,7 @@ Der ausführliche aktuelle Rechts-, Datenschutz- und Consent-Befund steht in
 
 ## 2. Codequalität
 
-- [x] AGB-Route und aktualisiertes Impressum am 2. November 2026 mit Lint, TypeScript, Build und Playwright geprüft; 261 bestanden, 9 erwartete Breakpoint-Skips, 0 fehlgeschlagen.
+- [x] AGB-Route und aktualisiertes Impressum am 2. November 2026 mit Lint, TypeScript, Build und Playwright geprüft; jüngster Abschlusslauf: 279 bestanden, 9 erwartete Breakpoint-Skips, 0 fehlgeschlagen.
 - [x] Vorheriger Inhaltsstand: Änderungen vom 2. November 2026 mit Lint, TypeScript und Build erfolgreich geprüft; Playwright: 243 bestanden, 9 erwartete Breakpoint-Skips, 0 fehlgeschlagen.
 - [x] Vorheriger Stand: `npm run lint`, `npx tsc --noEmit` und `npm run build` am 19. August 2026 erfolgreich; 7/7 statische Seiten erzeugt.
 - [x] Vorheriger Stand: Playwright gegen den statischen Export am 19. August 2026: 234 bestanden, 9 erwartete Breakpoint-Skips, 0 fehlgeschlagen.
