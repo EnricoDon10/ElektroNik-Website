@@ -12,7 +12,7 @@ import SiteHeader from "./components/site-header";
 import { faqs, siteContact } from "./data/site-content";
 
 const productionSiteUrl = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://elektronik-meisterbetrieb.de"
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://elektro-nik-meisterbetrieb.de"
 ).replace(/\/$/, "");
 
 export const metadata: Metadata = {

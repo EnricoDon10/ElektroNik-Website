@@ -12,7 +12,7 @@ export const services = [
     id: "netzwerkverkabelung",
     number: "02",
     icon: "network",
-    title: "Netzwerkverkabelung und IT-Beratung",
+    title: "Netzwerkverkabelung &   IT-Beratung",
     shortTitle: "Netzwerkverkabelung",
     text: "Strukturierte Netzwerkverkabelung für zuverlässige Datenverbindungen, von Netzwerkschränken und Bodentanks bis zu Netzwerkdosen.",
     tags: ["Netzwerkschränke", "Bodentanks", "Netzwerkdosen"],
