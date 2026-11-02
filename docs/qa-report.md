@@ -1,5 +1,27 @@
 # QA-, Accessibility- und Performance-Bericht
 
+## AGB- und Impressumsupdate vom 2. November 2026
+
+Der neue AGB-Endpunkt, die gekürzte Impressumsseite, der Footerlink und der Sitemap-Eintrag wurden
+gegen den frisch gebauten statischen Export in `out/` geprüft. Der Export wurde isoliert auf
+`http://localhost:3201` ausgeliefert. Der bestehende Next.js-Entwicklungsserver blieb unangetastet;
+ein IONOS-Upload fand nicht statt.
+
+| Prüfung | Ergebnis |
+| --- | --- |
+| `npm run lint` | erfolgreich |
+| `npx tsc --noEmit` | erfolgreich |
+| `npm run build` | erfolgreich; `/agb/` statisch erzeugt |
+| `npx playwright test` gegen `out/` | **261 bestanden, 9 erwartete Breakpoint-Skips, 0 fehlgeschlagen** |
+| Browser/Projekte | Chromium in allen neun Pflicht-Viewports |
+| `git diff --check` | erfolgreich |
+
+Die AGB-Prüfung bestätigte alle Vertragsabschnitte bis § 25, die angeglichene Kostenregel für
+Vor-Ort-Termine, die Netzanalyse und die Verbraucherstreitbeilegung. Die Impressumsprüfung bestätigte
+den Verleihungsstaat Deutschland und die Entfernung interner Prüfhinweise. Die internen Hinweisboxen
+auf Impressum und Datenschutzerklärung sind entfernt; die datenschutzrechtlichen Vertragsbedingungen
+bleiben im passenden Abschnitt beschrieben. Geprüft wurden außerdem Footerlink, Canonical und Sitemap.
+
 ## Inhalts- und Legal-Update vom 2. November 2026
 
 Die geänderten Leistungsangaben, Startseitenbereiche, Metadaten, Impressums- und

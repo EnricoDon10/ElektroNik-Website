@@ -74,7 +74,9 @@ npm run preview -- --port 3002
 
 ### 1. Produktionsdomain und E-Mail
 
-`elektronik-meisterbetrieb.de` und `www.elektronik-meisterbetrieb.de` lieferten beim Abschlussaudit NXDOMAIN. Es waren auch keine belastbaren NS-/MX-Ziele vorhanden. Vor einem Deployment müssen daher verbindlich geklärt werden:
+Eine erneute DNS-Abfrage am 2. November 2026 ergab weiterhin NXDOMAIN für
+`elektronik-meisterbetrieb.de` und `www.elektronik-meisterbetrieb.de`, einschließlich der MX-Abfrage.
+Vor einem Deployment müssen daher verbindlich geklärt werden:
 
 - Ist `elektronik-meisterbetrieb.de` die tatsächlich gewünschte und registrierte Domain?
 - Sind IONOS-DNS, HTTPS-Zertifikat und Weiterleitungen eingerichtet?
@@ -83,17 +85,10 @@ npm run preview -- --port 3002
 
 ### 2. Rechtstexte
 
-Impressum und Datenschutz sind bewusst als unvollständige Platzhalter gekennzeichnet. Benötigt werden insbesondere:
-
-- vollständiger Inhabername und Rechtsform;
-- Register- und Umsatzsteuerangaben, soweit zutreffend;
-- zuständige Handwerkskammer, Berufsbezeichnung und berufsrechtliche Angaben;
-- verantwortliche Person für Inhalte, soweit erforderlich;
-- Angaben zu IONOS-Hosting und Logfiles;
-- Rechtsgrundlagen, Speicherdauer, Empfänger, Drittlandübermittlungen und Betroffenenrechte;
-- fachliche Prüfung der Consent-geschützten Google-Maps-Einbettung und der WhatsApp-Übergabe.
-
-Die Texte dürfen erst nach fachlicher beziehungsweise rechtlicher Freigabe als fertig gelten.
+Impressum und Datenschutz enthalten die aktualisierten Betreiberangaben. Die USt-ID/Wirtschafts-ID
+steht noch aus. Die gelieferten AGB sind auf einer eigenen Seite verfügbar. Der konkrete IONOS-
+Vertrag, die AVV-Kette, WebAnalytics-Einstellungen, Kontaktaufbewahrung und die fachliche Freigabe
+der Rechtstexte müssen weiterhin geprüft werden.
 
 ### 3. Qualitätsabschnitt ohne Foto
 

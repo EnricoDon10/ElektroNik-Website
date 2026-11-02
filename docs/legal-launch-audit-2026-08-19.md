@@ -18,6 +18,18 @@ Tätigkeitsschwerpunkt wurde Elektronik und Automatisierungstechnik für die Ind
 Telefon und E-Mail wurden ebenfalls bestätigt. Diese Angaben wurden im Seiteninhalt aktualisiert;
 eine rechtliche Freigabe ersetzen sie nicht.
 
+Der Betreiber hat zusätzlich den Verleihungsstaat Deutschland bestätigt und mitgeteilt, dass kein
+Handelsregistereintrag besteht. Die Umsatzsteuer- oder Wirtschafts-Identifikationsnummer soll am
+3. November 2026 nachgereicht werden. Die vom Betreiber bereitgestellten AGB wurden als eigene
+statische Seite aufgenommen. Ihre Vor-Ort-Kostenregelung wurde an die Website angepasst; eine
+anwaltliche Prüfung der AGB ist damit nicht erfolgt.
+
+Die internen Prüfhinweise zu Handelsregister, redaktionell verantwortlicher Person und externen
+Links wurden aus dem Impressum entfernt. Die aktuelle Website enthält keinen journalistisch-
+redaktionell gestalteten Bereich. ME Digitale bleibt als Konzeptions-, Inhalts-, Gestaltungs- und
+technischer Betreuungsdienstleister genannt, aber nicht als Verantwortlicher nach § 18 MStV, der
+eine natürliche Person verlangt.
+
 Gestaltung, Inhalte und technische Betreuung erfolgen durch ME Digitale Maximilian Dirr & Enrico
 Mancuso GbR. Die Website liegt im gleichen IONOS-Hostingumfeld wie weitere betreute Websites, aber
 in einem eigenen Verzeichnis. ElektroNIK bleibt für die Zwecke und Mittel der geschäftlichen
@@ -43,9 +55,13 @@ Website aufgenommen, da sie für die Anbieterangaben nicht benötigt wird.
   öffnet WhatsApp erst nach dem Absenden durch die besuchende Person.
 - IONOS Webhosting und die von IONOS für dieses Produkt beschriebene WebAnalytics-Verarbeitung sind
   in der Datenschutzerklärung aufgenommen.
-- Impressum und Datenschutz wurden überarbeitet. Einzelunternehmen, Inhaber, Anschrift,
-  Handwerkskammer und Berufsbezeichnung sind jetzt eingetragen. Handwerksrollen-, Register-, Steuer-
-  und Streitbeilegungsangaben sowie der IONOS-Vertragsstatus bleiben offen.
+- Impressum wurde auf die bestätigten Pflichtangaben reduziert. Staat der Verleihung und
+  Verbraucherstreitbeilegung sind ergänzt. Der Betreiber meldet keine Handelsregistereintragung.
+  Die USt-ID/Wirtschafts-ID bleibt bis zum Eingang offen; IONOS-Vertragsdaten und die AVV-Kette
+  müssen weiterhin im tatsächlichen Konto geprüft werden.
+- Die bereitgestellten AGB sind unter `/agb/` verlinkt. Die Kostenregel für Vor-Ort-Beratungen wurde
+  mit der Website abgestimmt. Rechtswirksamkeit und Eignung für alle Auftragsarten sind nicht
+  anwaltlich begutachtet.
 - Ein fester Cookie-Button unten links öffnet die Einstellungen auf jeder Route erneut.
 - Der Foto-Platzhalter im Qualitätsabschnitt wurde entfernt; die Qualitätspunkte stehen nun
   untereinander neben der Positionierung.
@@ -95,29 +111,20 @@ darstellen.
 
 ### P0: Vor öffentlichem Launch erforderlich
 
-1. Nummer der Eintragung in die Handwerksrolle und das dort genau eingetragene Gewerk nennen.
-2. Meisterbrief und Handwerksrolleneintragung als internen Nachweis bereitstellen. Den Staat der
-   Verleihung des Meistertitels noch bestätigen.
-3. Handels-, Partnerschafts- oder sonstigen Registerstatus bestätigen. Falls eingetragen:
-   Registergericht und Registernummer liefern.
-4. Bestätigen, ob eine Umsatzsteuer-Identifikationsnummer oder Wirtschafts-Identifikationsnummer
-   erteilt wurde. Der Betreiber klärt dies mit seiner Bürokraft. Nur diese Nummern liefern, niemals
-   die persönliche Steuernummer.
-5. Entscheidung zur Verbraucherstreitbeilegung liefern: bereit, verpflichtet oder nicht bereit.
-   Zusätzlich Beschäftigtenzahl am 31. Dezember 2025 bestätigen, weil die Ausnahme in § 36 Abs. 3
-   VSBG davon abhängen kann.
-6. Exakten IONOS-Vertrag und Produktnamen bestätigen. Prüfen, ob es wirklich `Webhosting` ist.
-7. Vertragsdatum und AVV-Status im IONOS-Konto bestätigen. Für Neuverträge seit dem 19. Juli 2022
+1. Die ausstehende USt-ID oder Wirtschafts-ID am 3. November 2026 ergänzen, falls erteilt. Die
+   persönliche Steuernummer nicht veröffentlichen.
+2. Exakten IONOS-Vertrag und Produktnamen bestätigen. Prüfen, ob es wirklich `Webhosting` ist.
+3. Vertragsdatum und AVV-Status im IONOS-Konto bestätigen. Für Neuverträge seit dem 19. Juli 2022
     nennt IONOS die AVV als Bestandteil der AGB. Bei älteren Verträgen muss der Status geprüft werden.
-8. Prüfen und dokumentieren, ob IONOS WebAnalytics im Vertrag aktiv ist und welche Einstellungen im
+4. Prüfen und dokumentieren, ob IONOS WebAnalytics im Vertrag aktiv ist und welche Einstellungen im
     Kundenkonto gelten.
-9. Betriebliche Löschroutine für E-Mail- und WhatsApp-Anfragen festlegen. Benötigt werden Regeln für
+5. Betriebliche Löschroutine für E-Mail- und WhatsApp-Anfragen festlegen. Benötigt werden Regeln für
     unverbindliche Anfragen, abgelehnte Angebote, Vertragsunterlagen, Rechnungsbezug und Streitfälle.
-10. Bestätigen, ob ein Datenschutzbeauftragter bestellt ist oder bestellt werden muss. Falls ja:
+6. Bestätigen, ob ein Datenschutzbeauftragter bestellt ist oder bestellt werden muss. Falls ja:
     veröffentlichbare Kontaktdaten liefern.
-11. Bestätigen, ob die Mobilnummer als WhatsApp- oder WhatsApp-Business-Konto geschäftlich genutzt
+7. Bestätigen, ob die Mobilnummer als WhatsApp- oder WhatsApp-Business-Konto geschäftlich genutzt
     wird und ob WhatsApp der gewünschte Anfragekanal bleiben soll.
-12. Produktionsdomain, Domaininhaber, IONOS-Zielvertrag, HTTPS-Zertifikat und Weiterleitungen zwischen
+8. Produktionsdomain, Domaininhaber, IONOS-Zielvertrag, HTTPS-Zertifikat und Weiterleitungen zwischen
     Hauptdomain und `www` bestätigen.
 
 ### P1: Inhalt und Nachweise vor Launch
@@ -150,13 +157,11 @@ darstellen.
 
 ## Impressumsprüfung
 
-Rechtsform, Inhaber, Anschrift, Telefon, E-Mail, Handwerkskammer und Berufsbezeichnung sind
-eingetragen. Noch zu klären sind Handwerksrollennummer und eingetragenes Gewerk, Staat der
-Verleihung, Registerstatus, eine eventuell erteilte Umsatzsteuer- oder Wirtschafts-ID und die
-Entscheidung zur Streitbeilegung. Die DUNS-Nummer wird nicht veröffentlicht.
-
-Eine alte Verlinkung zur früheren EU-Plattform zur Online-Streitbeilegung wurde nicht aufgenommen.
-Die Teilnahmeinformation nach VSBG darf erst nach Entscheidung des Betreibers formuliert werden.
+Name, Rechtsform, Anschrift, Telefon, E-Mail, Handwerkskammer, Berufsbezeichnung und
+Verleihungsstaat sind eingetragen. Eine Handelsregisterangabe ist nicht erforderlich, weil der
+Betreiber mitteilt, nicht eingetragen zu sein. Die Umsatzsteuer- oder Wirtschafts-ID wird nach
+Eingang ergänzt, falls erteilt. Eine kurze Erklärung zur Verbraucherstreitbeilegung steht im
+Impressum und in den AGB. Die frühere EU-Plattform zur Online-Streitbeilegung wird nicht verlinkt.
 
 ## Datenschutzerklärung
 
@@ -197,11 +202,11 @@ Die neue Erklärung behandelt:
 ### Automatisiert zu verifizieren
 
 - **Stand 2. November 2026: erledigt.** Lint, TypeScript, Produktionsbuild und alle neun
-  Playwright-Viewport-Projekte liefen gegen den frischen statischen Export erfolgreich: 243
-  bestanden, 9 erwartete Breakpoint-Skips, 0 fehlgeschlagen. Die Suite prüfte unter anderem
-  Consent-Ablauf, permanente Wiederöffnung, direkte Rechtstextrouten, Drittanbieterblockierung,
-  überarbeitete Leistungstexte, FAQ, Dropdown und Foto-freien Qualitätsabschnitt. Details stehen
-  im [`qa-report.md`](./qa-report.md).
+  Playwright-Viewport-Projekte liefen gegen den frischen statischen Export erfolgreich: beim
+  Inhaltsupdate 243 bestanden, beim AGB- und Impressumsupdate 261 bestanden, jeweils 9 erwartete
+  Breakpoint-Skips und 0 fehlgeschlagen. Die Suiten prüften Consent, direkte Rechtstextrouten,
+  Leistungstexte, AGB, Impressum und Responsive-Verhalten. Details stehen im
+  [`qa-report.md`](./qa-report.md).
 
 ### Erst im echten Zielsystem verifizierbar
 

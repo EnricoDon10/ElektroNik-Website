@@ -22,14 +22,6 @@ export default function DatenschutzPage() {
         <h1>Datenschutzerklärung</h1>
         <p className="legal-updated">Stand: 2. November 2026</p>
 
-        <p className="legal-notice">
-          Diese Erklärung beschreibt die Verarbeitung auf der ElektroNIK-Website, das IONOS-Hosting
-          und die technische Betreuung durch ME Digitale. Vor der Veröffentlichung muss der Betreiber
-          noch den konkreten Hostingvertrag, die Rollen und Vereinbarungen mit den Dienstleistern,
-          WebAnalytics-Einstellungen, die betriebliche Löschpraxis und eine mögliche Pflicht zur
-          Benennung eines Datenschutzbeauftragten bestätigen.
-        </p>
-
         <section>
           <h2>1. Verantwortlicher</h2>
           <p>

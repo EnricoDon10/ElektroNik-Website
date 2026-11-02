@@ -8,11 +8,14 @@ Der ausführliche aktuelle Rechts-, Datenschutz- und Consent-Befund steht in
 ## 1. Freigaben und Inhalte
 
 - [x] Visuelle Richtung vom Auftraggeber am 1. August 2026 freigegeben.
-- [ ] **BLOCKER:** Produktionsdomain, IONOS-DNS, HTTPS sowie Mail/MX bestätigen; die bisher eingetragene Domain ließ sich beim letzten Check nicht auflösen.
+- [ ] **BLOCKER:** Produktionsdomain, IONOS-DNS, HTTPS sowie Mail/MX bestätigen; erneute Abfrage am 2. November 2026 ergab NXDOMAIN für Hauptdomain, `www` und MX.
 - [x] ElektroNIK als Markenname, Einzelunternehmen Nikolay Shirotskiy, Anschrift Kantstraße 10, 44867 Wattenscheid, Handwerkskammer Dortmund und Berufsbezeichnung Elektrotechnikermeister eingetragen.
-- [ ] **BLOCKER:** Handwerksrollen-Nummer und registriertes Gewerk, Verleihungsstaat, Registerstatus, eventuell erteilte USt-ID/Wirtschafts-ID und Verbraucherstreitbeilegung klären; Impressum fachlich freigeben.
+- [ ] **BLOCKER:** USt-ID beziehungsweise Wirtschafts-ID vor Veröffentlichung ergänzen, falls erteilt; persönliche Steuernummer nicht veröffentlichen.
 - [ ] **BLOCKER:** Datenschutzerklärung anhand des tatsächlichen IONOS-Vertrags, der Agenturbetreuung, Logs, WebAnalytics, Google Maps, WhatsApp und Kontaktwege fachlich prüfen.
 - [x] ME Digitale Maximilian Dirr & Enrico Mancuso GbR als Gestaltung, Inhalts- und technischer Betreuungsdienstleister benannt; Vertrags- und AVV-Kette bleibt zu prüfen.
+- [x] AGB aus den vom Betreiber gelieferten Unterlagen als eigene Route aufgenommen; Vor-Ort-Kostenregelung mit der freigegebenen Website-Aussage abgeglichen. Fachliche Prüfung der AGB bleibt offen.
+- [x] Handelsregisterangabe entfernt, weil der Betreiber mitgeteilt hat, nicht eingetragen zu sein. § 18 MStV-Abschnitt für journalistisch-redaktionelle Angebote entfernt; die Website enthält keinen solchen Angebotsbereich.
+- [x] Kurzangabe zur Verbraucherstreitbeilegung aus den bereitgestellten AGB in Impressum und AGB übernommen.
 - [x] Consent-Banner mit „Alle akzeptieren“, „Alle ablehnen“ und „Einstellungen“ umgesetzt.
 - [x] Dauerhafter Cookie-Button unten links öffnet die Einstellungen auf allen Routen erneut.
 - [x] Consent-Datensatz ist versioniert, wird validiert und nach spätestens 180 Tagen erneuert.
@@ -26,7 +29,8 @@ Der ausführliche aktuelle Rechts-, Datenschutz- und Consent-Befund steht in
 
 ## 2. Codequalität
 
-- [x] Neue Copy- und Rechtsseitenänderungen vom 2. November 2026 mit Lint, TypeScript und Build erfolgreich geprüft; Playwright: 243 bestanden, 9 erwartete Breakpoint-Skips, 0 fehlgeschlagen.
+- [x] AGB-Route und aktualisiertes Impressum am 2. November 2026 mit Lint, TypeScript, Build und Playwright geprüft; 261 bestanden, 9 erwartete Breakpoint-Skips, 0 fehlgeschlagen.
+- [x] Vorheriger Inhaltsstand: Änderungen vom 2. November 2026 mit Lint, TypeScript und Build erfolgreich geprüft; Playwright: 243 bestanden, 9 erwartete Breakpoint-Skips, 0 fehlgeschlagen.
 - [x] Vorheriger Stand: `npm run lint`, `npx tsc --noEmit` und `npm run build` am 19. August 2026 erfolgreich; 7/7 statische Seiten erzeugt.
 - [x] Vorheriger Stand: Playwright gegen den statischen Export am 19. August 2026: 234 bestanden, 9 erwartete Breakpoint-Skips, 0 fehlgeschlagen.
 - [x] `npx eslint playwright.config.ts tests` am 1. August 2026 erfolgreich.
@@ -47,6 +51,7 @@ Der ausführliche aktuelle Rechts-, Datenschutz- und Consent-Befund steht in
 - [x] FAQ funktioniert automatisiert per Enter und Leertaste; reale Touch-/Screenreaderprüfung bleibt offen.
 - [x] Karte zeigt vor Zustimmung einen lokalen Platzhalter; „Karte laden“, Adresse, iframe-Ziel und „In Maps öffnen“ sind geprüft.
 - [x] Impressum und Datenschutz sind direkt ladbar, intern korrekt verlinkt und technisch umfassend überarbeitet.
+- [x] AGB sind direkt ladbar, im Footer verlinkt und in der Sitemap enthalten.
 - [ ] **BLOCKER:** Verbleibende Betreiberangaben aus dem Legal-Audit einarbeiten und Rechtstexte fachlich freigeben.
 
 ## 4. Accessibility

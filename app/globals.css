@@ -1945,11 +1945,29 @@ footer {
   margin: 12px 0 0;
 }
 
-.legal-page ul {
+.legal-page ul,
+.legal-page ol {
   display: grid;
   gap: 7px;
   margin: 16px 0 0;
   padding-left: 22px;
+}
+
+.agb-identity {
+  border-left: 2px solid var(--color-energy);
+  color: var(--color-navy-900) !important;
+  margin: 0 0 12px !important;
+  padding-left: 18px;
+}
+
+.agb-definition {
+  font-size: 13px !important;
+}
+
+.agb-terms section {
+  border-top: 1px solid rgba(7, 17, 31, 0.1);
+  margin-top: 32px;
+  padding-top: 2px;
 }
 
 .legal-page a:not(.legal-back) {

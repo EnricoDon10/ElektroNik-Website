@@ -51,8 +51,9 @@ test("SEO-Metadaten, strukturierte Daten und statische Indexdateien sind konsist
     "href",
     "/datenschutz/",
   );
+  await expect(footer.getByRole("link", { name: "AGB" })).toHaveAttribute("href", "/agb/");
 
-  for (const legalRoute of ["/impressum/", "/datenschutz/"] as const) {
+  for (const legalRoute of ["/impressum/", "/datenschutz/", "/agb/"] as const) {
     await page.goto(legalRoute);
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
       "href",
@@ -77,5 +78,6 @@ test("SEO-Metadaten, strukturierte Daten und statische Indexdateien sind konsist
   expect(sitemapText).toContain(`<loc>${productionOrigin}/</loc>`);
   expect(sitemapText).toContain(`<loc>${productionOrigin}/impressum/</loc>`);
   expect(sitemapText).toContain(`<loc>${productionOrigin}/datenschutz/</loc>`);
+  expect(sitemapText).toContain(`<loc>${productionOrigin}/agb/</loc>`);
   expect(sitemapText).not.toContain("localhost");
 });
