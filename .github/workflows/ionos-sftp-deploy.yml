@@ -1,0 +1,290 @@
+name: ElektroNIK CI and IONOS deployment
+
+on:
+  push:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate static website
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      NEXT_PUBLIC_SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL }}
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 22.13.0
+          package-manager-cache: false
+
+      - name: Require the confirmed production URL
+        run: |
+          node --input-type=module <<'NODE'
+          const value = process.env.NEXT_PUBLIC_SITE_URL;
+
+          if (!value) {
+            console.error("Set the repository variable NEXT_PUBLIC_SITE_URL to the confirmed HTTPS domain.");
+            process.exit(1);
+          }
+
+          let url;
+          try {
+            url = new URL(value);
+          } catch {
+            console.error("NEXT_PUBLIC_SITE_URL must be a valid absolute URL.");
+            process.exit(1);
+          }
+
+          if (url.protocol !== "https:" || url.pathname !== "/" || url.search || url.hash) {
+            console.error("NEXT_PUBLIC_SITE_URL must be the HTTPS origin only, for example https://example.de.");
+            process.exit(1);
+          }
+          NODE
+
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Type check
+        run: npx tsc --noEmit
+
+      - name: Build static export
+        run: npm run build
+
+      - name: Install Chromium for Playwright
+        run: npx playwright install --with-deps chromium
+
+      - name: Test the exported site at all configured viewports
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          node scripts/serve-static.mjs --hostname 127.0.0.1 --port 4173 \
+            > "$RUNNER_TEMP/elektronik-preview.log" 2>&1 &
+          server_pid=$!
+          cleanup() {
+            kill "$server_pid" 2>/dev/null || true
+            wait "$server_pid" 2>/dev/null || true
+          }
+          trap cleanup EXIT
+
+          ready=false
+          for attempt in $(seq 1 60); do
+            if curl --fail --silent http://127.0.0.1:4173/ >/dev/null; then
+              ready=true
+              break
+            fi
+            if ! kill -0 "$server_pid" 2>/dev/null; then
+              cat "$RUNNER_TEMP/elektronik-preview.log"
+              exit 1
+            fi
+            sleep 1
+          done
+
+          if [[ "$ready" != true ]]; then
+            cat "$RUNNER_TEMP/elektronik-preview.log"
+            echo "Static preview did not become ready in time."
+            exit 1
+          fi
+
+          PLAYWRIGHT_BASE_URL=http://127.0.0.1:4173 npx playwright test
+
+      - name: Save the tested export
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: elektronik-out-${{ github.sha }}
+          path: out/
+          if-no-files-found: error
+          include-hidden-files: true
+          retention-days: 7
+
+  deploy:
+    name: Publish tested export to IONOS
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs:
+      - validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment: production
+    concurrency:
+      group: ionos-elektronik-production
+      cancel-in-progress: false
+    env:
+      IONOS_SFTP_HOST: access-5021047713.webspace-host.com
+      IONOS_REMOTE_DIR: ${{ vars.IONOS_REMOTE_DIR }}
+
+    steps:
+      - name: Download the export tested in this workflow run
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: elektronik-out-${{ github.sha }}
+          path: out
+
+      - name: Ensure this commit is still the head of main
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          current_main="$(gh api "repos/${GITHUB_REPOSITORY}/branches/main" --jq '.commit.sha')"
+          if [[ "$current_main" != "$GITHUB_SHA" ]]; then
+            echo "::error::A newer commit is on main; refusing to publish this older run."
+            exit 1
+          fi
+
+      - name: Check IONOS deployment settings
+        env:
+          IONOS_SFTP_USER: ${{ secrets.IONOS_SFTP_USER }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [[ -z "$IONOS_SFTP_USER" ]]; then
+            echo "::error::Add IONOS_SFTP_USER as a production environment secret."
+            exit 1
+          fi
+          if [[ -z "$IONOS_REMOTE_DIR" ]]; then
+            echo "::error::Set the IONOS_REMOTE_DIR repository variable to the verified ElektroNIK folder."
+            exit 1
+          fi
+          if [[ ! "$IONOS_SFTP_USER" =~ ^[A-Za-z0-9._-]+$ ]]; then
+            echo "::error::IONOS_SFTP_USER contains unsupported characters."
+            exit 1
+          fi
+          if [[ ! "$IONOS_REMOTE_DIR" =~ ^/?[A-Za-z0-9._/-]+$ ]]; then
+            echo "::error::IONOS_REMOTE_DIR must be a simple path without spaces or shell characters."
+            exit 1
+          fi
+
+          relative_path="${IONOS_REMOTE_DIR#/}"
+          if [[ -z "$relative_path" || "$relative_path" == *"//"* || "/$relative_path/" == *"/../"* || "/$relative_path/" == *"/./"* ]]; then
+            echo "::error::IONOS_REMOTE_DIR must identify a specific website folder and cannot contain dot segments."
+            exit 1
+          fi
+
+      - name: Install OpenSSH and password-based SFTP client
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes --no-install-recommends openssh-client sshpass
+
+      - name: Verify IONOS SSH host key
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          scanned="$RUNNER_TEMP/ionos-hostkeys-scanned"
+          trusted="$RUNNER_TEMP/ionos-known-hosts"
+          single_key="$RUNNER_TEMP/ionos-hostkey-candidate"
+
+          ssh-keyscan -T 10 -p 22 -t ed25519,ecdsa,rsa "$IONOS_SFTP_HOST" \
+            > "$scanned" 2>/dev/null || true
+          if [[ ! -s "$scanned" ]]; then
+            echo "::error::Could not retrieve an SSH host key from IONOS."
+            exit 1
+          fi
+
+          : > "$trusted"
+          while IFS= read -r key_line; do
+            printf '%s\n' "$key_line" > "$single_key"
+            fingerprint="$(ssh-keygen -E sha256 -lf "$single_key" | awk '{print $2}')"
+
+            case "$fingerprint" in
+              SHA256:J4oM+B2g7zZWAI3DolXR1e4vdIMrGO301kEN14/slsQ|SHA256:psLDE8kfhoS9GWrc/GTrdlPvyKPcWcGZv2JxOCvwF3w|SHA256:1gx2w8Rtv3wCgi7Jh8myf/KVd72cRQbow03UP8P095Q)
+                printf '%s\n' "$key_line" >> "$trusted"
+                ;;
+              *)
+                echo "::warning::An SSH host key did not match IONOS's published fingerprints and will not be trusted."
+                ;;
+            esac
+          done < "$scanned"
+
+          if [[ ! -s "$trusted" ]]; then
+            echo "::error::No scanned SSH host key matched IONOS's published Webhosting fingerprints."
+            exit 1
+          fi
+
+          chmod 600 "$trusted"
+
+      - name: Upload files to the verified website folder over SFTP
+        env:
+          IONOS_SFTP_USER: ${{ secrets.IONOS_SFTP_USER }}
+          SSHPASS: ${{ secrets.IONOS_SFTP_PASSWORD }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [[ -z "$SSHPASS" ]]; then
+            echo "::error::Add IONOS_SFTP_PASSWORD as a production environment secret."
+            exit 1
+          fi
+
+          batch_file="$RUNNER_TEMP/ionos-sftp-batch"
+          python3 - > "$batch_file" <<'PY'
+          import os
+          from pathlib import Path, PurePosixPath
+
+          root = Path(os.environ["GITHUB_WORKSPACE"], "out").resolve()
+          if not root.is_dir():
+              raise SystemExit("The tested out/ artifact is missing.")
+
+          def quote_sftp_path(value: str) -> str:
+              if "\n" in value or "\r" in value:
+                  raise SystemExit("A file path contains a newline and cannot be sent safely over SFTP.")
+              return '"' + value.replace("\\", "\\\\").replace('"', '\\"') + '"'
+
+          commands = [f"cd {quote_sftp_path(os.environ['IONOS_REMOTE_DIR'])}"]
+          directories = sorted(
+              (path for path in root.rglob("*") if path.is_dir()),
+              key=lambda path: (len(path.relative_to(root).parts), path.as_posix()),
+          )
+          for directory in directories:
+              remote_path = PurePosixPath(directory.relative_to(root).as_posix()).as_posix()
+              commands.append(f"-mkdir {quote_sftp_path(remote_path)}")
+
+          files = sorted(path for path in root.rglob("*") if path.is_file())
+          if not files:
+              raise SystemExit("The tested out/ artifact contains no files.")
+          for source in files:
+              local_path = source.as_posix()
+              remote_path = PurePosixPath(source.relative_to(root).as_posix()).as_posix()
+              commands.append(f"put -p {quote_sftp_path(local_path)} {quote_sftp_path(remote_path)}")
+
+          print("\n".join(commands))
+          PY
+
+          sshpass -e sftp \
+            -P 22 \
+            -b "$batch_file" \
+            -oBatchMode=no \
+            -oNumberOfPasswordPrompts=1 \
+            -oPreferredAuthentications=password,keyboard-interactive \
+            -oPubkeyAuthentication=no \
+            -oStrictHostKeyChecking=yes \
+            -oUserKnownHostsFile="$RUNNER_TEMP/ionos-known-hosts" \
+            -oConnectTimeout=15 \
+            "$IONOS_SFTP_USER@$IONOS_SFTP_HOST"
+
+      - name: Smoke-check the published pages
+        env:
+          SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL }}
+        run: |
+          set -euo pipefail
+          for route in / /impressum/ /datenschutz/ /agb/; do
+            echo "Checking ${SITE_URL}${route}"
+            curl --location --fail --silent --show-error \
+              --retry 5 --retry-connrefused --retry-delay 3 \
+              "${SITE_URL}${route}" --output /dev/null
+          done
