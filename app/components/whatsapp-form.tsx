@@ -1,7 +1,8 @@
 "use client";
 
 import { type FormEvent, useState } from "react";
-import { services } from "../data/site-content";
+import Image from "next/image";
+import { services, siteContact } from "../data/site-content";
 
 export default function WhatsAppForm() {
   const [projectType, setProjectType] = useState("Allgemeine Anfrage");
@@ -19,7 +20,7 @@ export default function WhatsAppForm() {
     ].filter(Boolean);
     const text = encodeURIComponent(
       [
-        "Hallo ElektroNik,",
+        `Hallo ${siteContact.businessName},`,
         "",
         `Thema: ${projectType}`,
         ...contactDetails,
@@ -29,7 +30,7 @@ export default function WhatsAppForm() {
     );
 
     const whatsAppWindow = window.open(
-      `https://wa.me/4915168488353?text=${text}`,
+      `${siteContact.whatsappHref}?text=${text}`,
       "_blank",
     );
 
@@ -49,7 +50,7 @@ export default function WhatsAppForm() {
   return (
     <form className="contact-form" id="whatsapp-anfrage" onSubmit={sendWhatsApp}>
       <div className="form-head">
-        <span>Projekt kurz einordnen</span>
+        <span>Leistung anfragen</span>
         <span className="online"><i /> Persönlich erreichbar</span>
       </div>
       <label>
@@ -106,7 +107,11 @@ export default function WhatsAppForm() {
         className="button button-primary form-button"
         type="submit"
       >
-        Anfrage in WhatsApp öffnen <span aria-hidden="true">↗</span>
+        <span className="form-button-content">
+          <Image alt="" aria-hidden="true" height={22} src="/whatsapp.svg" width={22} />
+          Anfrage in WhatsApp öffnen
+        </span>
+        <span aria-hidden="true">↗</span>
       </button>
       <p className="form-note" id="whatsapp-form-note">
         WhatsApp öffnet eine vorbereitete Nachricht. Sie prüfen und versenden sie dort selbst.

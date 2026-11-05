@@ -5,7 +5,7 @@ export default function ProcessSection() {
     <section className="section process" data-reveal-group id="ablauf">
       <div className="section-heading compact-heading" data-reveal>
         <div>
-          <p className="chapter">04 — Ablauf</p>
+          <p className="chapter">04 / Ablauf</p>
           <p className="eyebrow dark">
             <span /> Klar und nachvollziehbar
           </p>

@@ -74,36 +74,29 @@ npm run preview -- --port 3002
 
 ### 1. Produktionsdomain und E-Mail
 
-`elektronik-meisterbetrieb.de` und `www.elektronik-meisterbetrieb.de` lieferten beim Abschlussaudit NXDOMAIN. Es waren auch keine belastbaren NS-/MX-Ziele vorhanden. Vor einem Deployment müssen daher verbindlich geklärt werden:
+Eine erneute DNS-Abfrage am 2. November 2026 ergab weiterhin NXDOMAIN für
+`elektronik-meisterbetrieb.de` und `www.elektronik-meisterbetrieb.de`, einschließlich der MX-Abfrage.
+Vor einem Deployment müssen daher verbindlich geklärt werden:
 
 - Ist `elektronik-meisterbetrieb.de` die tatsächlich gewünschte und registrierte Domain?
 - Sind IONOS-DNS, HTTPS-Zertifikat und Weiterleitungen eingerichtet?
-- Sind MX-Einträge und das Postfach `kontakt@elektronik-meisterbetrieb.de` eingerichtet und getestet?
+- Ist das Postfach `Elektro-nik@t-online.de` aktiv und getestet?
 - Falls eine andere Domain vorgesehen ist, müssen `NEXT_PUBLIC_SITE_URL`, Kontaktmail, Canonicals, Open Graph, JSON-LD, `robots.txt` und `sitemap.xml` gemeinsam angepasst werden.
 
 ### 2. Rechtstexte
 
-Impressum und Datenschutz sind bewusst als unvollständige Platzhalter gekennzeichnet. Benötigt werden insbesondere:
+Impressum und Datenschutz enthalten die aktualisierten Betreiberangaben. Die USt-ID/Wirtschafts-ID
+steht noch aus. Die gelieferten AGB sind auf einer eigenen Seite verfügbar. Der konkrete IONOS-
+Vertrag, die AVV-Kette, WebAnalytics-Einstellungen, Kontaktaufbewahrung und die fachliche Freigabe
+der Rechtstexte müssen weiterhin geprüft werden.
 
-- vollständiger Inhabername und Rechtsform;
-- Register- und Umsatzsteuerangaben, soweit zutreffend;
-- zuständige Handwerkskammer, Berufsbezeichnung und berufsrechtliche Angaben;
-- verantwortliche Person für Inhalte, soweit erforderlich;
-- Angaben zu IONOS-Hosting und Logfiles;
-- Rechtsgrundlagen, Speicherdauer, Empfänger, Drittlandübermittlungen und Betroffenenrechte;
-- fachliche Prüfung der Google-Maps-Zwei-Klick-Lösung und der WhatsApp-Übergabe.
+### 3. Qualitätsabschnitt ohne Foto
 
-Die Texte dürfen erst nach fachlicher beziehungsweise rechtlicher Freigabe als fertig gelten.
-
-### 3. Echtes Projektfoto und Inhaltsfreigabe
-
-Der Qualitätsbereich verwendet weiterhin einen klar gekennzeichneten lokalen Platzhalter. Benötigt wird ein echtes freigegebenes ElektroNik-Projektfoto, idealerweise:
-
-- technische Installation, Verteilung, Wallbox, Netzwerk oder Photovoltaik;
-- Querformat ungefähr `3:2`, mindestens 2000 Pixel Breite;
-- ruhige, saubere Perspektive mit Reserve für einen mobilen Hochformat-Crop;
-- dokumentierte Herkunft, Nutzungsrechte und gegebenenfalls Einwilligungen;
-- final abgestimmter Alt-Text.
+Am 2. November 2026 wurde der Foto-Platzhalter auf Wunsch des Betreibers entfernt. Die drei
+Qualitätspunkte stehen jetzt untereinander neben der Positionierung. Der Satz „Wir hinterlassen
+Lösungen. Keine Fragen.“ ist als Markenformulierung freigegeben. Ein Foto ist für diesen
+Seitenabschnitt aktuell nicht erforderlich. Wird später eines ergänzt, müssen Herkunft, Rechte,
+Einwilligung und Alt-Text vor Veröffentlichung geklärt werden.
 
 Zusätzlich müssen Telefonnummer, E-Mail, Adresse, Öffnungszeiten, Leistungen und alle vertrauensbildenden Aussagen durch den Betrieb bestätigt werden.
 
@@ -121,7 +114,7 @@ Ein später verfügbares kompatibles Next.js-/Lockfile-Update muss separat einge
 
 1. Domain, DNS, HTTPS und Mail bestätigen.
 2. Unternehmensdaten und Rechtstexte liefern und freigeben.
-3. Echtes Projektfoto samt Rechten und Crop liefern.
+3. Unternehmensangaben und Leistungsumfang final schriftlich bestätigen.
 4. Finale visuelle, mobile und inhaltliche Abnahme durchführen.
 5. `NEXT_PUBLIC_SITE_URL` auf die bestätigte Domain setzen.
 6. `npm run verify` ausführen und `out/` statisch prüfen.

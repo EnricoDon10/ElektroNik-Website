@@ -1,11 +1,12 @@
 import { siteContact } from "../data/site-content";
+import ConsentSettingsLink from "./consent/consent-settings-link";
 
 export default function SiteFooter() {
   return (
     <footer>
       <div className="footer-inner">
         <div className="footer-brand">
-          <a className="brand brand-footer" href="#start" aria-label="ElektroNik Startseite">
+          <a className="brand brand-footer" href="#start" aria-label={`${siteContact.businessName} Startseite`}>
             <span className="brand-name">
               ELEKTRO<span>NIK</span>
             </span>
@@ -35,11 +36,16 @@ export default function SiteFooter() {
             <strong>Rechtliches</strong>
             <a href="/impressum/">Impressum</a>
             <a href="/datenschutz/">Datenschutz</a>
+            <a href="/agb/">AGB</a>
+            <ConsentSettingsLink />
           </div>
         </nav>
 
         <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} ElektroNik Meisterbetrieb</span>
+          <span className="footer-credit">
+            <span>© {new Date().getFullYear()} {siteContact.businessName} Meisterbetrieb</span>
+            <span>Website Powered by ME Digitale</span>
+          </span>
           <span>Mit Energie. Mit Verstand.</span>
         </div>
       </div>

@@ -3,7 +3,7 @@ import { competenceSignals } from "../../data/site-content";
 
 export default function CompetenceBar() {
   return (
-    <aside className="trust-bar competence-bar" aria-label="ElektroNik Qualitätsmerkmale">
+    <aside className="trust-bar competence-bar" aria-label="ElektroNIK Qualitätsmerkmale">
       <div>
         {competenceSignals.map((signal, index) => (
           <Fragment key={signal}>

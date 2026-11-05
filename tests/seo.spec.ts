@@ -8,7 +8,7 @@ test("SEO-Metadaten, strukturierte Daten und statische Indexdateien sind konsist
 }) => {
   await page.goto("/");
 
-  await expect(page).toHaveTitle("ElektroNik | Elektro-Meisterbetrieb in Köln");
+  await expect(page).toHaveTitle("ElektroNIK | Elektro-Meisterbetrieb in Wattenscheid");
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
     "href",
     `${productionOrigin}/`,
@@ -33,16 +33,27 @@ test("SEO-Metadaten, strukturierte Daten und statische Indexdateien sind konsist
   const graph = structuredData[0]?.["@graph"] as Array<Record<string, unknown>>;
   expect(graph.map((entry) => entry["@type"])).toEqual(["Electrician", "FAQPage"]);
   expect(graph[0]?.url).toBe(productionOrigin);
-  await expect(page.getByRole("link", { name: "Impressum" })).toHaveAttribute(
+  expect(graph[0]?.name).toBe("ElektroNIK");
+  expect(graph[0]?.telephone).toBe("+49 157 74299367");
+  expect(graph[0]?.email).toBe("Elektro-nik@t-online.de");
+  expect(graph[0]?.address).toMatchObject({
+    streetAddress: "Kantstraße 10",
+    postalCode: "44867",
+    addressLocality: "Wattenscheid",
+  });
+  expect(graph[0]).not.toHaveProperty("openingHoursSpecification");
+  const footer = page.getByRole("contentinfo");
+  await expect(footer.getByRole("link", { name: "Impressum" })).toHaveAttribute(
     "href",
     "/impressum/",
   );
-  await expect(page.getByRole("link", { name: "Datenschutz" })).toHaveAttribute(
+  await expect(footer.getByRole("link", { name: "Datenschutz" })).toHaveAttribute(
     "href",
     "/datenschutz/",
   );
+  await expect(footer.getByRole("link", { name: "AGB" })).toHaveAttribute("href", "/agb/");
 
-  for (const legalRoute of ["/impressum/", "/datenschutz/"] as const) {
+  for (const legalRoute of ["/impressum/", "/datenschutz/", "/agb/"] as const) {
     await page.goto(legalRoute);
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
       "href",
@@ -67,5 +78,6 @@ test("SEO-Metadaten, strukturierte Daten und statische Indexdateien sind konsist
   expect(sitemapText).toContain(`<loc>${productionOrigin}/</loc>`);
   expect(sitemapText).toContain(`<loc>${productionOrigin}/impressum/</loc>`);
   expect(sitemapText).toContain(`<loc>${productionOrigin}/datenschutz/</loc>`);
+  expect(sitemapText).toContain(`<loc>${productionOrigin}/agb/</loc>`);
   expect(sitemapText).not.toContain("localhost");
 });

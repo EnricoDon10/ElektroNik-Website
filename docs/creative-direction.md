@@ -44,7 +44,7 @@ Empfohlene Aufteilung im 1320-px-Container:
 
 Hero-Inhalt:
 
-1. Eyebrow „Elektro-Meisterbetrieb · Köln & Umgebung“
+1. Eyebrow „Elektro-Meisterbetrieb · Bochum & Umgebung“
 2. „Elektromeister / für Haus und Industrie“
 3. kurze Leistungs- und Qualitätsaussage
 4. linksbündiger CTA „Leistungen ansehen“
@@ -73,7 +73,7 @@ Der Rhythmus wechselt bewusst:
 1. **Hero – Navy:** Markenversprechen und Handlung
 2. **Kompetenzleiste – Grün oder Off-White:** kompakter Abschluss des Hero
 3. **Leistungen – Off-White:** strukturierte Angebotsübersicht
-4. **Warum ElektroNik – Navy:** Vertrauen und echte Bildfläche
+4. **Warum ElektroNik – Navy:** Vertrauen durch klare Positionierung und konkrete Qualitätsbelege
 5. **Ablauf – Off-White:** lineare Orientierung
 6. **FAQ – Off-White mit eigenem schmalen Raster:** Einwände klären
 7. **Kontakt – angehobenes Navy:** starker Conversion-Abschluss
@@ -94,9 +94,9 @@ Nummer, Icon, Titel, Beschreibung, Tags und CTA bilden eine wiederholbare Hierar
 
 ### Warum ElektroNik
 
-Dieser Abschnitt wird zum emotionalen Beleg. Links steht die Positionierung, rechts ein echtes Projektfoto mit zurückhaltender technischer Annotation. Darunter bleiben die drei vorhandenen Belege „Direkter Kontakt“, „Saubere Ausführung“ und „Zukunftssicher“ als horizontale Vertrauensachse.
+Links steht die Positionierung mit dem freigegebenen Satz „Wir hinterlassen Lösungen. Keine Fragen.“ Rechts stehen „Direkter Kontakt“, „Saubere Ausführung“ und „Zukunftssicher“ untereinander. Ein Foto-Platzhalter wird nicht verwendet.
 
-Die vorhandene Aussage „Wir hinterlassen Lösungen. Keine Fragen.“ sollte vor Veröffentlichung als tatsächliche Markenformulierung bestätigt werden; sie ist kein nachgewiesenes Kunden- oder Mitarbeiterzitat und darf nicht typografisch wie ein Testimonial erscheinen.
+Die Aussage „Wir hinterlassen Lösungen. Keine Fragen.“ ist als Markenformulierung freigegeben. Sie ist kein Kunden- oder Mitarbeiterzitat und wird nicht wie ein Testimonial dargestellt.
 
 ### Ablauf und FAQ
 
@@ -172,5 +172,5 @@ Die Richtung ist visuell freigegeben, wenn folgende Entscheidungen bestätigt si
 - kompaktere Hero-Typografie und ein einzelner linksbündiger Leistungs-CTA im Hero; Projekt-CTA ausschließlich im Header
 - reduziertes technisches Hero-Diagramm
 - Mobile Hero ohne vollständige Wiederholung aller sechs Leistungen
-- echtes Projektfoto als notwendiger Vertrauensbeleg
+- keine Platzhalterbilder; echte Fotos nur nach gesonderter Freigabe und geklärten Nutzungsrechten
 - konsistente lineare Icon-Sprache

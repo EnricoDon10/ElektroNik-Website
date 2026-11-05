@@ -8,11 +8,11 @@ Die Seite führt von „Passt dieser Betrieb zu meinem Projekt?“ zu „Ich kan
 
 | Kapitel | Nutzerfrage | Kerninhalt | Hauptaktion |
 | --- | --- | --- | --- |
-| Header/Hero | Wer ist ElektroNik und was kann ich tun? | Meisterbetrieb, Region, Nutzen, technisches Markensignet | Header: Projekt anfragen; Hero: Leistungen ansehen |
+| Header/Hero | Wer ist ElektroNik und was kann ich tun? | Meisterbetrieb, Region, Nutzen, technisches Markensignet | Header: Leistung anfragen; Hero: Leistungen ansehen |
 | Kompetenzleiste | Warum sollte ich weiterlesen? | Meisterbetrieb, Beratung, Ausführung, Region | Orientierung |
-| Leistungen | Wird mein Thema abgedeckt? | sechs bestehende Leistungen | Projekt besprechen |
-| Warum ElektroNik | Kann ich Qualität und Haltung vertrauen? | echtes Projektbild, drei bestehende Qualitätsargumente | persönlich kennenlernen |
-| Ablauf | Wie geht es nach der Anfrage weiter? | Anfrage, Beratung, Angebot, Umsetzung | Unsicherheit reduzieren |
+| Leistungen | Wird mein Thema abgedeckt? | sechs bestehende Leistungen | Leistung anfragen |
+| Warum ElektroNik | Kann ich Qualität und Haltung vertrauen? | drei konkrete Qualitätsargumente ohne Foto | persönlich kennenlernen |
+| Ablauf | Wie geht es nach der Anfrage weiter? | Anfrage, Beratung, Terminvereinbarung, Umsetzung | Unsicherheit reduzieren |
 | FAQ | Was muss ich noch wissen? | fünf bestehende Fragen | Kontakt aufnehmen |
 | Kontakt | Wie starte ich konkret? | Telefon, E-Mail, Zeiten, Karte, WhatsApp-Formular | Anfrage in WhatsApp öffnen |
 | Footer | Wo finde ich Navigation und Rechtliches? | Navigation, Kontakt, Impressum, Datenschutz | gezielter Abschluss |
@@ -106,15 +106,15 @@ Dieser Bereich wechselt von Leistungsbehauptung zu Vertrauensbeleg.
 
 ### Komposition
 
-- Desktop: Copy und echtes Projektbild zweispaltig; darunter drei Qualitätspunkte.
-- Tablet/Mobile: Copy → Bild → Qualitätspunkte.
-- Bildfläche reserviert feste Maße und schützt den Mobile Crop.
+- Desktop: Positionierung und drei vertikal gestapelte Qualitätspunkte zweispaltig.
+- Tablet/Mobile: Positionierung → Qualitätspunkte.
+- Ein Foto-Platzhalter wird nicht verwendet.
 
 ### Offener Inhalt
 
-Der aktuelle Platzhalter benennt transparent, dass ein Bild fehlt. Vor visueller Finalisierung ist ein echtes freigegebenes Projektfoto erforderlich. Bis dahin bleibt ein hochwertiger, eindeutig interner Platzhalter besser als ein zufälliges Stockbild.
+Auf Wunsch des Betreibers wurde der Foto-Platzhalter entfernt. Ein Foto ist für den aktuellen Entwurf nicht erforderlich.
 
-Die Aussage „Wir hinterlassen Lösungen. Keine Fragen.“ ist als Markenclaim zu bestätigen und darf nicht wie ein Kunden-Zitat inszeniert werden.
+Die Aussage „Wir hinterlassen Lösungen. Keine Fragen.“ ist als Markenclaim freigegeben und darf nicht wie ein Kunden-Zitat inszeniert werden.
 
 ## 6. Ablauf
 
@@ -161,7 +161,7 @@ Kontaktoptionen, Karte und Formular werden einspaltig. Floating Actions dürfen 
 
 ### Conversion- und Datenschutzklarheit
 
-Die bestehende Formulierung, dass WhatsApp nur eine vorbereitete Nachricht öffnet und der Nutzer dort selbst versendet, ist stark und bleibt erhalten. Google Maps lädt derzeit direkt als externes Iframe; rechtliche Prüfung und eine mögliche Consent-/Click-to-load-Lösung sind vor Launch erforderlich.
+Die bestehende Formulierung, dass WhatsApp nur eine vorbereitete Nachricht öffnet und der Nutzer dort selbst versendet, bleibt erhalten. Google Maps wird erst nach Zustimmung zu „Externe Medien“ geladen. Vorher bleiben Adresse, Routenlink und ein lokaler Kartenplatzhalter sichtbar; die Auswahl kann über den Footer widerrufen werden.
 
 ## 9. Footer und Rechtliches
 
@@ -210,7 +210,7 @@ Für alle Viewports gelten: keine horizontale Scrollbar, keine abgeschnittenen H
 - feinere Typografiehierarchie
 - ruhigere Karten-Hover
 - vertikale Mobile-Prozesslinie
-- Click-to-load-/Consent-Entscheidung für Google Maps
+- rechtliche Freigabe der umgesetzten Consent- und Google-Maps-Strategie
 
 ### Kann
 

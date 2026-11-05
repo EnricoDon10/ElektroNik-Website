@@ -9,29 +9,29 @@ import QualitySection from "./components/sections/quality-section";
 import ServicesSection from "./components/sections/services-section";
 import SiteFooter from "./components/site-footer";
 import SiteHeader from "./components/site-header";
-import { faqs } from "./data/site-content";
+import { faqs, siteContact } from "./data/site-content";
 
 const productionSiteUrl = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://elektronik-meisterbetrieb.de"
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://elektro-nik-meisterbetrieb.de"
 ).replace(/\/$/, "");
 
 export const metadata: Metadata = {
   title: {
-    absolute: "ElektroNik | Elektro-Meisterbetrieb in Köln",
+    absolute: "ElektroNIK | Elektro-Meisterbetrieb in Wattenscheid",
   },
   description:
-    "ElektroNik in Köln-Lindenthal: moderne Elektrotechnik, Netzwerkverkabelung, E-Mobilität und Energielösungen – meisterhaft und persönlich umgesetzt.",
+    "ElektroNIK in Wattenscheid und Bochum: Elektrotechnik, Netzwerk, E-Mobilität, PV-Beratung und Industrieservice.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "ElektroNik | Verkabeln. Vernetzen. Vertrauen.",
+    title: "ElektroNIK | Verkabeln. Vernetzen. Vertrauen.",
     description:
-      "Meisterstrom für Haus und Industrie – moderne Elektrotechnik, persönlich umgesetzt.",
+      "Elektrotechnik für Haus, Gewerbe und Industrie. Persönlich beraten und fachgerecht umgesetzt.",
     images: [
       {
         url: "/og-v3.png",
         width: 1734,
         height: 907,
-        alt: "ElektroNik – Verkabeln. Vernetzen. Vertrauen.",
+        alt: "ElektroNIK: Verkabeln. Vernetzen. Vertrauen.",
       },
     ],
     locale: "de_DE",
@@ -40,9 +40,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ElektroNik | Verkabeln. Vernetzen. Vertrauen.",
+    title: "ElektroNIK | Verkabeln. Vernetzen. Vertrauen.",
     description:
-      "Meisterstrom für Haus und Industrie – moderne Elektrotechnik, persönlich umgesetzt.",
+      "Elektrotechnik für Haus, Gewerbe und Industrie. Persönlich beraten und fachgerecht umgesetzt.",
     images: ["/og-v3.png"],
   },
 };
@@ -52,24 +52,18 @@ const structuredData = {
   "@graph": [
     {
       "@type": "Electrician",
-      name: "ElektroNik",
+      name: siteContact.businessName,
       description:
-        "Elektro-Meisterbetrieb für Elektroinstallation, Netzwerkverkabelung, E-Mobilität, Photovoltaik, Prüfung und Service.",
-      telephone: "+49 151 68488353",
-      email: "kontakt@elektronik-meisterbetrieb.de",
+        "Elektro-Meisterbetrieb für Elektroinstallation, Netzwerkverkabelung, E-Mobilität, PV-Beratung sowie Reparatur, Wartung und Netzanalyse für Industrieanlagen.",
+      telephone: "+49 157 74299367",
+      email: siteContact.email,
       url: productionSiteUrl,
       address: {
         "@type": "PostalAddress",
-        streetAddress: "Krieler Str. 115",
-        postalCode: "50935",
-        addressLocality: "Köln",
+        streetAddress: siteContact.street,
+        postalCode: siteContact.postalCode,
+        addressLocality: siteContact.city,
         addressCountry: "DE",
-      },
-      openingHoursSpecification: {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "07:00",
-        closes: "18:00",
       },
     },
     {

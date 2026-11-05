@@ -6,7 +6,7 @@ export default function QualitySection() {
     <section className="quality" data-reveal-group id="warum-wir">
       <div className="quality-inner">
         <div className="quality-copy" data-reveal>
-          <p className="chapter light">03 — Warum ElektroNik</p>
+          <p className="chapter light">03 / Warum ElektroNIK</p>
           <p className="eyebrow">
             <span /> Qualität mit Haltung
           </p>
@@ -18,33 +18,13 @@ export default function QualitySection() {
             zuverlässig funktioniert. Dazwischen liegen klare Beratung, saubere Arbeit
             und Lösungen mit Zukunft.
           </p>
+          <p className="quality-quote">Wir hinterlassen Lösungen. Keine Fragen.</p>
           <a className="text-link" href="#kontakt">
             Persönlich kennenlernen
             <span aria-hidden="true">
               <ArrowUpRight focusable="false" size={17} />
             </span>
           </a>
-        </div>
-
-        <div
-          aria-label="Vorbereitete Bildfläche für ein zukünftiges Foto von ElektroNik"
-          className="quality-panel quality-photo-placeholder"
-          data-reveal
-          role="group"
-        >
-          <div className="panel-grid" aria-hidden="true" />
-          <span className="panel-kicker">Foto · ElektroNik bei der Arbeit</span>
-          <div className="photo-placeholder-copy">
-            <span aria-hidden="true">+</span>
-            <strong>Projektfoto vorbereitet</strong>
-            <small>
-              Diese Fläche kann später direkt durch ein echtes Foto ersetzt werden.
-            </small>
-          </div>
-          <div className="panel-card">
-            <span>Unser Versprechen · noch zu bestätigen</span>
-            <strong>„Wir hinterlassen Lösungen. Keine Fragen.“</strong>
-          </div>
         </div>
 
         <div className="quality-points" data-reveal-group>

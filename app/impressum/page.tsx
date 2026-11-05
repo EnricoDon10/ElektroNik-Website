@@ -1,37 +1,76 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { siteContact } from "../data/site-content";
 
 export const metadata: Metadata = {
   title: "Impressum",
-  description: "Impressum des Elektro-Meisterbetriebs ElektroNik in Köln.",
+  description: "Impressum von ElektroNIK in Wattenscheid.",
   alternates: { canonical: "/impressum/" },
 };
 
 export default function ImpressumPage() {
   return (
     <main className="legal-page">
-      <div className="legal-inner">
+      <article className="legal-inner">
         <Link className="legal-back" href="/">← Zurück zur Startseite</Link>
         <p className="chapter">Rechtliches</p>
         <h1>Impressum</h1>
-        <p className="legal-notice">
-          Hinweis für den Betreiber: Diese Seite ist strukturell vorbereitet, aber noch nicht
-          rechtssicher vollständig. Vor der Veröffentlichung müssen insbesondere vollständiger
-          Inhabername, Rechtsform, zuständige Handwerkskammer, Berufsbezeichnung und weitere
-          gesetzlich erforderliche Angaben geprüft und ergänzt werden.
-        </p>
-        <h2>Kontakt</h2>
-        <p>ElektroNik<br />Krieler Str. 115<br />50935 Köln</p>
-        <p>Telefon: 0151 68488353<br />E-Mail: kontakt@elektronik-meisterbetrieb.de</p>
-        <h2>Noch zu ergänzende Pflichtangaben</h2>
-        <ul>
-          <li>Vollständiger Name des verantwortlichen Inhabers</li>
-          <li>Rechtsform und gegebenenfalls Registerangaben</li>
-          <li>Zuständige Handwerkskammer und Berufsbezeichnung</li>
-          <li>Umsatzsteuer-ID, sofern vorhanden und erforderlich</li>
-          <li>Verantwortliche Person für redaktionelle Inhalte, sofern erforderlich</li>
-        </ul>
-      </div>
+        <p className="legal-updated">Stand: 2. November 2026</p>
+
+        <section>
+          <h2>Angaben gemäß § 5 DDG</h2>
+          <p>
+            {siteContact.businessName} (Markenname)<br />
+            Inhaber: {siteContact.ownerName}, {siteContact.legalForm}<br />
+            {siteContact.street}<br />
+            {siteContact.postalCode} {siteContact.city}<br />
+            Deutschland
+          </p>
+        </section>
+
+        <section>
+          <h2>Kontakt</h2>
+          <p>
+            Telefon: <a href={siteContact.phoneHref}>{siteContact.phoneDisplay}</a><br />
+            E-Mail: <a href={siteContact.emailHref}>{siteContact.email}</a>
+          </p>
+        </section>
+
+        <section>
+          <h2>Berufsrechtliche Angaben</h2>
+          <p>
+            Zuständige Handwerkskammer: {siteContact.chamber}<br />
+            Reinoldistraße 7-9<br />
+            44135 Dortmund
+          </p>
+          <p>
+            Gesetzliche Berufsbezeichnung: {siteContact.professionalTitle}<br />
+            Staat der Verleihung: Deutschland
+          </p>
+          <p>
+            Berufsrechtliche Regelung: Handwerksordnung (HwO). Sie ist unter{" "}
+            <a href="https://www.gesetze-im-internet.de/hwo/" rel="noreferrer" target="_blank">
+              Gesetze im Internet
+            </a>{" "}
+            einsehbar.
+          </p>
+        </section>
+
+        <section>
+          <h2>Website</h2>
+          <p>
+            Konzeption, Inhalte, Gestaltung und technische Betreuung: {siteContact.websiteAdministrator}.
+          </p>
+        </section>
+
+        <section>
+          <h2>Verbraucherstreitbeilegung</h2>
+          <p>
+            ElektroNIK ist nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer
+            Verbraucherschlichtungsstelle teilzunehmen.
+          </p>
+        </section>
+      </article>
     </main>
   );
 }

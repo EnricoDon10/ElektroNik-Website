@@ -9,10 +9,11 @@ import {
   useState,
 } from "react";
 import usePrefersReducedMotion from "./motion/use-prefers-reduced-motion";
+import { siteContact } from "../data/site-content";
 
 const navigationItems = [
   { href: "#leistungen", id: "leistungen", label: "Leistungen" },
-  { href: "#warum-wir", id: "warum-wir", label: "Warum ElektroNik" },
+  { href: "#warum-wir", id: "warum-wir", label: "Warum ElektroNIK" },
   { href: "#ablauf", id: "ablauf", label: "Ablauf" },
   { href: "#kontakt", id: "kontakt", label: "Kontakt" },
 ] as const;
@@ -308,7 +309,7 @@ export default function SiteHeader() {
       <a
         className="brand"
         href="#start"
-        aria-label="ElektroNik Startseite"
+        aria-label={`${siteContact.businessName} Startseite`}
         onClick={() => menuOpen && closeMenu({ restoreFocus: true })}
       >
         <span className="brand-name">ELEKTRO<span>NIK</span></span>
@@ -339,11 +340,11 @@ export default function SiteHeader() {
           </a>
         ))}
         <div className="nav-contact">
-          <a data-menu-item href="tel:+4915168488353" onClick={() => closeMenu({ restoreFocus: true })}>
+          <a data-menu-item href={siteContact.phoneHref} onClick={() => closeMenu({ restoreFocus: true })}>
             <small>Direkt anrufen</small>
-            <strong>0151 68488353</strong>
+            <strong>{siteContact.phoneDisplay}</strong>
           </a>
-          <a data-menu-item href="https://wa.me/4915168488353" onClick={() => closeMenu({ restoreFocus: true })}>
+          <a data-menu-item href={siteContact.whatsappHref} onClick={() => closeMenu({ restoreFocus: true })}>
             <small>WhatsApp</small>
             <strong>Anfrage starten</strong>
           </a>
@@ -358,7 +359,7 @@ export default function SiteHeader() {
         <span className="whatsapp-mark" aria-hidden="true">
           <Image src="/whatsapp.svg" alt="" height={22} width={22} />
         </span>
-        <strong className="header-cta-label">Projekt unverbindlich anfragen</strong>
+        <strong className="header-cta-label">Leistung anfragen</strong>
         <span className="header-cta-arrow" aria-hidden="true">↓</span>
       </a>
       <button

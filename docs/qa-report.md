@@ -1,8 +1,111 @@
 # QA-, Accessibility- und Performance-Bericht
 
+## Abschluss der Copy- und Layoutanpassungen vom 2. November 2026
+
+Netzwerkleistung, Industrieservice, Terminablauf, WhatsApp-Button, Kontaktformular, Footer und
+AGB wurden am statischen Export geprüft. Der Export lief auf `http://localhost:3201`; der bereits
+laufende Next.js-Entwicklungsserver wurde nicht beendet. Ein IONOS-Upload fand nicht statt.
+
+| Prüfung | Ergebnis |
+| --- | --- |
+| `npm run lint` | erfolgreich |
+| `npx tsc --noEmit` | erfolgreich |
+| `npm run build` | erfolgreich; statische Seiten erzeugt |
+| `npx playwright test` gegen `out/` | **279 bestanden, 9 erwartete Breakpoint-Skips, 0 fehlgeschlagen** |
+| Browser/Projekte | Chromium in allen neun Pflicht-Viewports |
+| Sichtkontrolle | Kontaktformular, WhatsApp-Logo, Footer-Credit und Cookie-Button geprüft |
+| `git diff --check` | erfolgreich |
+
+Die erste Browserausführung konnte wegen einer bestehenden Next.js-Entwicklungssperre nicht
+starten. Der vorhandene Server blieb unangetastet; die vollständige Suite lief danach gegen den
+frischen statischen Export erfolgreich durch.
+
+## AGB- und Impressumsupdate vom 2. November 2026
+
+Der neue AGB-Endpunkt, die gekürzte Impressumsseite, der Footerlink und der Sitemap-Eintrag wurden
+gegen den frisch gebauten statischen Export in `out/` geprüft. Der Export wurde isoliert auf
+`http://localhost:3201` ausgeliefert. Der bestehende Next.js-Entwicklungsserver blieb unangetastet;
+ein IONOS-Upload fand nicht statt.
+
+| Prüfung | Ergebnis |
+| --- | --- |
+| `npm run lint` | erfolgreich |
+| `npx tsc --noEmit` | erfolgreich |
+| `npm run build` | erfolgreich; `/agb/` statisch erzeugt |
+| `npx playwright test` gegen `out/` | **261 bestanden, 9 erwartete Breakpoint-Skips, 0 fehlgeschlagen** |
+| Browser/Projekte | Chromium in allen neun Pflicht-Viewports |
+| `git diff --check` | erfolgreich |
+
+Die AGB-Prüfung bestätigte alle Vertragsabschnitte bis § 25, die Kostenregel für
+Vor-Ort-Termine, Angebote auf Wunsch, die Netzanalyse und die Verbraucherstreitbeilegung. Die Impressumsprüfung bestätigte
+den Verleihungsstaat Deutschland und die Entfernung interner Prüfhinweise. Die internen Hinweisboxen
+auf Impressum und Datenschutzerklärung sind entfernt; die datenschutzrechtlichen Vertragsbedingungen
+bleiben im passenden Abschnitt beschrieben. Geprüft wurden außerdem Footerlink, Canonical und Sitemap.
+
+## Inhalts- und Legal-Update vom 2. November 2026
+
+Die geänderten Leistungsangaben, Startseitenbereiche, Metadaten, Impressums- und
+Datenschutzhinhalte wurden gegen den frisch erzeugten statischen Export in `out/` geprüft.
+Der Export wurde isoliert auf `http://localhost:3200` ausgeliefert. Der bereits laufende
+Next.js-Entwicklungsserver auf Port 3001 blieb unangetastet. Ein Upload auf IONOS oder ein
+Produktivdeployment fand nicht statt.
+
+| Prüfung | Ergebnis |
+| --- | --- |
+| `npm run lint` | erfolgreich |
+| `npx tsc --noEmit` | erfolgreich |
+| `npm run build` | erfolgreich; 7/7 statische Seiten erzeugt |
+| `npx playwright test` gegen `out/` | **243 bestanden, 9 erwartete Breakpoint-Skips, 0 fehlgeschlagen** |
+| Browser/Projekte | Chromium in allen neun Pflicht-Viewports |
+| `git diff --check` | erfolgreich |
+
+Die neun geprüften Viewports: 375 × 667, 390 × 844, 430 × 932, 768 × 1024, 1024 × 768,
+1366 × 768, 1440 × 900, 1920 × 1080 und 2560 × 1440. Ergänzende Inhaltsprüfungen bestätigen
+die neuen Leistungsnamen und Texte, die aktualisierte WhatsApp-Auswahl, die entfernte FAQ zum
+Angebot, die Antwort zu Großkunden und Schwerindustrie sowie den Foto-freien Qualitätsabschnitt.
+
+Die erste Playwright-Ausführung konnte wegen einer bereits belegten Next.js-Entwicklungssperre
+nicht starten. Der bestehende Prozess wurde nicht beendet; die vollständige Suite lief danach gegen
+den isolierten statischen Export erfolgreich durch.
+
+Die automatisierten Prüfungen bestätigen weder die Richtigkeit unbekannter Betreiberangaben noch
+die Vertragslage bei IONOS, AVV-Kette, DNS, HTTPS oder Serverheadern. Diese Punkte bleiben im
+separaten Legal-Audit und in der Launch-Checkliste offen.
+
+## Legal-Launch-Update vom 19. August 2026
+
+Testziel war der frisch erzeugte statische Export unter `out/`, isoliert ausgeliefert auf
+`http://localhost:3200`. Der bereits vorhandene Next.js-Entwicklungsserver auf Port 3001 wurde nicht
+beendet und nicht als Abnahmenachweis verwendet. Ein Deployment in das IONOS-Zielsystem fand nicht
+statt.
+
+| Prüfung | Ergebnis |
+| --- | --- |
+| `npm run lint` | erfolgreich |
+| `npx tsc --noEmit` | erfolgreich |
+| `npm run build` | erfolgreich; 7/7 statische Seiten erzeugt |
+| `npx playwright test` gegen `out/` | **234 bestanden, 9 erwartete Breakpoint-Skips, 0 fehlgeschlagen** |
+| Browser/Projekte | Chromium in allen neun Pflicht-Viewports |
+| Laufzeit Matrixlauf | 2,9 Minuten |
+| `git diff --check` | erfolgreich |
+
+Neu verifiziert wurden der dauerhaft feste Cookie-Button auf Start- und Rechtsseiten, die
+gleichwertigen Erstentscheidungen, die sechsmonatige Consent-Gültigkeit, die sichere Behandlung
+veralteter und beschädigter Datensätze, Escape und Fokuswiederherstellung sowie die unveränderte
+Blockierung von Google Maps vor Einwilligung. Direkte Routen für Impressum und Datenschutz,
+Canonical-Ziele, Sitemap und Robots-Datei waren im statischen Export erreichbar.
+
+Die sichtbare Prüfung umfasste das Consent-Banner bei 375 × 667 und 1440 × 900, das Impressum bei
+390 × 844 sowie die Datenschutzerklärung bei 1440 × 900. Banner, Rechtsseiten und der feste Button
+waren ohne horizontale Überbreite oder abgeschnittene Hauptaktionen nutzbar.
+
+Die technische Prüfung macht die offenen echten Betreiberangaben nicht automatisch rechtlich
+vollständig. Diese Blocker stehen im separaten
+[`legal-launch-audit-2026-08-19.md`](./legal-launch-audit-2026-08-19.md).
+
 ## Finale automatisierte Browserverifikation
 
-Stand: 1. August 2026  
+Stand: 2. August 2026
 Testziel: lokaler Next.js-Devserver auf `http://localhost:3100` sowie lokaler statischer Server für den erzeugten `out/`-Ordner; kein Deployment und noch kein Test im IONOS-Zielsystem.
 
 ### Ergebnis
@@ -12,9 +115,9 @@ Testziel: lokaler Next.js-Devserver auf `http://localhost:3100` sowie lokaler st
 | `npm run lint` | erfolgreich |
 | `npx tsc --noEmit` | erfolgreich |
 | `npm run build` | erfolgreich; 7/7 statische Seiten erzeugt |
-| `npx playwright test` | **162 bestanden, 9 erwartete Breakpoint-Skips, 0 fehlgeschlagen** |
+| `npx playwright test` | **216 bestanden, 9 erwartete Breakpoint-Skips, 0 fehlgeschlagen** |
 | Browser/Projekte | Chromium in allen neun Pflicht-Viewports |
-| Laufzeit finaler Matrixlauf | 5,0 Minuten |
+| Laufzeit finaler Matrixlauf | 4,8 Minuten |
 | `npm audit --json` | 6 Advisories: 1 niedrig, 5 hoch; kein automatischer Fix ausgeführt |
 
 Die neun Skips sind beabsichtigt: In fünf Menü-Viewports wird der reine Desktop-Menütest ausgelassen, in vier Desktop-Viewports der reine Overlay-Menütest. Es gibt keine übersprungenen fachlichen Prüffälle innerhalb ihres jeweils relevanten Breakpoints.
@@ -26,7 +129,7 @@ Abgedeckt wurden:
 - unveränderte Telefon-, E-Mail- und direkte WhatsApp-Ziele;
 - WhatsApp-Nachrichtenkodierung einschließlich Umlauten/Sonderzeichen, native Mindestlänge sowie Erfolg und Popup-Blockierung;
 - FAQ per Enter und Leertaste sowie synchrones `aria-expanded`, `aria-controls` und `aria-hidden`;
-- Google-Maps-Zwei-Klick-Verhalten, iframe-Quelle/-Titel und sicherer externer Maps-Link;
+- Consent-Banner, Einstellungsdialog, versionierte lokale Auswahl, Widerruf und Google-Maps-Blockierung;
 - horizontale Dokumentüberbreite sowie abgeschnittene Kerntexte/Bedienelemente;
 - Sichtbarkeit, Mindestgröße und Überlagerungsfreiheit der zentralen Projekt-CTAs;
 - Reduced-Motion-Endzustand, eindeutige IDs, Formularlabels, Semantik und fehlende unnötige Prozess-Tabstopps;
@@ -42,7 +145,7 @@ Abgedeckt wurden:
 ### Weiterhin offene Nachweise und Launch-Gates
 
 - Impressum und Datenschutzerklärung benötigen vollständige Kundendaten und fachliche/rechtliche Freigabe.
-- Das technische Google-Maps-Zwei-Klick-Verfahren ist verifiziert; Datenschutzerklärung und Rechtsgrundlage sind damit noch nicht rechtlich freigegeben.
+- Die Consent-geschützte Google-Maps-Einbettung ist technisch verifiziert; Datenschutzerklärung und Rechtsgrundlage sind damit noch nicht rechtlich freigegeben.
 - Ein echtes, freigegebenes ElektroNik-Projektfoto fehlt; der sichtbare lokale Platzhalter bleibt ein Launch-Gate.
 - NVDA/Firefox, VoiceOver/Safari, 200-%-Zoom, 320-CSS-px-Reflow, Forced Colors und eine vollständige manuelle WCAG-Kontrastmessung stehen aus.
 - Lighthouse, LCP, INP, TBT, Bundle-/Main-Thread-Analyse und Prüfung auf einem schwächeren realen Mobilgerät stehen aus. Der automatisierte CLS-Test ersetzt diese Messungen nicht.
@@ -71,7 +174,7 @@ Vor einer Veröffentlichung sind insbesondere das mobile Dialog-/Fokusverhalten,
 ### P0 – Veröffentlichung blockierend
 
 1. **Impressum und Datenschutzerklärung sind ausdrücklich unvollständig.** Beide Seiten nennen fehlende Pflichtangaben. Sie dürfen nicht als rechtssicher fertig behandelt werden. Fachliche/rechtliche Freigabe ist erforderlich.
-2. **Google Maps lädt als direktes Drittanbieter-iframe.** `LocationMap` setzt die Google-URL unmittelbar als `src`; `loading="lazy"` verzögert nur den Zeitpunkt und stellt keine Einwilligung dar. Datenschutztext, Rechtsgrundlage und gewünschtes Consent-/Zwei-Klick-Modell müssen vor Launch verbindlich geklärt werden.
+2. **Google Maps ist technisch blockiert, bis „Externe Medien“ erlaubt werden.** Vorher wird kein iframe erzeugt. Einwilligung, Ablehnung, individuelle Auswahl und Widerruf sind umgesetzt; Datenschutztext und Rechtsgrundlage müssen vor Launch dennoch verbindlich geprüft werden.
 
 ### P1 – hoch
 
@@ -111,7 +214,7 @@ Vor einer Veröffentlichung sind insbesondere das mobile Dialog-/Fokusverhalten,
 - Daueranimationen existieren für Orbit und Energiepuls. Sie verwenden überwiegend Transform/Opacity-orientierte CSS-Effekte; Reduced Motion ist vorhanden.
 - `backdrop-filter`, große Schatten, radiale Verläufe und dauerhaft animierte Flächen können auf schwächeren Mobilgeräten GPU-/Paint-Kosten verursachen.
 - IntersectionObserver und passiver Scroll-Listener im Header sind begrenzt und werden aufgeräumt.
-- Das Google-Maps-iframe ist voraussichtlich der größte externe Laufzeit-/Privacy-Kostenblock, wenn der Kontaktbereich in die Nähe des Viewports kommt.
+- Das Google-Maps-iframe ist der einzige optionale externe Laufzeitdienst und wird erst nach Einwilligung erzeugt.
 - Systemschriftarten vermeiden Font-Downloads und Font Layout Shift.
 
 ### Phase 1 nicht getestet

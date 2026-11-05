@@ -1,18 +1,22 @@
 # ElektroNik Creative Brief – Phase 1
 
+Aktualisierung vom 2. November 2026: Dieses Dokument hält die ursprüngliche Analyse fest. Die
+nachfolgenden Betreiberangaben und Copy-Änderungen aktualisieren die betroffenen Punkte; maßgeblich
+für den aktuellen Seiteninhalt ist `app/data/site-content.ts`.
+
 ## Status und Zweck
 
 Dieses Dokument beschreibt die fachlich und gestalterisch abnehmbare Grundlage für das High-End-Redesign. Es basiert auf der tatsächlichen Implementierung in `app/page.tsx`, `app/globals.css`, den Komponenten unter `app/components/`, den Inhalten in `app/data/site-content.ts`, der Next.js-Konfiguration und der IONOS-Deployment-Anleitung. In Phase 1 wurde kein Produktionscode verändert.
 
 ## Unternehmen und Angebot
 
-ElektroNik wird im vorhandenen Inhalt als persönlicher Elektro-Meisterbetrieb in Köln und Umgebung positioniert. Das Angebot umfasst:
+Elektro - NIK wird als persönlicher Elektro-Meisterbetrieb in Bochum und Umgebung positioniert. Das Angebot umfasst:
 
 1. Elektroinstallation
-2. Netzwerkverkabelung
+2. Netzwerkverkabelung und IT-Beratung
 3. E-Mobilität
-4. Photovoltaik und Energiemanagement
-5. Prüfung und Sicherheit
+4. PV und Energieberatung mit Machbarkeitsprüfung, Wartung und Netzanalyse mit modernem Messsystem
+5. Reparatur, Fehlersuche und Wartung von Industrieanlagen sowie Netzanalyse
 6. Service und Störung
 
 Die vorhandene Kernbotschaft „Elektromeister für Haus und Industrie“ deckt Privat- und Gewerbekunden ab. Der Text verbindet moderne Technik mit „Handschlagqualität“, sauberer Ausführung und persönlicher Begleitung. Diese Kombination ist der stärkste differenzierende Kern und soll erhalten bleiben.
@@ -21,7 +25,7 @@ Die vorhandene Kernbotschaft „Elektromeister für Haus und Industrie“ deckt 
 
 ### Primär
 
-- Private Eigentümer und Bauherren im Raum Köln, die Renovierung, Neubau, Wallbox, PV oder eine sichere Modernisierung planen.
+- Private Eigentümer und Bauherren im Raum Bochum, die Renovierung, Neubau, Wallbox, PV oder eine sichere Modernisierung planen.
 - Kleine und mittlere Gewerbekunden, Hausverwaltungen und Vermieter mit Bedarf an Installation, Netzwerk, Prüfung oder Störungsbehebung.
 
 ### Nutzungssituationen
@@ -48,19 +52,19 @@ Die Website soll deshalb nicht primär „Technologie-Show“, sondern kontrolli
 
 ### Primäre Conversion
 
-„Projekt unverbindlich anfragen“ führt zum vorhandenen WhatsApp-Formular und bleibt als primäre Aktion im festen Header jederzeit erreichbar. Nach der Nutzerentscheidung vom 1. August 2026 wird dieser CTA im Hero nicht wiederholt. Dort steht ausschließlich der linksbündige Orientierungslink „Leistungen ansehen“.
+„Leistung anfragen“ führt zum vorhandenen WhatsApp-Formular und bleibt als primäre Aktion im festen Header jederzeit erreichbar. Dieser CTA wird im Hero nicht wiederholt. Dort steht ausschließlich der linksbündige Orientierungslink „Leistungen ansehen“.
 
 ### Sekundäre Conversions
 
-- direkte Telefonnummer `0151 68488353`
-- WhatsApp `+49 151 68488353`
-- E-Mail `kontakt@elektronik-meisterbetrieb.de`
-- Route zu `Krieler Str. 115, 50935 Köln-Lindenthal`
+- direkte Telefonnummer `0157 / 742 99 367`
+- WhatsApp vorläufig `+49 157 74299367` (Bestätigung ausstehend)
+- E-Mail `Elektro-nik@t-online.de`
+- Route zu `Kantstraße 10, 44867 Wattenscheid`
 - vertiefender Einstieg über eine konkrete Leistung
 
 ### Empfohlener Hauptpfad
 
-Hero → Vertrauenssignale → Leistungen → Warum ElektroNik mit echtem Projektbild → Ablauf → FAQ → Kontaktformular.
+Hero → Vertrauenssignale → Leistungen → Warum ElektroNik mit gestapelten Qualitätsbelegen → Ablauf → FAQ → Kontaktformular.
 
 Die vorhandene Seitenreihenfolge ist grundsätzlich richtig und wird nicht aus Selbstzweck neu sortiert.
 
@@ -81,7 +85,7 @@ Die vorhandene Seitenreihenfolge ist grundsätzlich richtig und wird nicht aus S
 
 ### Vertrauen
 
-Der Bereich „Warum ElektroNik“ enthält nur eine als solche bezeichnete Fotoplatzhalterfläche. Damit fehlt der wichtigste visuelle Beleg für echte Ausführung, Materialqualität und Nähe zum Betrieb. Auch Referenzen, Zertifikate und Bewertungen fehlen; sie dürfen nicht erfunden werden.
+Der Bereich „Warum ElektroNik“ enthielt zunächst einen Foto-Platzhalter. Auf Wunsch des Betreibers wurde dieser am 2. November 2026 entfernt und durch drei vertikal angeordnete Qualitätsbelege neben der Positionierung ersetzt. Referenzen, Zertifikate und Bewertungen dürfen nicht erfunden werden.
 
 ### Hero und Hierarchie
 
@@ -109,31 +113,28 @@ Der Bereich „Warum ElektroNik“ enthält nur eine als solche bezeichnete Foto
 
 Folgende Angaben werden unverändert bewahrt:
 
-- Telefon: 0151 68488353
-- E-Mail: kontakt@elektronik-meisterbetrieb.de
-- Adresse: Krieler Str. 115, 50935 Köln
-- Öffnungszeiten: Montag bis Freitag, 07:00 bis 18:00 Uhr
+- Unternehmensname: Elektro - NIK
+- Inhaber: Nikolay Shirotskiy
+- Telefon: 0157 / 742 99 367
+- E-Mail: Elektro-nik@t-online.de
+- Adresse: Kantstraße 10, 44867 Wattenscheid
+- Öffnungszeiten: noch nicht bestätigt und daher derzeit nicht öffentlich dargestellt
 - vorhandene Leistungen, FAQ-Inhalte und Kontaktlogik
 
 Nicht ohne Kundennachweis ergänzen: Bewertungen, Mitarbeiter, Betriebsalter, Reaktionszeiten, Partnerlogos, Zertifikate, Referenzprojekte oder Garantiezusagen.
 
-## Bildbedarf vor finaler visueller Umsetzung
+## Bilder
 
-Mindestens ein echtes, freigegebenes ElektroNik-Projektfoto wird benötigt. Ideal ist ein kleines Set:
-
-| Motiv | Einsatz | Format | Perspektive / Crop | Alt-Text-Vorschlag |
-| --- | --- | --- | --- | --- |
-| Präzise Arbeit an Verteilung oder Schaltschrank | Warum ElektroNik, Hauptbild | 4:3, mindestens 2000 px breit | Detailaufnahme, Hände/Werkzeug erlaubt, Gesicht nicht erforderlich; Motivzentrum für 1:1-Mobile-Crop schützen | „Fachgerechte Elektroinstallation von ElektroNik an einer Verteilung“ |
-| Sauber installierte Wallbox oder PV-Technik | Leistung/Vertrauen optional | 3:2 | klare Linien, reale Umgebung, keine fremden Marken dominant | „Von ElektroNik installierte Wallbox an einem Wohngebäude“ |
-| Netzwerkverteiler oder Messsituation | ergänzende Projektfläche optional | 4:3 | technisch präzise, aufgeräumt, natürliches Licht | „Strukturierte Netzwerkverkabelung in einem ElektroNik-Projekt“ |
-
-Keine externen Stockbilder und keine generierten Personen als reale Mitarbeiter verwenden. Herkunft, Einwilligung und Nutzungsrecht müssen dokumentiert werden.
+Für den aktuellen Seitenentwurf wird kein Projekt- oder Mitarbeiterfoto benötigt. Es werden keine
+Platzhalterbilder, Stockbilder oder generierten Personen als reale Mitarbeiter verwendet. Wenn
+später echte Fotos ergänzt werden, müssen Herkunft, Nutzungsrechte, erforderliche Einwilligungen und
+Alt-Texte vor Veröffentlichung geklärt werden.
 
 ## Annahmen zur Abnahme
 
 - ElektroNik möchte weiterhin Privat- und Gewerbekunden gleichwertig ansprechen.
 - WhatsApp bleibt der primäre digitale Anfrageweg.
-- Es liegt aktuell kein freigegebenes Projektbild im Repository vor; `public/` enthält nur WhatsApp-Icon, Favicon und Open-Graph-Grafiken.
+- Der Foto-Platzhalter wurde entfernt; Fotos sind im aktuellen Entwurf nicht vorgesehen.
 - Systemschriften bleiben der performante Fallback. Ob eine lizenzierte lokale Markenschrift bereitgestellt werden kann, ist vor der Implementierung zu entscheiden.
 - Google Maps bleibt fachlich gewünscht; Datenschutz und Einwilligungsbedarf werden separat rechtlich geprüft.
 
@@ -141,6 +142,6 @@ Keine externen Stockbilder und keine generierten Personen als reale Mitarbeiter 
 
 1. Wird „Präzisionshandwerk mit persönlicher Meisterbetreuung“ als Kernpositionierung freigegeben?
 2. Bleibt WhatsApp der primäre Projekt-CTA?
-3. Kann mindestens ein echtes, freigegebenes Projektfoto bereitgestellt werden?
+3. Sind die neu eingetragenen Unternehmens- und Leistungsangaben final bestätigt?
 4. Soll die Website Privat- und Gewerbekunden weiterhin ohne getrennte Einstiegsseiten gemeinsam führen?
 5. Ist eine lokal gehostete, lizenzierte Display-Schrift verfügbar oder soll bewusst ein optimierter System-Stack verwendet werden?

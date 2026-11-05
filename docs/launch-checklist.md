@@ -2,24 +2,37 @@
 
 Diese Liste ist eine Abnahmevorlage. Phase 3 enthält automatisierte Chromium-Nachweise; offene Kästchen bleiben ausstehende Nachweise und nicht automatisch bestätigte Fehler – außer wenn ausdrücklich als Blocker markiert.
 
+Der ausführliche aktuelle Rechts-, Datenschutz- und Consent-Befund steht in
+[`legal-launch-audit-2026-08-19.md`](./legal-launch-audit-2026-08-19.md).
+
 ## 1. Freigaben und Inhalte
 
 - [x] Visuelle Richtung vom Auftraggeber am 1. August 2026 freigegeben.
-- [ ] **BLOCKER:** Produktionsdomain, IONOS-DNS, HTTPS sowie Mail/MX bestätigen; `elektronik-meisterbetrieb.de` und `www` lieferten im Finalaudit NXDOMAIN.
-- [ ] **BLOCKER:** Vollständiger Inhabername, Rechtsform, Kammer-/Berufsangaben und ggf. Register-/USt-ID-Angaben geliefert und Impressum fachlich geprüft.
-- [ ] **BLOCKER:** Datenschutzerklärung für IONOS-Hosting, Logs, Google Maps, WhatsApp und Kontaktwege fachlich geprüft.
-- [x] Technisches Google-Maps-Zwei-Klick-Laden umgesetzt und browsergeprüft.
+- [ ] **BLOCKER:** Produktionsdomain, IONOS-DNS, HTTPS sowie Mail/MX bestätigen; erneute Abfrage am 2. November 2026 ergab NXDOMAIN für Hauptdomain, `www` und MX.
+- [x] ElektroNIK als Markenname, Einzelunternehmen Nikolay Shirotskiy, Anschrift Kantstraße 10, 44867 Wattenscheid, Handwerkskammer Dortmund und Berufsbezeichnung Elektrotechnikermeister eingetragen.
+- [ ] **BLOCKER:** USt-ID beziehungsweise Wirtschafts-ID vor Veröffentlichung ergänzen, falls erteilt; persönliche Steuernummer nicht veröffentlichen.
+- [ ] **BLOCKER:** Datenschutzerklärung anhand des tatsächlichen IONOS-Vertrags, der Agenturbetreuung, Logs, WebAnalytics, Google Maps, WhatsApp und Kontaktwege fachlich prüfen.
+- [x] ME Digitale Maximilian Dirr & Enrico Mancuso GbR als Gestaltung, Inhalts- und technischer Betreuungsdienstleister benannt; Vertrags- und AVV-Kette bleibt zu prüfen.
+- [x] AGB aus den vom Betreiber gelieferten Unterlagen als eigene Route aufgenommen; Angebote werden laut Betreiberwunsch nur auf Wunsch erstellt. Vor-Ort-Kostenregelung bleibt in den AGB. Fachliche Prüfung bleibt offen.
+- [x] Handelsregisterangabe entfernt, weil der Betreiber mitgeteilt hat, nicht eingetragen zu sein. § 18 MStV-Abschnitt für journalistisch-redaktionelle Angebote entfernt; die Website enthält keinen solchen Angebotsbereich.
+- [x] Kurzangabe zur Verbraucherstreitbeilegung aus den bereitgestellten AGB in Impressum und AGB übernommen.
+- [x] Consent-Banner mit „Alle akzeptieren“, „Alle ablehnen“ und „Einstellungen“ umgesetzt.
+- [x] Dauerhafter Cookie-Button unten links öffnet die Einstellungen auf allen Routen erneut.
+- [x] Consent-Datensatz ist versioniert, wird validiert und nach spätestens 180 Tagen erneuert.
+- [x] Google Maps wird erst nach Zustimmung zu „Externe Medien“ eingebettet.
 - [ ] **BLOCKER:** Google-Maps-Verarbeitung in der Datenschutzerklärung fachlich/rechtlich freigegeben.
-- [ ] Alle Telefonnummern, E-Mail-Adressen, Adresse, Öffnungszeiten und Leistungsangaben mit dem Betrieb abgeglichen.
+- [x] Telefonnummer und E-Mail bestätigt; neue Anschrift durch den Betreiber mitgeteilt.
+- [ ] Öffnungszeiten und Leistungsangaben final mit dem Betrieb abgleichen; WhatsApp-Fähigkeit der Nummer bestätigen.
+- [x] Nicht angebotene Prüfungen nach DGUV V3 und E-Checks aus den Leistungskarten entfernt.
+- [x] Kein Foto im Qualitätsabschnitt vorgesehen; der frühere Foto-Platzhalter wurde entfernt.
 - [ ] Keine erfundenen Bewertungen, Zertifikate, Referenzen oder Mitarbeiterdarstellungen.
-- [ ] Alle neuen Bilder besitzen dokumentierte Herkunft/Lizenz, passende Formate/Crops und geprüfte Alt-Texte.
 
 ## 2. Codequalität
 
-- [x] `npm run lint` am 1. August 2026 erfolgreich.
-- [x] `npx tsc --noEmit` am 1. August 2026 erfolgreich.
-- [x] `npm run build` am 1. August 2026 erfolgreich; 7/7 statische Seiten erzeugt.
-- [x] `npx playwright test` am 1. August 2026: 162 bestanden, 9 erwartete Breakpoint-Skips, 0 fehlgeschlagen.
+- [x] AGB-Route und aktualisiertes Impressum am 2. November 2026 mit Lint, TypeScript, Build und Playwright geprüft; jüngster Abschlusslauf: 279 bestanden, 9 erwartete Breakpoint-Skips, 0 fehlgeschlagen.
+- [x] Vorheriger Inhaltsstand: Änderungen vom 2. November 2026 mit Lint, TypeScript und Build erfolgreich geprüft; Playwright: 243 bestanden, 9 erwartete Breakpoint-Skips, 0 fehlgeschlagen.
+- [x] Vorheriger Stand: `npm run lint`, `npx tsc --noEmit` und `npm run build` am 19. August 2026 erfolgreich; 7/7 statische Seiten erzeugt.
+- [x] Vorheriger Stand: Playwright gegen den statischen Export am 19. August 2026: 234 bestanden, 9 erwartete Breakpoint-Skips, 0 fehlgeschlagen.
 - [x] `npx eslint playwright.config.ts tests` am 1. August 2026 erfolgreich.
 - [x] Keine Prüfung wurde durch Deaktivieren oder pauschales Ignorieren umgangen.
 - [x] Nur die freigegebenen und fachlich begründeten Dependencies hinzugefügt; Lockfile, Lizenzen und Bundlegrenzen geprüft.
@@ -30,14 +43,16 @@ Diese Liste ist eine Abnahmevorlage. Phase 3 enthält automatisierte Chromium-Na
 - [x] Desktopnavigation und alle Ankerziele funktionieren in der Chromium-Zielmatrix.
 - [x] Mobiles Menü öffnet/schließt, Escape funktioniert, Fokus bleibt kontrolliert und kehrt zum Auslöser zurück.
 - [x] Aktive Navigation ist visuell und programmatisch nach Linkklick geprüft.
-- [x] Telefonlinks verwenden `+4915168488353`.
-- [x] E-Mail-Links verwenden `kontakt@elektronik-meisterbetrieb.de`.
-- [x] Direkte WhatsApp-Links verwenden `4915168488353`.
+- [x] Telefonlinks verwenden `+4915774299367`.
+- [x] E-Mail-Links verwenden `Elektro-nik@t-online.de`.
+- [ ] WhatsApp-Fähigkeit der vorläufig verwendeten Nummer `4915774299367` vom Kunden bestätigen lassen.
 - [x] WhatsApp-Formular kodiert Thema, optionale Kontaktdaten, Nachricht und Sonderzeichen korrekt.
 - [x] Nachrichten-Mindestlänge, ungültiges E-Mail-Format und Popup-Blockierung verhindern fehlerhafte Aufrufe und besitzen verständliche Browserzustände.
 - [x] FAQ funktioniert automatisiert per Enter und Leertaste; reale Touch-/Screenreaderprüfung bleibt offen.
-- [x] Karte wird erst nach Auswahl geladen; Adresse, iframe-Ziel und „In Maps öffnen“ sind geprüft.
-- [x] Impressum und Datenschutz sind direkt ladbar und intern korrekt verlinkt; ihre Inhalte bleiben rechtlich unvollständig.
+- [x] Karte zeigt vor Zustimmung einen lokalen Platzhalter; „Karte laden“, Adresse, iframe-Ziel und „In Maps öffnen“ sind geprüft.
+- [x] Impressum und Datenschutz sind direkt ladbar, intern korrekt verlinkt und technisch umfassend überarbeitet.
+- [x] AGB sind direkt ladbar, im Footer verlinkt und in der Sitemap enthalten.
+- [ ] **BLOCKER:** Verbleibende Betreiberangaben aus dem Legal-Audit einarbeiten und Rechtstexte fachlich freigeben.
 
 ## 4. Accessibility
 
@@ -74,7 +89,7 @@ Diese Liste ist eine Abnahmevorlage. Phase 3 enthält automatisierte Chromium-Na
 ## 6. SEO und strukturierte Daten
 
 - [x] Seitentitel, Beschreibungen, Canonical, Open Graph und Twitter Card im gebauten Export geprüft.
-- [x] Das aktuelle Build-Artefakt enthält für SEO-Ziele ausschließlich `https://elektronik-meisterbetrieb.de`; die Domain selbst bleibt extern unbestätigt.
+- [x] Das zuletzt geprüfte Build-Artefakt enthielt für SEO-Ziele ausschließlich `https://elektronik-meisterbetrieb.de`; die Domain selbst bleibt extern unbestätigt.
 - [ ] OG-Bild unter realer Produktions-URL erreichbar und visuell geprüft.
 - [ ] Electrician- und FAQ-JSON-LD sind technisch geprüft; Unternehmensdaten benötigen weiterhin inhaltliche Kundenbestätigung.
 - [x] `robots.txt` ist im Export vorhanden, erlaubt Crawling und verweist auf die Sitemap.
@@ -88,7 +103,8 @@ Diese Liste ist eine Abnahmevorlage. Phase 3 enthält automatisierte Chromium-Na
 - [x] Automatisierter CLS-Wert blieb in allen neun Chromium-Viewports bei höchstens `0.1`.
 - [x] Keine sichtbaren Layout Shifts bei Header, Hero, Karte oder Platzhalterfläche im automatisierten und visuellen Chromium-Lauf.
 - [ ] Animationen laufen ohne auffällige Paint-/GPU-Probleme; schwaches Mobilgerät stichprobenartig geprüft.
-- [x] Google Maps lädt technisch erst nach bewusster Auswahl; rechtliche Freigabe bleibt separat offen.
+- [x] Google Maps lädt technisch erst nach Einwilligung; Widerruf entfernt das iframe sofort. Die Datenschutzerklärung beschreibt den Dienst ausführlich, die fachliche Betreiberfreigabe bleibt offen.
+- [x] Versionierte Auswahl wird lokal gespeichert und kann über Footer und festen Cookie-Button erneut geöffnet werden.
 - [x] Client-Grenzen und Motion-/GSAP-Bundles geprüft; GSAP lädt erst bei Annäherung des Prozessbereichs.
 - [x] Keine Console-/Page-Errors, Hydrationfehler oder Drittanbieterrequests vor Kartenfreigabe im automatisierten Chromium-Lauf.
 

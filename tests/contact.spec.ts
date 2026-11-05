@@ -30,7 +30,7 @@ test("WhatsApp-Formular erzeugt die korrekt kodierte Popup-URL", async ({ page }
   await page.getByLabel("Gewünschte Leistung").selectOption({ label: "E-Mobilität" });
   await page.getByLabel(/Ihr Name/).fill("Jörg Müller");
   await page.getByLabel(/Ihre E-Mail-Adresse/).fill("joerg@example.de");
-  await page.getByLabel("Worum geht es?").fill("Wallbox & Prüfung – Köln");
+  await page.getByLabel("Worum geht es?").fill("Wallbox in Wattenscheid");
   await page.getByRole("button", { name: /Anfrage in WhatsApp öffnen/ }).click();
 
   const openedUrl = await page.evaluate(() => {
@@ -42,13 +42,13 @@ test("WhatsApp-Formular erzeugt die korrekt kodierte Popup-URL", async ({ page }
   expect(`${url.origin}${url.pathname}`).toBe(contactTargets.whatsapp);
   expect(url.searchParams.get("text")).toBe(
     [
-      "Hallo ElektroNik,",
+      "Hallo ElektroNIK,",
       "",
       "Thema: E-Mobilität",
       "Name: Jörg Müller",
       "E-Mail: joerg@example.de",
       "",
-      "Wallbox & Prüfung – Köln",
+      "Wallbox in Wattenscheid",
     ].join("\n"),
   );
   await expect(page.getByRole("status")).toContainText("WhatsApp wurde");
@@ -109,25 +109,56 @@ test("Ungültiges optionales E-Mail-Format verhindert den WhatsApp-Aufruf", asyn
   expect(await page.evaluate(() => Reflect.get(window, "popupAttempted"))).toBe(false);
 });
 
-test("Google Maps wird erst nach bewusster Auswahl eingebettet", async ({ page }) => {
+test("Google Maps wird erst nach Einwilligung eingebettet", async ({ page }) => {
   await page.route(/https:\/\/www\.google\.com\/maps.*/, async (route) => {
     await route.fulfill({ body: "<!doctype html><title>Map test stub</title>", contentType: "text/html" });
   });
   await gotoHome(page);
 
   const map = page.locator(".contact-map");
-  const consentButton = page.getByRole("button", { name: "Interaktive Karte laden" });
   await expect(map.locator("iframe")).toHaveCount(0);
-  await expect(consentButton).toBeVisible();
-  await consentButton.click();
+  await page.getByRole("button", { name: "Karte laden" }).click();
 
   const iframe = map.locator("iframe");
   await expect(iframe).toHaveCount(1);
   await expect(iframe).toHaveAttribute("src", /google\.com\/maps\?.*output=embed/);
-  await expect(iframe).toHaveAttribute("title", /Google Maps.*ElektroNik/);
+  await expect(iframe).toHaveAttribute("title", /Google Maps.*ElektroNIK.*Kantstraße 10.*44867 Wattenscheid/);
+  await expect(page.getByRole("button", { name: "Karte laden" })).toHaveCount(0);
 
   const directions = map.getByRole("link", { name: /In Maps öffnen/ });
   await expect(directions).toHaveAttribute("target", "_blank");
   await expect(directions).toHaveAttribute("rel", /noopener/);
   await expect(directions).toHaveAttribute("href", /google\.com\/maps\/search/);
+});
+
+test("Leistungskarten, Kontakt, Ablauf und Footer zeigen die bestätigten Angaben", async ({ page }) => {
+  await gotoHome(page);
+
+  const serviceCards = page.locator("[data-service-card]");
+  await expect(serviceCards).toHaveCount(6);
+  await expect(page.getByRole("heading", { name: "Netzwerkverkabelung und IT-Beratung" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "PV & Energieberatung" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Industriemaschinen & Anlagen" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Prüfung & Sicherheit" })).toHaveCount(0);
+
+  const serviceOptions = await page.getByLabel("Gewünschte Leistung").locator("option").allTextContents();
+  expect(serviceOptions).toContain("Netzwerkverkabelung und IT-Beratung");
+  expect(serviceOptions).toContain("PV & Energieberatung");
+  expect(serviceOptions).toContain("Industriemaschinen & Anlagen");
+  expect(serviceOptions).not.toContain("Prüfung & Sicherheit");
+
+  await expect(page.locator(".header-cta-label")).toHaveText("Leistung anfragen");
+  await expect(page.locator(".form-head")).toContainText("Leistung anfragen");
+  await expect(page.locator(".form-button-content img[src='/whatsapp.svg']")).toBeVisible();
+  await expect(page.getByRole("listitem", { name: "Schritt 03: Terminvereinbarung" })).toBeVisible();
+  await expect(page.locator("#ablauf")).not.toContainText("Vor-Ort-Beratungen sind kostenpflichtig");
+  await expect(page.locator(".footer-credit")).toContainText("Website Powered by ME Digitale");
+
+  await expect(page.getByRole("button", { name: "Wie entsteht ein transparentes Angebot?" })).toHaveCount(0);
+  await page.getByRole("button", { name: "Arbeitet ElektroNIK für Privat- und Gewerbekunden?" }).click();
+  await expect(page.getByText(/große Industriekunden, auch aus der Schwerindustrie/)).toBeVisible();
+
+  await expect(page.locator(".quality-photo-placeholder")).toHaveCount(0);
+  await expect(page.locator(".quality-points article")).toHaveCount(3);
+  await expect(page.locator(".quality-quote")).toHaveText("Wir hinterlassen Lösungen. Keine Fragen.");
 });

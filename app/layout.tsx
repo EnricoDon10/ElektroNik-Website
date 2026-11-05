@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import ConsentProvider from "./components/consent/consent-provider";
 import "./globals.css";
 
 const configuredSiteUrl = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
@@ -8,14 +9,14 @@ const metadataBaseUrl =
   ?? (process.env.NODE_ENV === "production" ? productionSiteUrl : "http://localhost:3001");
 
 export const metadata: Metadata = {
-  applicationName: "ElektroNik",
+  applicationName: "ElektroNIK",
   metadataBase: new URL(metadataBaseUrl),
   title: {
-    default: "ElektroNik | Elektro-Meisterbetrieb in Köln",
-    template: "%s | ElektroNik",
+    default: "ElektroNIK | Elektro-Meisterbetrieb in Wattenscheid",
+    template: "%s | ElektroNIK",
   },
   description:
-    "ElektroNik in Köln-Lindenthal: moderne Elektrotechnik, Netzwerkverkabelung, E-Mobilität und Energielösungen – meisterhaft und persönlich umgesetzt.",
+    "ElektroNIK in Wattenscheid und Bochum: Elektrotechnik, Netzwerk, E-Mobilität, PV-Beratung und Industrieservice.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
@@ -33,7 +34,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de">
-      <body>{children}</body>
+      <body>
+        <ConsentProvider>{children}</ConsentProvider>
+      </body>
     </html>
   );
 }

@@ -1,4 +1,4 @@
-import { ArrowUpRight, Clock, Mail, Phone } from "lucide-react";
+import { ArrowUpRight, Mail, Phone } from "lucide-react";
 import { siteContact } from "../../data/site-content";
 import LocationMap from "../location-map";
 import WhatsAppForm from "../whatsapp-form";
@@ -8,7 +8,7 @@ export default function ContactSection() {
     <section className="contact" data-reveal-group id="kontakt">
       <div className="contact-inner">
         <div className="contact-intro" data-reveal>
-          <p className="chapter light">06 — Kontakt</p>
+          <p className="chapter light">06 / Kontakt</p>
           <p className="eyebrow">
             <span /> Direkt &amp; unkompliziert
           </p>
@@ -46,16 +46,6 @@ export default function ContactSection() {
                 <ArrowUpRight focusable="false" size={17} />
               </i>
             </a>
-
-            <div className="contact-item contact-hours" data-reveal>
-              <span className="contact-symbol" aria-hidden="true">
-                <Clock focusable="false" size={19} strokeWidth={1.7} />
-              </span>
-              <span className="contact-copy">
-                <small>Öffnungszeiten</small>
-                <strong>{siteContact.openingHoursLabel}</strong>
-              </span>
-            </div>
 
             <div className="contact-map-shell" data-reveal>
               <LocationMap />

@@ -1,14 +1,31 @@
 import { expect, type Locator, type Page } from "@playwright/test";
+import { consentConfig } from "../app/consent/consent-config";
 
 export const MOBILE_NAVIGATION_MAX_WIDTH = 1279;
 
 export const contactTargets = {
-  email: "mailto:kontakt@elektronik-meisterbetrieb.de",
-  phone: "tel:+4915168488353",
-  whatsapp: "https://wa.me/4915168488353",
+  email: "mailto:Elektro-nik@t-online.de",
+  phone: "tel:+4915774299367",
+  whatsapp: "https://wa.me/4915774299367",
 } as const;
 
+export async function setStoredConsent(page: Page, externalMedia = false) {
+  await page.addInitScript(
+    ({ storageKey, value }) => window.localStorage.setItem(storageKey, JSON.stringify(value)),
+    {
+      storageKey: consentConfig.storageKey,
+      value: {
+        consentVersion: consentConfig.consentVersion,
+        necessary: true,
+        externalMedia,
+        updatedAt: new Date().toISOString(),
+      },
+    },
+  );
+}
+
 export async function gotoHome(page: Page) {
+  await setStoredConsent(page);
   await page.goto("/", { waitUntil: "domcontentloaded" });
   await expect(page.locator("main#main-content")).toBeVisible();
   await page.waitForFunction(() => (

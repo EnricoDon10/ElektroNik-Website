@@ -5,16 +5,16 @@ export const services = [
     icon: "cable",
     title: "Elektroinstallation",
     shortTitle: "Elektroinstallation",
-    text: "Sichere, zukunftsfähige Installationen für Neubau, Umbau und Sanierung – sauber geplant und fachgerecht umgesetzt.",
+    text: "Sichere, zukunftsfähige Installationen für Neubau, Umbau und Sanierung. Sauber geplant und fachgerecht umgesetzt.",
     tags: ["Neubau", "Sanierung", "Unterverteilung"],
   },
   {
     id: "netzwerkverkabelung",
     number: "02",
     icon: "network",
-    title: "Netzwerkverkabelung",
+    title: "Netzwerkverkabelung und IT-Beratung",
     shortTitle: "Netzwerkverkabelung",
-    text: "Strukturierte Netzwerkverkabelung für zuverlässige Datenverbindungen – von Netzwerkschränken und Bodentanks bis zu fachgerecht installierten Netzwerkdosen.",
+    text: "Strukturierte Netzwerkverkabelung für zuverlässige Datenverbindungen, von Netzwerkschränken und Bodentanks bis zu Netzwerkdosen.",
     tags: ["Netzwerkschränke", "Bodentanks", "Netzwerkdosen"],
   },
   {
@@ -23,26 +23,26 @@ export const services = [
     icon: "battery-charging",
     title: "E-Mobilität",
     shortTitle: "E-Mobilität",
-    text: "Wallbox, Lastmanagement und die passende Infrastruktur – vom ersten Check bis zur betriebsbereiten Ladestation.",
-    tags: ["Wallbox", "Lastmanagement", "Prüfung"],
+    text: "Wallbox, Lastmanagement und die passende Infrastruktur. Von der Planung bis zur betriebsbereiten Ladestation.",
+    tags: ["Wallbox", "Lastmanagement", "Infrastruktur"],
   },
   {
-    id: "pv-energiemanagement",
+    id: "pv-energieberatung",
     number: "04",
     icon: "solar-panel",
-    title: "PV & Energiemanagement",
-    shortTitle: "PV & Energie",
-    text: "Energie sinnvoll erzeugen, speichern und verteilen. Durchdachte Systeme für mehr Unabhängigkeit und Transparenz.",
-    tags: ["Photovoltaik", "Speicher", "Monitoring"],
+    title: "PV & Energieberatung",
+    shortTitle: "PV & Energieberatung",
+    text: "Wir beraten zu Photovoltaik, prüfen die Machbarkeit und übernehmen die Wartung. Netzanalyse mit modernem Messsystem.",
+    tags: ["Photovoltaik", "Machbarkeit", "Wartung", "Netzanalyse"],
   },
   {
-    id: "pruefung-sicherheit",
+    id: "industriemaschinen-anlagen",
     number: "05",
-    icon: "shield-check",
-    title: "Prüfung & Sicherheit",
-    shortTitle: "Prüfung & Sicherheit",
-    text: "Normgerechte Messungen, E-Checks und Prüfprotokolle für private, gewerbliche und vermietete Objekte.",
-    tags: ["E-Check", "DGUV V3", "Dokumentation"],
+    icon: "factory",
+    title: "Industriemaschinen & Anlagen",
+    shortTitle: "Industrieservice",
+    text: "Reparatur, Fehlersuche und Wartung von Industrieanlagen. Netzanalyse mit modernem Messsystem.",
+    tags: ["Reparatur", "Fehlersuche", "Wartung", "Netzanalyse"],
   },
   {
     id: "service-stoerung",
@@ -56,17 +56,21 @@ export const services = [
 ] as const;
 
 export const siteContact = {
-  phoneDisplay: "0151 68488353",
-  phoneHref: "tel:+4915168488353",
-  whatsappHref: "https://wa.me/4915168488353",
-  email: "kontakt@elektronik-meisterbetrieb.de",
-  emailHref: "mailto:kontakt@elektronik-meisterbetrieb.de",
-  street: "Krieler Str. 115",
-  postalCode: "50935",
-  city: "Köln",
-  district: "Lindenthal",
-  openingHoursLabel: "Mo–Fr · 07:00–18:00 Uhr",
-  openingHoursLong: "Montag bis Freitag, 07:00 bis 18:00 Uhr",
+  businessName: "ElektroNIK",
+  ownerName: "Nikolay Shirotskiy",
+  legalForm: "Einzelunternehmen",
+  chamber: "Handwerkskammer Dortmund",
+  professionalTitle: "Elektrotechnikermeister",
+  industrySpecialty: "Elektronik und Automatisierungstechnik für die Industrie",
+  websiteAdministrator: "ME Digitale Maximilian Dirr & Enrico Mancuso GbR",
+  phoneDisplay: "0157 / 742 99 367",
+  phoneHref: "tel:+4915774299367",
+  whatsappHref: "https://wa.me/4915774299367",
+  email: "Elektro-nik@t-online.de",
+  emailHref: "mailto:Elektro-nik@t-online.de",
+  street: "Kantstraße 10",
+  postalCode: "44867",
+  city: "Wattenscheid",
 } as const;
 
 export const trustSignals = [
@@ -79,7 +83,7 @@ export const competenceSignals = [
   "Meisterbetrieb",
   "Persönliche Beratung",
   "Saubere Ausführung",
-  "Köln & Umgebung",
+  "Bochum & Umgebung",
 ] as const;
 
 export const qualityPoints = [
@@ -113,8 +117,8 @@ export const processSteps = [
   },
   {
     number: "03",
-    title: "Angebot",
-    text: "Sie erhalten einen transparenten und verständlichen Umfang.",
+    title: "Terminvereinbarung",
+    text: "Wir vereinbaren einen passenden Termin und klären den Umfang der gewünschten Arbeiten.",
   },
   {
     number: "04",
@@ -130,19 +134,14 @@ export const faqs = [
       "Eine kurze Beschreibung, Fotos der Situation, der Einsatzort und das gewünschte Ergebnis helfen dabei, Ihr Vorhaben schnell einzuordnen. Details können anschließend persönlich geklärt werden.",
   },
   {
-    question: "Übernimmt ElektroNik auch kleinere Aufträge?",
+    question: "Übernimmt ElektroNIK auch kleinere Aufträge?",
     answer:
-      "Ja. Neben kompletten Installationen unterstützt ElektroNik auch bei einzelnen Steckdosen, Leuchten, Reparaturen, Prüfungen und der Fehlersuche.",
+      "Ja. Neben kompletten Installationen unterstützt ElektroNIK auch bei einzelnen Steckdosen, Leuchten, Reparaturen und der Fehlersuche.",
   },
   {
-    question: "Wie entsteht ein transparentes Angebot?",
+    question: "Arbeitet ElektroNIK für Privat- und Gewerbekunden?",
     answer:
-      "Nach einer kurzen Abstimmung und – falls nötig – einem Vor-Ort-Termin erhalten Sie eine nachvollziehbare Leistungsübersicht mit klar beschriebenem Umfang.",
-  },
-  {
-    question: "Arbeitet ElektroNik für Privat- und Gewerbekunden?",
-    answer:
-      "Ja. Die Leistungen reichen von Elektroarbeiten in Wohngebäuden bis zu Installations-, Netzwerk- und Prüfaufgaben im gewerblichen Umfeld.",
+      "Ja. ElektroNIK arbeitet für Privatkunden, Gewerbebetriebe und große Industriekunden, auch aus der Schwerindustrie.",
   },
   {
     question: "Was passiert bei einer Anfrage über WhatsApp?",

@@ -7,7 +7,7 @@ export default function ServicesSection() {
     <section className="section services" data-reveal-group id="leistungen">
       <div className="section-heading" data-reveal>
         <div>
-          <p className="chapter">02 — Leistungen</p>
+          <p className="chapter">02 / Leistungen</p>
           <p className="eyebrow dark">
             <span /> Was wir für Sie tun
           </p>
